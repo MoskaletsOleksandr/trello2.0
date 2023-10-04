@@ -15,7 +15,7 @@ import sprite from '../../assets/sprite.svg';
 
 const themes = ['Light', 'Dark', 'Violet'];
 
-export const Header = () => {
+export const Header = ({ toggleSidebar }) => {
   const [isCustomOptionListOpen, setCustomOptionListOpen] = useState(false);
   const toggleCustomOptionList = () => {
     setCustomOptionListOpen(!isCustomOptionListOpen);
@@ -29,7 +29,7 @@ export const Header = () => {
     <HeaderContainer>
       <ButtonMenu
         onClick={() => {
-          console.log('Click ButtonMenu');
+          toggleSidebar();
         }}
       >
         <IconMenu>
@@ -40,7 +40,6 @@ export const Header = () => {
         <TheamBtn
           onClick={() => {
             toggleCustomOptionList();
-            console.log('Click TheamBtn');
           }}
         >
           Theme

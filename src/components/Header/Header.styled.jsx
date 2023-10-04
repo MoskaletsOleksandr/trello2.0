@@ -2,10 +2,11 @@ import styled from '@emotion/styled';
 
 export const HeaderContainer = styled.header`
   display: flex;
+  flex-grow: 1;
+  height: 68px;
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  min-height: 68px;
   padding-right: 24px;
   color: black;
   background-color: teal;
@@ -24,11 +25,15 @@ export const HeaderContainer = styled.header`
 `;
 
 export const ButtonMenu = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
   width: 32px;
   height: 32px;
-  @media (min-width: 1200px) {
-    display: none;
-  }
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 `;
 
 export const IconMenu = styled.svg`
