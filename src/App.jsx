@@ -10,8 +10,7 @@ export const App = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
-        <Route index element={<WelcomePage />} />
-        <Route path="/welcome" element={<WelcomePage />} />
+        <Route path="/" element={<WelcomePage />} />
         <Route path="/auth/:id" element={<AuthPage />} />
         <Route path="/home" element={<HomePage />}>
           <Route path=":boardName" element={<CardsPage />} />

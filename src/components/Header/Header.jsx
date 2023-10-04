@@ -22,7 +22,7 @@ export const Header = ({ toggleSidebar }) => {
   };
 
   const handleThemeClick = (selectedTheme) => {
-    dispatch(UpdateThemeThunk({ theme: selectedTheme }));
+    console.log(selectedTheme);
   };
 
   return (

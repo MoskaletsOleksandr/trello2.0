@@ -1,7 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const WelcomePage = () => {
-  return <h1>WelcomePage</h1>;
+  return (
+    <>
+      <h1>WelcomePage</h1>
+      <Link to="/home">Home</Link>
+    </>
+  );
 };
 
 export default WelcomePage;
