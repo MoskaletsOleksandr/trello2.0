@@ -1,13 +1,13 @@
 import axios from 'axios';
 
-export const authInstance = axios.create({
-  baseURL: 'https://task-pro-group-1-backend.onrender.com/users',
+const authInstance = axios.create({
+  withCredentials: true,
+  baseURL: 'http://localhost:5000/users',
 });
 
-export const setToken = (accessToken) => {
-  authInstance.defaults.headers.common['Authorization'] = accessToken;
-};
+authInstance.interceptors.request.use((config) => {
+  config.headers.Authorization = `Bearer ${localStorage.getItem('token')}`;
+  return config;
+});
 
-export const clearToken = () => {
-  authInstance.defaults.headers.common['Authorization'] = '';
-};
+export default authInstance;

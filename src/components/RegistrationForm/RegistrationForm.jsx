@@ -9,8 +9,22 @@ import {
   StyledLink,
 } from '../common/FormComponents/FormComponents.styled';
 import { Button } from '../common/Button';
+import { useDispatch } from 'react-redux';
+import { registerThunk } from '../../redux/auth/thunks';
 
 export const RegistrationForm = () => {
+  const dispatch = useDispatch();
+
+  const handleSubmit = (values) => {
+    const body = {
+      email: values.email,
+      name: values.name,
+      password: values.password,
+    };
+
+    dispatch(registerThunk(body));
+  };
+
   return (
     <Formik
       initialValues={{ name: '', email: '', password: '' }}
@@ -23,9 +37,7 @@ export const RegistrationForm = () => {
           .max(20, 'Must be 20 characters or less')
           .required('Required'),
       })}
-      onSubmit={(values) => {
-        alert(JSON.stringify(values, null, 2));
-      }}
+      onSubmit={handleSubmit}
     >
       <StyledForm>
         <AuthTitle>

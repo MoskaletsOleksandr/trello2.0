@@ -1,23 +1,33 @@
-import { authInstance, setToken, clearToken } from '../axiosConfig';
+import authInstance from '../axiosConfig';
 
 export const register = async (body) => {
   const { data } = await authInstance.post('/register', body);
-  if ('token' in data) setToken(`Bearer ${data.token}`);
+  localStorage.setItem('token', data.accessToken);
   return data;
 };
 
 export const login = async (body) => {
   const { data } = await authInstance.post('/login', body);
-  if ('token' in data) setToken(`Bearer ${data.token}`);
+  localStorage.setItem('token', data.accessToken);
   return data;
 };
 
 export const logout = async () => {
   await authInstance.post('/logout');
-  deleteToken();
+  localStorage.removeItem('token');
 };
 
-export const getCurrent = async () => {
-  const { data } = await authInstance.get('/current');
+export const refresh = async () => {
+  const { data } = await authInstance.get('/refresh');
+  return data;
+};
+
+// export const getCurrent = async () => {
+//   const { data } = await authInstance.get('/current');
+//   return data;
+// };
+
+export const fetchUsers = async () => {
+  const { data } = await authInstance.get('/users');
   return data;
 };
