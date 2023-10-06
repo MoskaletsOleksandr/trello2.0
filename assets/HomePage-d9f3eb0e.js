@@ -1,4 +1,4 @@
-import{r as l,j as e,b as d}from"./index-b8e5bed7.js";import{n as t}from"./emotion-styled.browser.esm-73c260d8.js";import{s as a}from"./sprite-394e7d5d.js";import{u as p}from"./useDispatch-639cfd3c.js";const x=t.header`
+import{r as l,j as e,u as x,c as h,f as g}from"./index-c5e3c855.js";import{n as t}from"./emotion-styled.browser.esm-6d09e3a1.js";import{s as d}from"./sprite-394e7d5d.js";const u=t.header`
   display: flex;
   flex-grow: 1;
   height: 68px;
@@ -20,7 +20,7 @@ import{r as l,j as e,b as d}from"./index-b8e5bed7.js";import{n as t}from"./emoti
     padding-left: 20px;
     padding-right: 32px;
   }
-`,h=t.button`
+`,m=t.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,29 +30,29 @@ import{r as l,j as e,b as d}from"./index-b8e5bed7.js";import{n as t}from"./emoti
   background-color: transparent;
   border: none;
   cursor: pointer;
-`,g=t.svg`
+`,b=t.svg`
   width: 32px;
   height: 32px;
   fill: none;
   stroke: black;
   /* stroke: var(--header-name-color); */
-`,u=t.div`
+`,f=t.div`
   display: flex;
   align-items: center;
-`,m=t.div`
+`,k=t.div`
   display: flex;
   align-items: center;
   cursor: pointer;
-`,b=t.svg`
+`,j=t.svg`
   width: 16px;
   height: 16px;
   margin-left: 4px;
   fill: transparent;
   stroke: black;
   /* stroke: var(--header-theme-select-text-color); */
-`,f=t.div`
+`,v=t.div`
   position: relative;
-`,k=t.ul`
+`,w=t.ul`
   position: absolute;
   display: ${o=>o.open?"block":"none"};
   top: 20px;
@@ -67,7 +67,7 @@ import{r as l,j as e,b as d}from"./index-b8e5bed7.js";import{n as t}from"./emoti
   /* background-color: var(--header-theme-select-bg-color); */
   box-shadow: 0px 4px 16px 0px rgba(17, 17, 17, 0.1);
   z-index: 1;
-`,v=t.li`
+`,C=t.li`
   padding: 5px 10px;
   cursor: pointer;
   color: black;
@@ -80,7 +80,7 @@ import{r as l,j as e,b as d}from"./index-b8e5bed7.js";import{n as t}from"./emoti
   ${o=>o.selected&&`
       color: var(--header-theme-select-text-color-hover)
     `} */
-`,j=["Light","Dark","Violet"],w=({toggleSidebar:o})=>{const[n,r]=l.useState(!1),i=()=>{r(!n)},c=s=>{console.log(s)};return e.jsxs(x,{children:[e.jsx(h,{onClick:()=>{o()},children:e.jsx(g,{children:e.jsx("use",{href:`${a}#icon-menu`})})}),e.jsxs(u,{children:[e.jsxs(m,{onClick:()=>{i()},children:["Theme",e.jsx(b,{children:e.jsx("use",{href:`${a}#icon-chevron-down`})})]}),e.jsx(f,{children:e.jsx(k,{open:n,children:j.map(s=>e.jsx(v,{onClick:()=>c(s),children:s},s))})})]})]})},C=t.div`
+`,y=["Light","Dark","Violet"],S=({toggleSidebar:o})=>{const[r,s]=l.useState(!1),a=()=>{s(!r)},c=n=>{console.log(n)};return e.jsxs(u,{children:[e.jsx(m,{onClick:()=>{o()},children:e.jsx(b,{children:e.jsx("use",{href:`${d}#icon-menu`})})}),e.jsxs(f,{children:[e.jsxs(k,{onClick:()=>{a()},children:["Theme",e.jsx(j,{children:e.jsx("use",{href:`${d}#icon-chevron-down`})})]}),e.jsx(v,{children:e.jsx(w,{open:r,children:y.map(n=>e.jsx(C,{onClick:()=>c(n),children:n},n))})})]})]})},O=t.div`
   position: absolute;
   top: 0;
   bottom: 0;
@@ -97,7 +97,7 @@ import{r as l,j as e,b as d}from"./index-b8e5bed7.js";import{n as t}from"./emoti
   width: 260px;
 
   transition: transform 500ms;
-`,y=t.div`
+`,L=t.div`
   display: ${({isOpen:o})=>o?"block":"none"};
   position: fixed;
   top: 0;
@@ -107,9 +107,9 @@ import{r as l,j as e,b as d}from"./index-b8e5bed7.js";import{n as t}from"./emoti
   background-color: #0000004c;
   overflow-y: auto;
   z-index: 1;
-`,L=({isOpen:o,toggleSidebar:n})=>{const r=p(),i=()=>{console.log("handleLogout"),r(d())};return e.jsxs(e.Fragment,{children:[o&&e.jsx(y,{onClick:()=>{n()},isOpen:o}),e.jsx(C,{isOpen:o,children:e.jsx("button",{onClick:i,children:"logout"})})]})},O=t.div`
+`,$=({isOpen:o,toggleSidebar:r})=>{const[s,a]=l.useState([]),c=x(),n=()=>{c(h())},p=async()=>{const i=await g();a(i)};return e.jsxs(e.Fragment,{children:[o&&e.jsx(L,{onClick:()=>{r()},isOpen:o}),e.jsxs(O,{isOpen:o,children:[e.jsx("button",{onClick:n,children:"logout"}),e.jsx("button",{onClick:p,children:"get users"}),e.jsx("ul",{children:s.map(i=>e.jsx("li",{children:i.email},i.email))})]})]})},D=t.div`
   display: flex;
   width: 100vw;
   height: 100vh;
   background-color: orange;
-`,I=()=>{const[o,n]=l.useState(!1),r=()=>{n(!o)};return e.jsxs(O,{children:[e.jsx(L,{isOpen:o,toggleSidebar:r}),e.jsx(w,{toggleSidebar:r})]})};export{I as default};
+`,z=()=>{const[o,r]=l.useState(!1),s=()=>{r(!o)};return e.jsxs(D,{children:[e.jsx($,{isOpen:o,toggleSidebar:s}),e.jsx(S,{toggleSidebar:s})]})};export{z as default};
