@@ -1,4 +1,4 @@
-import{r as a,j as e}from"./index-ce3a370f.js";import{n as t}from"./emotion-styled.browser.esm-ec021a0b.js";import{s}from"./sprite-394e7d5d.js";const d=t.header`
+import{r as l,j as e,b as d}from"./index-b8e5bed7.js";import{n as t}from"./emotion-styled.browser.esm-73c260d8.js";import{s as a}from"./sprite-394e7d5d.js";import{u as p}from"./useDispatch-639cfd3c.js";const x=t.header`
   display: flex;
   flex-grow: 1;
   height: 68px;
@@ -20,7 +20,7 @@ import{r as a,j as e}from"./index-ce3a370f.js";import{n as t}from"./emotion-styl
     padding-left: 20px;
     padding-right: 32px;
   }
-`,p=t.button`
+`,h=t.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,29 +30,29 @@ import{r as a,j as e}from"./index-ce3a370f.js";import{n as t}from"./emotion-styl
   background-color: transparent;
   border: none;
   cursor: pointer;
-`,x=t.svg`
+`,g=t.svg`
   width: 32px;
   height: 32px;
   fill: none;
   stroke: black;
   /* stroke: var(--header-name-color); */
-`,h=t.div`
+`,u=t.div`
   display: flex;
   align-items: center;
-`,g=t.div`
+`,m=t.div`
   display: flex;
   align-items: center;
   cursor: pointer;
-`,m=t.svg`
+`,b=t.svg`
   width: 16px;
   height: 16px;
   margin-left: 4px;
   fill: transparent;
   stroke: black;
   /* stroke: var(--header-theme-select-text-color); */
-`,u=t.div`
+`,f=t.div`
   position: relative;
-`,b=t.ul`
+`,k=t.ul`
   position: absolute;
   display: ${o=>o.open?"block":"none"};
   top: 20px;
@@ -67,7 +67,7 @@ import{r as a,j as e}from"./index-ce3a370f.js";import{n as t}from"./emotion-styl
   /* background-color: var(--header-theme-select-bg-color); */
   box-shadow: 0px 4px 16px 0px rgba(17, 17, 17, 0.1);
   z-index: 1;
-`,f=t.li`
+`,v=t.li`
   padding: 5px 10px;
   cursor: pointer;
   color: black;
@@ -80,7 +80,7 @@ import{r as a,j as e}from"./index-ce3a370f.js";import{n as t}from"./emotion-styl
   ${o=>o.selected&&`
       color: var(--header-theme-select-text-color-hover)
     `} */
-`,k=["Light","Dark","Violet"],v=({toggleSidebar:o})=>{const[r,i]=a.useState(!1),c=()=>{i(!r)},l=n=>{console.log(n)};return e.jsxs(d,{children:[e.jsx(p,{onClick:()=>{o()},children:e.jsx(x,{children:e.jsx("use",{href:`${s}#icon-menu`})})}),e.jsxs(h,{children:[e.jsxs(g,{onClick:()=>{c()},children:["Theme",e.jsx(m,{children:e.jsx("use",{href:`${s}#icon-chevron-down`})})]}),e.jsx(u,{children:e.jsx(b,{open:r,children:k.map(n=>e.jsx(f,{onClick:()=>l(n),children:n},n))})})]})]})},j=t.div`
+`,j=["Light","Dark","Violet"],w=({toggleSidebar:o})=>{const[n,r]=l.useState(!1),i=()=>{r(!n)},c=s=>{console.log(s)};return e.jsxs(x,{children:[e.jsx(h,{onClick:()=>{o()},children:e.jsx(g,{children:e.jsx("use",{href:`${a}#icon-menu`})})}),e.jsxs(u,{children:[e.jsxs(m,{onClick:()=>{i()},children:["Theme",e.jsx(b,{children:e.jsx("use",{href:`${a}#icon-chevron-down`})})]}),e.jsx(f,{children:e.jsx(k,{open:n,children:j.map(s=>e.jsx(v,{onClick:()=>c(s),children:s},s))})})]})]})},C=t.div`
   position: absolute;
   top: 0;
   bottom: 0;
@@ -97,7 +97,7 @@ import{r as a,j as e}from"./index-ce3a370f.js";import{n as t}from"./emotion-styl
   width: 260px;
 
   transition: transform 500ms;
-`,w=t.div`
+`,y=t.div`
   display: ${({isOpen:o})=>o?"block":"none"};
   position: fixed;
   top: 0;
@@ -107,9 +107,9 @@ import{r as a,j as e}from"./index-ce3a370f.js";import{n as t}from"./emotion-styl
   background-color: #0000004c;
   overflow-y: auto;
   z-index: 1;
-`,y=({isOpen:o,toggleSidebar:r})=>e.jsxs(e.Fragment,{children:[o&&e.jsx(w,{onClick:()=>{r()},isOpen:o}),e.jsx(j,{isOpen:o})]}),C=t.div`
+`,L=({isOpen:o,toggleSidebar:n})=>{const r=p(),i=()=>{console.log("handleLogout"),r(d())};return e.jsxs(e.Fragment,{children:[o&&e.jsx(y,{onClick:()=>{n()},isOpen:o}),e.jsx(C,{isOpen:o,children:e.jsx("button",{onClick:i,children:"logout"})})]})},O=t.div`
   display: flex;
   width: 100vw;
   height: 100vh;
   background-color: orange;
-`,L=()=>{const[o,r]=a.useState(!1),i=()=>{r(!o)};return e.jsxs(C,{children:[e.jsx(y,{isOpen:o,toggleSidebar:i}),e.jsx(v,{toggleSidebar:i})]})};export{L as default};
+`,I=()=>{const[o,n]=l.useState(!1),r=()=>{n(!o)};return e.jsxs(O,{children:[e.jsx(L,{isOpen:o,toggleSidebar:r}),e.jsx(w,{toggleSidebar:r})]})};export{I as default};
