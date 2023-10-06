@@ -1,4 +1,4 @@
-import authInstance from '../axiosConfig';
+import { authInstance, refreshInstance } from '../axiosConfig';
 
 export const register = async (body) => {
   const { data } = await authInstance.post('/register', body);
@@ -18,14 +18,9 @@ export const logout = async () => {
 };
 
 export const refresh = async () => {
-  const { data } = await authInstance.get('/refresh');
+  const { data } = await refreshInstance.get();
   return data;
 };
-
-// export const getCurrent = async () => {
-//   const { data } = await authInstance.get('/current');
-//   return data;
-// };
 
 export const fetchUsers = async () => {
   const { data } = await authInstance.get('/users');
