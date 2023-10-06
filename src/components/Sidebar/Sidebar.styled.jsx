@@ -31,3 +31,14 @@ export const BackDrop = styled.div`
   overflow-y: auto;
   z-index: 1;
 `;
+
+export const Title = styled.h2`
+  /* margin-left: 14px;
+  margin-bottom: 8px; */
+  /* align-self: flex-start; */
+  color: grey;
+  /* color: var(--secondary-text-color); */
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.24px;
+`;

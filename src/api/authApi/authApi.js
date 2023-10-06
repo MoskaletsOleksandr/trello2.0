@@ -21,8 +21,3 @@ export const refresh = async () => {
   const { data } = await refreshInstance.get();
   return data;
 };
-
-export const fetchUsers = async () => {
-  const { data } = await authInstance.get('/users');
-  return data;
-};
