@@ -2,13 +2,13 @@ import React from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import {
+  AuthButton,
   AuthTitle,
   StyledErrorMessage,
   StyledField,
   StyledForm,
   StyledLink,
 } from '../common/FormComponents/FormComponents.styled';
-import { Button } from '../common/Button';
 import { useDispatch } from 'react-redux';
 import { registerThunk } from '../../redux/auth/thunks';
 
@@ -31,11 +31,13 @@ export const RegistrationForm = () => {
       validationSchema={Yup.object({
         name: Yup.string()
           .max(15, 'Must be 15 characters or less')
-          .required('Required'),
-        email: Yup.string().email('Invalid email address').required('Required'),
+          .required('Name is required'),
+        email: Yup.string()
+          .email('Invalid email address')
+          .required('Email is required'),
         password: Yup.string()
           .max(20, 'Must be 20 characters or less')
-          .required('Required'),
+          .required('Password is required'),
       })}
       onSubmit={handleSubmit}
     >
@@ -46,18 +48,15 @@ export const RegistrationForm = () => {
         </AuthTitle>
         <StyledField type="text" name="name" placeholder="Enter your name" />
         <StyledErrorMessage name="name" />
-
         <StyledField type="email" name="email" placeholder="Enter your email" />
         <StyledErrorMessage name="email" />
-
         <StyledField
           type="password"
           name="password"
           placeholder="Enter your password"
         />
         <StyledErrorMessage name="password" />
-
-        <Button type="submit">Register</Button>
+        <AuthButton type="submit">Register</AuthButton>
       </StyledForm>
     </Formik>
   );

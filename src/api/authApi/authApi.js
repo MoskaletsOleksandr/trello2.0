@@ -21,3 +21,8 @@ export const refresh = async () => {
   const { data } = await refreshInstance.get();
   return data;
 };
+
+export const updateTheme = async (theme) => {
+  const { data } = await authInstance.patch('theme', theme);
+  return data;
+};

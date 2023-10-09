@@ -20,7 +20,7 @@ export const StyledForm = styled(Form)`
 `;
 
 export const StyledField = styled(Field)`
-  background-color: #161616;
+  background-color: var(--auth-input-bg-color);
   border: 1px solid var(--auth-input-border-color);
   border-radius: 8px;
   font-size: 16px;
@@ -67,7 +67,25 @@ export const StyledLink = styled(NavLink)`
   }
 
   &:hover {
-    color: rgba(255, 255, 255, 70%);
     color: var(--hover-form-title-color);
+  }
+`;
+
+export const AuthButton = styled.button`
+  width: 100%;
+  height: 49px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--auth-btn-bg-color);
+
+  color: var(--dark-btn-text-color);
+  font-size: 14px;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 300ms var(--timing-function);
+
+  &:hover,
+  :focus {
+    background-color: var(--auth-btn-bg-color-hover);
   }
 `;

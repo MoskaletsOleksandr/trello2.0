@@ -1,17 +1,14 @@
 import React from 'react';
 import sprite from '../../assets/sprite.svg';
+import Logo from '../../components/Logo/Logo';
 
 import {
   Container,
   Text,
-  Title,
-  LogoIcon,
   RegistrationBtn,
   LoginBtn,
   Nav,
   MainContent,
-  TitleContainer,
-  IconContainer,
   MainIcon,
 } from './WelcomePage.styled';
 
@@ -22,14 +19,7 @@ const WelcomePage = () => {
         <MainIcon>
           <use href={sprite + '#icon-main-trello'}></use>
         </MainIcon>
-        <TitleContainer>
-          <IconContainer>
-            <LogoIcon>
-              <use href={sprite + '#icon-trello'}></use>
-            </LogoIcon>
-          </IconContainer>
-          <Title>Trello2.0</Title>
-        </TitleContainer>
+        <Logo large={true} />
         <Text>
           Supercharge your productivity and take control of your tasks with this
           Task Manager - Don't wait, start achieving your goals now!

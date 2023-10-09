@@ -22,6 +22,12 @@ export const handleRefreshUserFulfilled = (state, { payload }) => {
   state.error = null;
 };
 
+export const handleUpdateThemeFulfilled = (state, { payload }) => {
+  state.user.theme = payload.theme;
+  state.isLoading = false;
+  state.error = null;
+};
+
 export const handleRefreshUserRejected = (state, { payload }) => {
   state.user = null;
   state.isLoading = false;

@@ -7,6 +7,7 @@ import {
   handleRegisterFulfilled,
   handleThunkPending,
   handleThunkRejected,
+  handleUpdateThemeFulfilled,
 } from './handlers';
 import { initialState } from './initialState';
 import {
@@ -14,6 +15,7 @@ import {
   logoutThunk,
   refreshUserThunk,
   registerThunk,
+  updateThemeThunk,
 } from './thunks';
 
 const authSlice = createSlice({
@@ -24,6 +26,7 @@ const authSlice = createSlice({
       .addCase(registerThunk.fulfilled, handleRegisterFulfilled)
       .addCase(loginThunk.fulfilled, handleLoginFulfilled)
       .addCase(logoutThunk.fulfilled, handleLogoutFulfilled)
+      .addCase(updateThemeThunk.fulfilled, handleUpdateThemeFulfilled)
       .addCase(refreshUserThunk.fulfilled, handleRefreshUserFulfilled)
       .addCase(refreshUserThunk.rejected, handleRefreshUserRejected)
       .addMatcher(({ type }) => type.endsWith('/pending'), handleThunkPending)

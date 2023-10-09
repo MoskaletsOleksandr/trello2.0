@@ -61,18 +61,18 @@ export const GlobalStyles = () => {
           }
 
           .dark {
-           
             --primary-text-color: #ffffff;
             --secondary-text-color: #ffffff80;
             --link-text-color: #BEDBB0;
 
             //variables for SideBar
             --sidebar-bg-color: #121212;
-            --sidebar-logo--bg-color: #1f1f1f;
-            --sidebar-logo--icon-color: #FFFFFF;
+            --sidebar-logo--bg-color: #BEDBB0;
+            --sidebar-logo--icon-color: #1F1F1F;
             --sidebar-button-plus-bg-color: #BEDBB0;
             --sidebar-button-plus-bg-color-hover: #9dc888;
             --sidebar-button-plus-icon-color: #121212;
+            --sidebar-button-plus-border-color: rgba(255, 255, 255, 0.1);
             --sidebar-need-help-bg-color: #1f1f1f;
             --sidebar-active-board-text-color: #ffffff;
             --sidebar-active-board-bg-color: #1f1f1f;
@@ -180,11 +180,12 @@ export const GlobalStyles = () => {
 
             //variables for SideBar
             --sidebar-bg-color: #ffffff;
-            --sidebar-logo--bg-color: #1f1f1f;
+            --sidebar-logo--bg-color: #BEDBB0;
             --sidebar-logo--icon-color: #FFFFFF;
             --sidebar-button-plus-bg-color: #bedbb0;
             --sidebar-button-plus-bg-color-hover: #9dc888;
             --sidebar-button-plus-icon-color: #121212;
+            --sidebar-button-plus-border-color: #1616161a;
             --sidebar-need-help-bg-color: #F6F6F7;
             --sidebar-active-board-text-color: #161616;
             --sidebar-active-board-bg-color: #F6F6F7;
@@ -297,6 +298,7 @@ export const GlobalStyles = () => {
             --sidebar-button-plus-bg-color: #B8BCFD;
             --sidebar-button-plus-bg-color-hover: #979CEA;
             --sidebar-button-plus-icon-color: #FFFFFF;
+            --sidebar-button-plus-border-color: rgba(255, 255, 255, 0.1);
             --sidebar-need-help-bg-color: #ECEDFD66;
             --sidebar-active-board-text-color: #ffffff;
             --sidebar-active-board-bg-color: #ECEDFD66;

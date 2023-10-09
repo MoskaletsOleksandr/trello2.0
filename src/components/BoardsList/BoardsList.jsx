@@ -40,7 +40,7 @@ export const BoardsList = () => {
         // if (board._id === currentBoard._id) {
         if (board._id === '652059f261e7de9cb1659b32') {
           return (
-            <ActiveItem onClick={handleOpenBoard}>
+            <ActiveItem key={board._id} onClick={handleOpenBoard}>
               <Icon width="18px" height="18px">
                 <use href={`${sprite}#${board.icon}`}></use>
               </Icon>
@@ -67,7 +67,7 @@ export const BoardsList = () => {
           );
         }
         return (
-          <Item onClick={handleOpenBoard}>
+          <Item key={board._id} onClick={handleOpenBoard}>
             <Icon width="18px" height="18px">
               <use href={`${sprite}#${board.icon}`}></use>
             </Icon>

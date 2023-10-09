@@ -1,14 +1,16 @@
 import sprite from '../../assets/sprite.svg';
-import { LogoIcon, LogoText, LogoWrapper } from './Logo.styled';
+import { IconContainer, LogoContainer, LogoIcon, Title } from './Logo.styled';
 
-const Logo = () => {
+const Logo = ({ large }) => {
   return (
-    <LogoWrapper>
-      <LogoIcon width="32px" height="32px">
-        <use href={`${sprite}#icon-logo-lightning`} />
-      </LogoIcon>
-      <LogoText>Trello2.0</LogoText>
-    </LogoWrapper>
+    <LogoContainer large={large}>
+      <IconContainer large={large}>
+        <LogoIcon large={large}>
+          <use href={sprite + '#icon-trello'}></use>
+        </LogoIcon>
+      </IconContainer>
+      <Title large={large}>Trello2.0</Title>
+    </LogoContainer>
   );
 };
 

@@ -9,15 +9,13 @@ export const SidebarContainer = styled.div`
   justify-content: space-between;
   padding-top: 24px;
   padding-bottom: 24px;
-  margin: 0;
-  /* background: var(--sidebar-bg-color); */
-  background: white;
+  background-color: var(--sidebar-bg-color);
   transform: ${({ isOpen }) =>
     isOpen ? 'translateX(0)' : 'translateX(-100%)'};
-  z-index: 2;
+  z-index: 3;
   width: 260px;
 
-  transition: transform 500ms;
+  transition: transform 500ms var(--timing-function);
 `;
 
 export const BackDrop = styled.div`
@@ -29,16 +27,14 @@ export const BackDrop = styled.div`
   height: 100%;
   background-color: #0000004c;
   overflow-y: auto;
-  z-index: 1;
+  z-index: 2;
 `;
 
 export const Title = styled.h2`
-  /* margin-left: 14px;
-  margin-bottom: 8px; */
-  /* align-self: flex-start; */
-  color: grey;
-  /* color: var(--secondary-text-color); */
-  font-size: 12px;
+  margin-left: 14px;
+  margin-bottom: 8px;
+  color: var(--secondary-text-color);
+  font-size: 14px;
   font-weight: 400;
   letter-spacing: -0.24px;
 `;

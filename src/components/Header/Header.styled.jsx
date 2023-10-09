@@ -89,6 +89,7 @@ export const CustomOption = styled.li`
   padding: 5px 10px;
   cursor: pointer;
   color: black;
+  text-transform: capitalize;
   /* color: var(--header-theme-select-text-color); */
 
   /* &:hover {

@@ -2,13 +2,13 @@ import React from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import {
+  AuthButton,
   AuthTitle,
   StyledErrorMessage,
   StyledField,
   StyledForm,
   StyledLink,
 } from '../common/FormComponents/FormComponents.styled';
-import { Button } from '../common/Button';
 import { useDispatch } from 'react-redux';
 import { loginThunk } from '../../redux/auth/thunks';
 
@@ -50,7 +50,7 @@ export const LoginForm = () => {
           placeholder="Enter your password"
         />
         <StyledErrorMessage name="password" />
-        <Button type="button">Login</Button>
+        <AuthButton type="submit">Login</AuthButton>
       </StyledForm>
     </Formik>
   );

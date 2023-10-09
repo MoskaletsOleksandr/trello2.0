@@ -24,39 +24,6 @@ export const MainIcon = styled.svg`
   height: 200px;
 `;
 
-export const TitleContainer = styled.div`
-  display: flex;
-  gap: 14px;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 24px;
-`;
-
-export const IconContainer = styled.div`
-  display: flex;
-  width: 48px;
-  height: 48px;
-  background-color: var(--registration-btn-bg-color);
-  justify-content: center;
-  align-items: center;
-  border-radius: 6px;
-`;
-
-export const LogoIcon = styled.svg`
-  width: 40px;
-  height: 40px;
-  fill: #bedbb0;
-`;
-
-export const Title = styled.h1`
-  color: var(--welcome-primary-text-color);
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  letter-spacing: -1.6px;
-`;
-
 export const Text = styled.p`
   color: var(--welcome-primary-text-color);
   text-align: center;

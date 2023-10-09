@@ -5,9 +5,16 @@ export const StyledButton = styled.button`
   height: 49px;
   border-radius: 8px;
   border: none;
-  background-color: rgba(190, 219, 176, 1);
+  background-color: var(--auth-btn-bg-color);
 
   color: #161616;
   font-size: 14px;
   padding: 0;
+  cursor: pointer;
+  transition: background-color 300ms var(--timing-function);
+
+  &:hover,
+  :focus {
+    background-color: var(--auth-btn-bg-color-hover);
+  }
 `;
