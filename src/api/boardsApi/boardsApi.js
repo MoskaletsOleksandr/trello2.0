@@ -1,11 +1,31 @@
 import { boardsInstance } from '../axiosConfig';
 
-export const fetchBoards = async () => {
+export const getAllBoards = async () => {
   const { data } = await boardsInstance.get();
+  return data;
+};
+
+export const getCurrentBoard = async (id) => {
+  const { data } = await boardsInstance.get(`/${id}`);
   return data;
 };
 
 export const createNewBoard = async (body) => {
   const { data } = await boardsInstance.post('', body);
+  return data;
+};
+
+export const updateBoardById = async (id, body) => {
+  const { data } = await boardsInstance.put(`/${id}`, body);
+  return data;
+};
+
+export const deleteBoardById = async (id) => {
+  const { data } = await boardsInstance.delete(`/${id}`);
+  return data;
+};
+
+export const getAllBackgrounds = async () => {
+  const { data } = await boardsInstance.get(`/backgrounds`);
   return data;
 };

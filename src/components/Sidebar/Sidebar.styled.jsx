@@ -11,7 +11,7 @@ export const SidebarContainer = styled.div`
   padding-bottom: 24px;
   margin: 0;
   /* background: var(--sidebar-bg-color); */
-  background: tomato;
+  background: white;
   transform: ${({ isOpen }) =>
     isOpen ? 'translateX(0)' : 'translateX(-100%)'};
   z-index: 2;

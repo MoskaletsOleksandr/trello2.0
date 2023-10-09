@@ -28,10 +28,12 @@ export const LoginForm = () => {
     <Formik
       initialValues={{ email: '', password: '' }}
       validationSchema={Yup.object({
-        email: Yup.string().email('Invalid email address').required('Required'),
+        email: Yup.string()
+          .email('Invalid email address')
+          .required('Email is required'),
         password: Yup.string()
           .max(20, 'Must be 20 characters or less')
-          .required('Required'),
+          .required('Password is required'),
       })}
       onSubmit={handleSubmit}
     >
@@ -40,17 +42,14 @@ export const LoginForm = () => {
           <StyledLink to="/auth/register">Registration</StyledLink>
           <StyledLink to="/auth/login"> Log In</StyledLink>
         </AuthTitle>
-
         <StyledField type="email" name="email" placeholder="Enter your email" />
         <StyledErrorMessage name="email" />
-
         <StyledField
           type="password"
           name="password"
           placeholder="Enter your password"
         />
         <StyledErrorMessage name="password" />
-
         <Button type="button">Login</Button>
       </StyledForm>
     </Formik>

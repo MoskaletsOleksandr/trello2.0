@@ -5,6 +5,7 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { refreshUserThunk } from './redux/auth/thunks';
+import GlobalStyles from './GlobalStyles';
 
 const WelcomePage = lazy(() => import('./pages/WelcomePage/WelcomePage'));
 const AuthPage = lazy(() => import('./pages/AuthPage/AuthPage'));
@@ -21,6 +22,7 @@ export const App = () => {
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
+      <GlobalStyles />
       <Routes>
         <Route
           path="/"

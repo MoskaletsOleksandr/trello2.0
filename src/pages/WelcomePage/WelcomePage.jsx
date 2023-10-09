@@ -5,38 +5,40 @@ import {
   Container,
   Text,
   Title,
-  SvgLogo,
+  LogoIcon,
   RegistrationBtn,
   LoginBtn,
   Nav,
-  ContentMain,
-  ContainerTitle,
-  ContainerSvg,
+  MainContent,
+  TitleContainer,
+  IconContainer,
+  MainIcon,
 } from './WelcomePage.styled';
 
 const WelcomePage = () => {
   return (
     <Container>
-      <ContentMain>
-        <ContainerTitle>
-          <ContainerSvg>
-            <SvgLogo>
+      <MainContent>
+        <MainIcon>
+          <use href={sprite + '#icon-main-trello'}></use>
+        </MainIcon>
+        <TitleContainer>
+          <IconContainer>
+            <LogoIcon>
               <use href={sprite + '#icon-trello'}></use>
-            </SvgLogo>
-          </ContainerSvg>
+            </LogoIcon>
+          </IconContainer>
           <Title>Trello2.0</Title>
-        </ContainerTitle>
+        </TitleContainer>
         <Text>
-          Supercharge your productivity and take control of your tasks with Task
-          Pro - Don't wait, start achieving your goals now!
+          Supercharge your productivity and take control of your tasks with this
+          Task Manager - Don't wait, start achieving your goals now!
         </Text>
-
         <Nav>
-          <RegistrationBtn to="/auth/register">Registration</RegistrationBtn>
           <LoginBtn to="/auth/login">Log In</LoginBtn>
-          <LoginBtn to="/home">Home</LoginBtn>
+          <RegistrationBtn to="/auth/register">Registration</RegistrationBtn>
         </Nav>
-      </ContentMain>
+      </MainContent>
     </Container>
   );
 };
