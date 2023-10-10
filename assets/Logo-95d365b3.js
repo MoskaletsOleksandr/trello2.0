@@ -1,4 +1,4 @@
-import{j as t}from"./index-379cbf85.js";import{n as e}from"./emotion-styled.browser.esm-6b7c39bf.js";const r="/trello2.0/assets/sprite-53427736.svg",n=e.div`
+import{j as t}from"./index-97f4fe38.js";import{n as e}from"./emotion-styled.browser.esm-e61dbf0c.js";const r="/trello2.0/assets/sprite-e3456342.svg",n=e.div`
   display: flex;
   gap: 14px;
   align-items: center;
