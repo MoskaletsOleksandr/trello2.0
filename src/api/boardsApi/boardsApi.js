@@ -15,8 +15,8 @@ export const createNewBoard = async (body) => {
   return data;
 };
 
-export const updateBoardById = async (id, body) => {
-  const { data } = await boardsInstance.put(`/${id}`, body);
+export const updateBoardById = async (boardId, body) => {
+  const { data } = await boardsInstance.put(`/${boardId}`, body);
   return data;
 };
 

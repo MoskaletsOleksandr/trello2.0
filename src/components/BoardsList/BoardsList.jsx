@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import sprite from '../../assets/sprite.svg';
@@ -7,6 +7,7 @@ import {
   selectCurrentBoard,
 } from '../../redux/boards/selectors';
 import { getCurrentBoardThunk } from '../../redux/boards/thunks';
+import { UpdateBoardModal } from '../modals/UpdateBoardModal';
 import {
   ActiveItem,
   Button,
@@ -19,6 +20,8 @@ import {
 } from './BoardsList.styled';
 
 export const BoardsList = () => {
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [boardId, setBoardId] = useState(false);
   const boards = useSelector(selectAllBoards);
   const currentBoard = useSelector(selectCurrentBoard);
   const dispatch = useDispatch();
@@ -30,8 +33,18 @@ export const BoardsList = () => {
     navigate(normalizedTitle);
   };
 
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
   const handleEditBoard = (e, boardId) => {
     e.stopPropagation();
+    setBoardId(boardId);
+    openModal();
     console.log('handleEditBoard', boardId);
   };
 
@@ -41,50 +54,55 @@ export const BoardsList = () => {
   };
 
   return (
-    <List>
-      {boards.map((board) => {
-        if (board._id === currentBoard?._id) {
+    <>
+      <List>
+        {boards.map((board) => {
+          if (board._id === currentBoard?._id) {
+            return (
+              <ActiveItem key={board._id}>
+                <Icon width="18px" height="18px">
+                  <use href={`${sprite}#${board.icon}`}></use>
+                </Icon>
+                <Title>{board.title}</Title>
+                <ButtonsWrapper>
+                  <Button
+                    type="button"
+                    onClick={(e) => handleEditBoard(e, board._id)}
+                  >
+                    <ButtonIcon width="16px" height="16px">
+                      <use href={sprite + '#icon-pencil'}></use>
+                    </ButtonIcon>
+                  </Button>
+                  <Button
+                    type="button"
+                    onClick={(e) => handleDeleteBoard(e, board._id)}
+                  >
+                    <ButtonIcon width="16px" height="16px">
+                      <use href={sprite + '#icon-trash'}></use>
+                    </ButtonIcon>
+                  </Button>
+                </ButtonsWrapper>
+              </ActiveItem>
+            );
+          }
           return (
-            <ActiveItem key={board._id}>
+            <Item
+              key={board._id}
+              onClick={() => {
+                handleOpenBoard(board._id, board.title);
+              }}
+            >
               <Icon width="18px" height="18px">
                 <use href={`${sprite}#${board.icon}`}></use>
               </Icon>
               <Title>{board.title}</Title>
-              <ButtonsWrapper>
-                <Button
-                  type="button"
-                  onClick={(e) => handleEditBoard(e, board._id)}
-                >
-                  <ButtonIcon width="16px" height="16px">
-                    <use href={sprite + '#icon-pencil'}></use>
-                  </ButtonIcon>
-                </Button>
-                <Button
-                  type="button"
-                  onClick={(e) => handleDeleteBoard(e, board._id)}
-                >
-                  <ButtonIcon width="16px" height="16px">
-                    <use href={sprite + '#icon-trash'}></use>
-                  </ButtonIcon>
-                </Button>
-              </ButtonsWrapper>
-            </ActiveItem>
+            </Item>
           );
-        }
-        return (
-          <Item
-            key={board._id}
-            onClick={() => {
-              handleOpenBoard(board._id, board.title);
-            }}
-          >
-            <Icon width="18px" height="18px">
-              <use href={`${sprite}#${board.icon}`}></use>
-            </Icon>
-            <Title>{board.title}</Title>
-          </Item>
-        );
-      })}
-    </List>
+        })}
+      </List>
+      {isModalOpen && (
+        <UpdateBoardModal boardId={boardId} onClose={closeModal} />
+      )}
+    </>
   );
 };

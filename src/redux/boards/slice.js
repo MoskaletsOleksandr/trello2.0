@@ -4,6 +4,7 @@ import {
   handleGetAllBoardsFulfilled,
   handleGetBackgroundsFulfilled,
   handleGetCurrentBoardFulfilled,
+  handleUpdateBoardByIdFulfilled,
 } from './handlers';
 import { initialState } from './initialState';
 import {
@@ -11,6 +12,7 @@ import {
   getAllBoardsThunk,
   getBackgroundsThunk,
   getCurrentBoardThunk,
+  updateBoardByIdThunk,
 } from './thunks';
 
 const boardSlice = createSlice({
@@ -21,6 +23,7 @@ const boardSlice = createSlice({
       .addCase(getAllBoardsThunk.fulfilled, handleGetAllBoardsFulfilled)
       .addCase(getCurrentBoardThunk.fulfilled, handleGetCurrentBoardFulfilled)
       .addCase(createNewBoardThunk.fulfilled, handleCreateNewBoardFulfilled)
+      .addCase(updateBoardByIdThunk.fulfilled, handleUpdateBoardByIdFulfilled)
       .addCase(getBackgroundsThunk.fulfilled, handleGetBackgroundsFulfilled);
   },
 });

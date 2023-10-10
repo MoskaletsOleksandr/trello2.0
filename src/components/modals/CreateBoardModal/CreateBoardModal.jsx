@@ -33,7 +33,6 @@ export const CreateBoardModal = ({ onClose }) => {
       icon: values.selectedIcon,
       backgroundId: values.selectedBg,
     };
-    console.log(body);
     dispatch(createNewBoardThunk(body));
     onClose();
   };

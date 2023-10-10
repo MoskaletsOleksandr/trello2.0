@@ -4,6 +4,7 @@ import {
   getAllBoards,
   getBackgrounds,
   getCurrentBoard,
+  updateBoardById,
 } from '../../api/boardsApi/boardsApi';
 import { updateCurrentBoardIdThunk } from '../auth/thunks';
 
@@ -39,6 +40,20 @@ export const createNewBoardThunk = createAsyncThunk(
       const data = await createNewBoard(body);
       await dispatch(getAllBoardsThunk());
       await dispatch(updateCurrentBoardIdThunk({ boardId: data._id }));
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const updateBoardByIdThunk = createAsyncThunk(
+  'boards/updateBoardById',
+  async ({ boardId, body }, { rejectWithValue, dispatch }) => {
+    console.log(boardId, body);
+    try {
+      const data = await updateBoardById(boardId, body);
+      dispatch(getAllBoardsThunk());
       return data;
     } catch (error) {
       return rejectWithValue(error.message);

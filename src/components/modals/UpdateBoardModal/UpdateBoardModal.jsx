@@ -11,8 +11,14 @@ import {
 import { IconRadioBtns } from '../../common/ModalComponents/IconRadioBtns';
 import { BgRadioBtns } from '../../common/ModalComponents/BgRadioBtns';
 import { Button } from '../../common/Button';
+import { useDispatch } from 'react-redux';
+import {
+  createNewBoardThunk,
+  updateBoardByIdThunk,
+} from '../../../redux/boards/thunks';
 
-export const UpdateBoardModal = ({ onClose }) => {
+export const UpdateBoardModal = ({ boardId, onClose }) => {
+  const dispatch = useDispatch();
   const icons = [
     'icon-project',
     'icon-star',
@@ -25,12 +31,13 @@ export const UpdateBoardModal = ({ onClose }) => {
   ];
 
   const handleSubmit = (values) => {
-    console.log(values);
-    // const body = {
-    //   name: values.name,
-    //   icon: values.icon,
-    // };
-    // console.log(body);
+    const body = {
+      title: values.title,
+      icon: values.selectedIcon,
+      backgroundId: values.selectedBg,
+    };
+    dispatch(updateBoardByIdThunk({ boardId, body }));
+    onClose();
   };
 
   return (
@@ -59,7 +66,7 @@ export const UpdateBoardModal = ({ onClose }) => {
           <RadioBtnsTitle>Backgrounds</RadioBtnsTitle>
           <BgRadioBtns name={'selectedBg'} />
           <StyledErrorMessage name="selectedBg" />
-          <Button type="submit">Create</Button>
+          <Button type="submit">Edit</Button>
         </StyledForm>
       </Formik>
     </Modal>

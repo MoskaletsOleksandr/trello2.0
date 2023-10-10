@@ -16,7 +16,7 @@ export const Sidebar = ({ isOpen, toggleSidebar }) => {
           isOpen={isOpen}
         />
       )}
-      <SidebarContainer isOpen={true}>
+      <SidebarContainer isOpen={isOpen}>
         <Logo />
         <Title>My boards</Title>
         <AddBoardButton />
