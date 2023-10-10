@@ -11,13 +11,12 @@ import {
 import { IconRadioBtns } from '../../common/ModalComponents/IconRadioBtns';
 import { BgRadioBtns } from '../../common/ModalComponents/BgRadioBtns';
 import { Button } from '../../common/Button';
-import { useDispatch } from 'react-redux';
-import {
-  createNewBoardThunk,
-  updateBoardByIdThunk,
-} from '../../../redux/boards/thunks';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateBoardByIdThunk } from '../../../redux/boards/thunks';
+import { selectCurrentBoard } from '../../../redux/boards/selectors';
 
 export const UpdateBoardModal = ({ boardId, onClose }) => {
+  const currentBoard = useSelector(selectCurrentBoard);
   const dispatch = useDispatch();
   const icons = [
     'icon-project',
@@ -44,9 +43,9 @@ export const UpdateBoardModal = ({ boardId, onClose }) => {
     <Modal onClose={onClose} title={'New board'}>
       <Formik
         initialValues={{
-          title: '',
-          selectedIcon: '',
-          selectedBg: '',
+          title: currentBoard?.title,
+          selectedIcon: currentBoard?.icon,
+          selectedBg: currentBoard?.background?._id,
         }}
         validationSchema={Yup.object({
           title: Yup.string()
@@ -61,10 +60,17 @@ export const UpdateBoardModal = ({ boardId, onClose }) => {
           <StyledField type="text" name="title" placeholder="Title" />
           <StyledErrorMessage name="title" />
           <RadioBtnsTitle>Icons</RadioBtnsTitle>
-          <IconRadioBtns name={'selectedIcon'} icons={icons} />
+          <IconRadioBtns
+            name={'selectedIcon'}
+            icons={icons}
+            selectedItem={currentBoard?.icon}
+          />
           <StyledErrorMessage name="selectedIcon" />
           <RadioBtnsTitle>Backgrounds</RadioBtnsTitle>
-          <BgRadioBtns name={'selectedBg'} />
+          <BgRadioBtns
+            name={'selectedBg'}
+            selectedItem={currentBoard?.background?._id}
+          />
           <StyledErrorMessage name="selectedBg" />
           <Button type="submit">Edit</Button>
         </StyledForm>

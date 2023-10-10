@@ -6,7 +6,10 @@ import {
   selectAllBoards,
   selectCurrentBoard,
 } from '../../redux/boards/selectors';
-import { getCurrentBoardThunk } from '../../redux/boards/thunks';
+import {
+  deleteBoardByIdThunk,
+  getCurrentBoardThunk,
+} from '../../redux/boards/thunks';
 import { UpdateBoardModal } from '../modals/UpdateBoardModal';
 import {
   ActiveItem,
@@ -41,16 +44,13 @@ export const BoardsList = () => {
     setModalOpen(false);
   };
 
-  const handleEditBoard = (e, boardId) => {
-    e.stopPropagation();
+  const handleEditBoard = (boardId) => {
     setBoardId(boardId);
     openModal();
-    console.log('handleEditBoard', boardId);
   };
 
-  const handleDeleteBoard = (e, boardId) => {
-    e.stopPropagation();
-    console.log('handleDeleteBoard', boardId);
+  const handleDeleteBoard = (boardId) => {
+    dispatch(deleteBoardByIdThunk(boardId));
   };
 
   return (
@@ -67,7 +67,7 @@ export const BoardsList = () => {
                 <ButtonsWrapper>
                   <Button
                     type="button"
-                    onClick={(e) => handleEditBoard(e, board._id)}
+                    onClick={() => handleEditBoard(board._id)}
                   >
                     <ButtonIcon width="16px" height="16px">
                       <use href={sprite + '#icon-pencil'}></use>
@@ -75,7 +75,7 @@ export const BoardsList = () => {
                   </Button>
                   <Button
                     type="button"
-                    onClick={(e) => handleDeleteBoard(e, board._id)}
+                    onClick={() => handleDeleteBoard(board._id)}
                   >
                     <ButtonIcon width="16px" height="16px">
                       <use href={sprite + '#icon-trash'}></use>

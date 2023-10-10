@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import {
   createNewBoard,
+  deleteBoardById,
   getAllBoards,
   getBackgrounds,
   getCurrentBoard,
@@ -53,8 +54,21 @@ export const updateBoardByIdThunk = createAsyncThunk(
     console.log(boardId, body);
     try {
       const data = await updateBoardById(boardId, body);
-      dispatch(getAllBoardsThunk());
+      await dispatch(getAllBoardsThunk());
       return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const deleteBoardByIdThunk = createAsyncThunk(
+  'boards/deleteBoardById',
+  async (boardId, { rejectWithValue, dispatch }) => {
+    try {
+      await deleteBoardById(boardId);
+      await dispatch(getAllBoardsThunk());
+      await dispatch(updateCurrentBoardIdThunk({ boardId: null }));
     } catch (error) {
       return rejectWithValue(error.message);
     }

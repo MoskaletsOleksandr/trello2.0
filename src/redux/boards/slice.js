@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
   handleCreateNewBoardFulfilled,
+  handleDeleteBoardByIdFulfilled,
   handleGetAllBoardsFulfilled,
   handleGetBackgroundsFulfilled,
   handleGetCurrentBoardFulfilled,
@@ -9,6 +10,7 @@ import {
 import { initialState } from './initialState';
 import {
   createNewBoardThunk,
+  deleteBoardByIdThunk,
   getAllBoardsThunk,
   getBackgroundsThunk,
   getCurrentBoardThunk,
@@ -24,6 +26,7 @@ const boardSlice = createSlice({
       .addCase(getCurrentBoardThunk.fulfilled, handleGetCurrentBoardFulfilled)
       .addCase(createNewBoardThunk.fulfilled, handleCreateNewBoardFulfilled)
       .addCase(updateBoardByIdThunk.fulfilled, handleUpdateBoardByIdFulfilled)
+      .addCase(deleteBoardByIdThunk.fulfilled, handleDeleteBoardByIdFulfilled)
       .addCase(getBackgroundsThunk.fulfilled, handleGetBackgroundsFulfilled);
   },
 });

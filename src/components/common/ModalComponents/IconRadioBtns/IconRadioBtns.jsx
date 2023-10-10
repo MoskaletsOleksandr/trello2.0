@@ -1,11 +1,15 @@
 import { useFormikContext } from 'formik';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import sprite from '../../../../assets/sprite.svg';
 import { Icon, Item, Label, List, StyledField } from './IconRadioBtns.styled';
 
-export const IconRadioBtns = ({ name, icons }) => {
-  const [selectedIcon, setSelectedIcon] = useState('');
+export const IconRadioBtns = ({ name, icons, selectedItem }) => {
+  const [selectedIcon, setSelectedIcon] = useState(selectedItem || '');
   const { setFieldValue } = useFormikContext();
+
+  useEffect(() => {
+    setSelectedIcon(selectedItem || '');
+  }, [selectedItem]);
 
   return (
     <List>

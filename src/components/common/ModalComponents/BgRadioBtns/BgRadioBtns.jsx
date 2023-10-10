@@ -1,6 +1,6 @@
 import { useFormikContext } from 'formik';
 import sprite from '../../../../assets/sprite.svg';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { selectBackgrounds } from '../../../../redux/boards/selectors';
 import {
@@ -13,10 +13,14 @@ import {
   StyledField,
 } from './BgRadioBtns.styled';
 
-export const BgRadioBtns = ({ name }) => {
-  const [selectedBg, setSelectedBg] = useState('');
+export const BgRadioBtns = ({ name, selectedItem }) => {
+  const [selectedBg, setSelectedBg] = useState(selectedItem || '');
   const backgrounds = useSelector(selectBackgrounds);
   const { setFieldValue } = useFormikContext();
+
+  useEffect(() => {
+    setSelectedBg(selectedItem || '');
+  }, [selectedItem]);
 
   return (
     <List>

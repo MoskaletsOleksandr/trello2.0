@@ -22,6 +22,12 @@ export const handleUpdateBoardByIdFulfilled = (state, { payload }) => {
   state.error = null;
 };
 
+export const handleDeleteBoardByIdFulfilled = (state, { payload }) => {
+  state.currentBoard = null;
+  state.isLoading = false;
+  state.error = null;
+};
+
 export const handleGetBackgroundsFulfilled = (state, { payload }) => {
   state.backgrounds = payload;
   state.isLoading = false;

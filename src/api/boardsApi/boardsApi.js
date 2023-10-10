@@ -20,8 +20,8 @@ export const updateBoardById = async (boardId, body) => {
   return data;
 };
 
-export const deleteBoardById = async (id) => {
-  const { data } = await boardsInstance.delete(`/${id}`);
+export const deleteBoardById = async (board) => {
+  const { data } = await boardsInstance.delete(`/${board}`);
   return data;
 };
 
