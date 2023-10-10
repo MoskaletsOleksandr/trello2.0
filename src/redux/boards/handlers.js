@@ -15,3 +15,9 @@ export const handleCreateNewBoardFulfilled = (state, { payload }) => {
   state.isLoading = false;
   state.error = null;
 };
+
+export const handleGetBackgroundsFulfilled = (state, { payload }) => {
+  state.backgrounds = payload;
+  state.isLoading = false;
+  state.error = null;
+};

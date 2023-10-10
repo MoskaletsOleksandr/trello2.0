@@ -8,6 +8,7 @@ import { selectCurrentBoardId } from '../../redux/auth/selectors';
 import { selectCurrentBoard } from '../../redux/boards/selectors';
 import {
   getAllBoardsThunk,
+  getBackgroundsThunk,
   getCurrentBoardThunk,
 } from '../../redux/boards/thunks';
 import { Container } from './Homepage.styled';
@@ -26,6 +27,7 @@ const HomePage = () => {
 
   useEffect(() => {
     dispatch(getAllBoardsThunk());
+    dispatch(getBackgroundsThunk());
     if (currentBoardId) {
       dispatch(getCurrentBoardThunk(currentBoardId));
     }

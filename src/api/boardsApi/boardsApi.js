@@ -25,7 +25,7 @@ export const deleteBoardById = async (id) => {
   return data;
 };
 
-export const getAllBackgrounds = async () => {
+export const getBackgrounds = async () => {
   const { data } = await boardsInstance.get(`/backgrounds`);
   return data;
 };

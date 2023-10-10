@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import sprite from '../../assets/sprite.svg';
-import { Modal } from '../common/Modal';
+import { CreateBoardModal } from '../modals/CreateBoardModal';
 import { Button, ButtonWrapper, Icon, Text } from './AddBoardBtn.styled';
 
 export const AddBoardButton = () => {
-  const [isModalOpen, setModalOpen] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(true);
+  // const [isModalOpen, setModalOpen] = useState(false);
 
   const openModal = () => {
     setModalOpen(true);
@@ -24,7 +25,7 @@ export const AddBoardButton = () => {
           </Icon>
         </Button>
       </ButtonWrapper>
-      {isModalOpen && <Modal onClose={closeModal} title={'Test modal'} />}
+      {isModalOpen && <CreateBoardModal onClose={closeModal} />}
     </>
   );
 };

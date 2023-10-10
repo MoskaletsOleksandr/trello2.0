@@ -2,12 +2,14 @@ import { createSlice } from '@reduxjs/toolkit';
 import {
   handleCreateNewBoardFulfilled,
   handleGetAllBoardsFulfilled,
+  handleGetBackgroundsFulfilled,
   handleGetCurrentBoardFulfilled,
 } from './handlers';
 import { initialState } from './initialState';
 import {
   createNewBoardThunk,
   getAllBoardsThunk,
+  getBackgroundsThunk,
   getCurrentBoardThunk,
 } from './thunks';
 
@@ -18,7 +20,8 @@ const boardSlice = createSlice({
     builder
       .addCase(getAllBoardsThunk.fulfilled, handleGetAllBoardsFulfilled)
       .addCase(getCurrentBoardThunk.fulfilled, handleGetCurrentBoardFulfilled)
-      .addCase(createNewBoardThunk.fulfilled, handleCreateNewBoardFulfilled);
+      .addCase(createNewBoardThunk.fulfilled, handleCreateNewBoardFulfilled)
+      .addCase(getBackgroundsThunk.fulfilled, handleGetBackgroundsFulfilled);
   },
 });
 

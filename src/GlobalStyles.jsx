@@ -143,7 +143,8 @@ export const GlobalStyles = () => {
 
             //variables for modals
             --modal-bg-color: #151515;
-            --modal-window-shadow: rgba(22, 22, 22, 0.05);
+            --modal-icon-close-color: #ffffff;
+            --modal-window-shadow: rgba(22, 22, 22, 0.5);
             --modal-title-color: #ffffff;
             --modal-primary-text-color: #ffffff;
             --modal-secondary-text-color: #ffffff80;
@@ -154,7 +155,7 @@ export const GlobalStyles = () => {
             --modal-button-plus-bg-color: #161616
             --modal-input-bg-color: #1f1f1f;
             --modal-input-text-color: #ffffff;
-            --modal-input-placeholder-color: #ffffff;
+            --modal-input-placeholder-color: #ffffff80;
             --modal-input-border-color: #bedbb0;
             --modal-icon-color: #ffffff80;
             --modal-selected-icon-color: #ffffff;
@@ -256,7 +257,8 @@ export const GlobalStyles = () => {
 
             //variables for modals
             --modal-bg-color: #FCFCFC;
-            --modal-window-shadow: rgba(22, 22, 22, 0.05);
+            --modal-icon-close-color: #161616;
+            --modal-window-shadow: rgba(22, 22, 22, 0.5);
             --modal-title-color: #161616;
             --modal-primary-text-color: #161616;
             --modal-secondary-text-color: #16161680;
@@ -267,7 +269,7 @@ export const GlobalStyles = () => {
             --modal-button-plus-bg-color: #161616
             --modal-input-bg-color: #FCFCFC;
             --modal-input-text-color: #161616;
-            --modal-input-placeholder-color: #161616;
+            --modal-input-placeholder-color: #16161680;
             --modal-input-border-color: #bedbb0;
             --modal-icon-color: #16161680;
             --modal-selected-icon-color: #161616;
@@ -368,7 +370,8 @@ export const GlobalStyles = () => {
 
             //variables for modals
             --modal-bg-color: #FCFCFC;
-            --modal-window-shadow: rgba(22, 22, 22, 0.05);
+            --modal-icon-close-color: #161616;
+            --modal-window-shadow: rgba(22, 22, 22, 0.5);
             --modal-title-color: #161616;
             --modal-primary-text-color: #161616;
             --modal-secondary-text-color: #16161680;
@@ -379,7 +382,7 @@ export const GlobalStyles = () => {
             --modal-button-plus-bg-color: #ffffff;
             --modal-input-bg-color: #FCFCFC;
             --modal-input-text-color: #161616;
-            --modal-input-placeholder-color: #161616;
+            --modal-input-placeholder-color: #16161680;
             --modal-input-border-color: #5255BC;
             --modal-icon-color: #16161680;
             --modal-selected-icon-color: #161616;
