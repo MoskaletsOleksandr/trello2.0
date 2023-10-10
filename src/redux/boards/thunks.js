@@ -4,6 +4,7 @@ import {
   getAllBoards,
   getCurrentBoard,
 } from '../../api/boardsApi/boardsApi';
+import { updateCurrentBoardIdThunk } from '../auth/thunks';
 
 export const getAllBoardsThunk = createAsyncThunk(
   'boards/getAllBoards',
@@ -19,9 +20,10 @@ export const getAllBoardsThunk = createAsyncThunk(
 
 export const getCurrentBoardThunk = createAsyncThunk(
   'boards/getCurrentBoard',
-  async (id, { rejectWithValue }) => {
+  async (id, { rejectWithValue, dispatch }) => {
     try {
       const data = await getCurrentBoard(id);
+      await dispatch(updateCurrentBoardIdThunk({ boardId: id }));
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -34,7 +36,8 @@ export const createNewBoardThunk = createAsyncThunk(
   async (body, { rejectWithValue, dispatch }) => {
     try {
       const data = await createNewBoard(body);
-      dispatch(getAllBoardsThunk());
+      await dispatch(getAllBoardsThunk());
+      await dispatch(updateCurrentBoardIdThunk({ boardId: data._id }));
       return data;
     } catch (error) {
       return rejectWithValue(error.message);

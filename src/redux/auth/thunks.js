@@ -4,6 +4,7 @@ import {
   logout,
   refresh,
   register,
+  updateCurrentBoardId,
   updateTheme,
 } from '../../api/authApi/authApi';
 
@@ -47,6 +48,18 @@ export const updateThemeThunk = createAsyncThunk(
   async (theme, { rejectWithValue }) => {
     try {
       const data = await updateTheme(theme);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const updateCurrentBoardIdThunk = createAsyncThunk(
+  'auth/updateCurrentBoardId',
+  async (boardId, { rejectWithValue }) => {
+    try {
+      const data = await updateCurrentBoardId(boardId);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);

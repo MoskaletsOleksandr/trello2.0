@@ -1,10 +1,12 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import sprite from '../../assets/sprite.svg';
 import {
   selectAllBoards,
   selectCurrentBoard,
 } from '../../redux/boards/selectors';
+import { getCurrentBoardThunk } from '../../redux/boards/thunks';
 import {
   ActiveItem,
   Button,
@@ -19,9 +21,13 @@ import {
 export const BoardsList = () => {
   const boards = useSelector(selectAllBoards);
   const currentBoard = useSelector(selectCurrentBoard);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const handleOpenBoard = () => {
-    console.log('handleOpenBoard');
+  const handleOpenBoard = (boardId, boardTitle) => {
+    dispatch(getCurrentBoardThunk(boardId));
+    const normalizedTitle = boardTitle.toLowerCase().replace(/[\s/]+/g, '-');
+    navigate(normalizedTitle);
   };
 
   const handleEditBoard = (e, boardId) => {
@@ -37,10 +43,9 @@ export const BoardsList = () => {
   return (
     <List>
       {boards.map((board) => {
-        // if (board._id === currentBoard._id) {
-        if (board._id === '652059f261e7de9cb1659b32') {
+        if (board._id === currentBoard?._id) {
           return (
-            <ActiveItem key={board._id} onClick={handleOpenBoard}>
+            <ActiveItem key={board._id}>
               <Icon width="18px" height="18px">
                 <use href={`${sprite}#${board.icon}`}></use>
               </Icon>
@@ -67,7 +72,12 @@ export const BoardsList = () => {
           );
         }
         return (
-          <Item key={board._id} onClick={handleOpenBoard}>
+          <Item
+            key={board._id}
+            onClick={() => {
+              handleOpenBoard(board._id, board.title);
+            }}
+          >
             <Icon width="18px" height="18px">
               <use href={`${sprite}#${board.icon}`}></use>
             </Icon>

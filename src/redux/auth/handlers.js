@@ -16,14 +16,20 @@ export const handleLogoutFulfilled = (state) => {
   state.error = null;
 };
 
-export const handleRefreshUserFulfilled = (state, { payload }) => {
-  state.user = payload.user;
+export const handleUpdateThemeFulfilled = (state, { payload }) => {
+  state.user.theme = payload.theme;
   state.isLoading = false;
   state.error = null;
 };
 
-export const handleUpdateThemeFulfilled = (state, { payload }) => {
-  state.user.theme = payload.theme;
+export const handleUpdateCurrentBoardIdFulfilled = (state, { payload }) => {
+  state.user.currentBoardId = payload.boardId;
+  state.isLoading = false;
+  state.error = null;
+};
+
+export const handleRefreshUserFulfilled = (state, { payload }) => {
+  state.user = payload.user;
   state.isLoading = false;
   state.error = null;
 };

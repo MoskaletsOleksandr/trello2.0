@@ -19,7 +19,6 @@ export const Item = styled.li`
   width: 100%;
   padding: 20px 14px;
   opacity: 0.4;
-  /* scroll-snap-align: start; */
 
   &:not(:last-child) {
     margin-bottom: 4px;
@@ -33,7 +32,6 @@ export const ActiveItem = styled.li`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  background-color: red;
   background-color: var(--sidebar-active-board-bg-color);
   opacity: 1;
 
@@ -63,6 +61,7 @@ export const Title = styled.p`
   font-weight: 500;
   letter-spacing: -0.28px;
   margin-left: 14px;
+  cursor: pointer;
 `;
 
 export const ButtonsWrapper = styled.div`

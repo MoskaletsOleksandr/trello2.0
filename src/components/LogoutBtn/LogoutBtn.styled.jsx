@@ -1,8 +1,7 @@
 import styled from '@emotion/styled';
 
 export const BtnText = styled.p`
-  color: black;
-  /* color: var(--primary-text-color); */
+  color: var(--primary-text-color);
   font-size: 16px;
   font-weight: 500;
 `;
@@ -23,6 +22,5 @@ export const Button = styled.button`
 export const Icon = styled.svg`
   width: 32px;
   height: 32px;
-  stroke: black;
-  /* stroke: var(--sidebar-logout-icon-color); */
+  stroke: var(--sidebar-logout-icon-color);
 `;

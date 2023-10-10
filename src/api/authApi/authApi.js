@@ -23,6 +23,11 @@ export const refresh = async () => {
 };
 
 export const updateTheme = async (theme) => {
-  const { data } = await authInstance.patch('theme', theme);
+  const { data } = await authInstance.patch('/theme', theme);
+  return data;
+};
+
+export const updateCurrentBoardId = async (boardId) => {
+  const { data } = await authInstance.patch('/board', boardId);
   return data;
 };
