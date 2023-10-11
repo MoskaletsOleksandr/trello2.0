@@ -14,20 +14,11 @@ import { Button } from '../../common/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateBoardByIdThunk } from '../../../redux/boards/thunks';
 import { selectCurrentBoard } from '../../../redux/boards/selectors';
+import { icons } from '../../../data/constants';
 
 export const UpdateBoardModal = ({ boardId, onClose }) => {
   const currentBoard = useSelector(selectCurrentBoard);
   const dispatch = useDispatch();
-  const icons = [
-    'icon-project',
-    'icon-star',
-    'icon-loading',
-    'icon-puzzle-piece',
-    'icon-container',
-    'icon-lightning',
-    'icon-colors',
-    'icon-hexagon',
-  ];
 
   const handleSubmit = (values) => {
     const body = {

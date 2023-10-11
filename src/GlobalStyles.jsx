@@ -103,8 +103,8 @@ export const GlobalStyles = () => {
             --add-column-btn-text-color: #ffffff;
             --add-column-btn-plus-bg-color: #ffffff;
             --add-column-btn-plus-color: #121212; //vit
-            --new-dashboadr-text-color: #FFFFFFCC; //vit change
-            --new-dashboadr-text-accent-color: #BEDBB0; //vit
+            --placeholder-board-text-color: #FFFFFFCC; //vit change
+            --placeholder-board-text-accent-color: #BEDBB0; //vit
             //variables for HeaderDashboard
             --header-dashboard-title-color: #ffffff;
             --filter-text-color: #ffffffCC;
@@ -217,8 +217,8 @@ export const GlobalStyles = () => {
             --add-column-btn-text-color: #161616;
             --add-column-btn-plus-bg-color: #161616;
             --add-column-btn-plus-color: #ffffff; //vit
-            --new-dashboadr-text-color: #161616B2; //vit change
-            --new-dashboadr-text-accent-color: #BEDBB0; //vit
+            --placeholder-board-text-color: #161616B2; //vit change
+            --placeholder-board-text-accent-color: #7da568; //vit
                         
             //variables for HeaderDashboard
             --header-dashboard-title-color: #161616;
@@ -331,8 +331,8 @@ export const GlobalStyles = () => {
             --add-column-btn-text-color: #161616;
             --add-column-btn-plus-bg-color: #5255BC;
             --add-column-btn-plus-color: #FFFFFF; //vit
-            --new-dashboadr-text-color: #161616B2; //vit
-            --new-dashboadr-text-accent-color: #5255BC; //vit
+            --placeholder-board-text-color: #161616B2; //vit
+            --placeholder-board-text-accent-color: #5255BC; //vit
 
             //variables for HeaderDashboard
             --header-dashboard-title-color: #161616;

@@ -13,19 +13,10 @@ import { BgRadioBtns } from '../../common/ModalComponents/BgRadioBtns';
 import { Button } from '../../common/Button';
 import { useDispatch } from 'react-redux';
 import { createNewBoardThunk } from '../../../redux/boards/thunks';
+import { icons } from '../../../data/constants';
 
 export const CreateBoardModal = ({ onClose }) => {
   const dispatch = useDispatch();
-  const icons = [
-    'icon-project',
-    'icon-star',
-    'icon-loading',
-    'icon-puzzle-piece',
-    'icon-container',
-    'icon-lightning',
-    'icon-colors',
-    'icon-hexagon',
-  ];
 
   const handleSubmit = (values) => {
     const body = {

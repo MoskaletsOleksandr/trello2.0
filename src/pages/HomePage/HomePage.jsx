@@ -12,7 +12,8 @@ import {
   getCurrentBoardThunk,
 } from '../../redux/boards/thunks';
 import { Container } from './Homepage.styled';
-// import { Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import { PlaceHolderBoard } from '../../components/PlaceHolderBoard/PlaceHolderBoard';
 
 const HomePage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,6 +47,7 @@ const HomePage = () => {
     <Container>
       <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
       <Header toggleSidebar={toggleSidebar} />
+      {currentBoard ? <Outlet /> : <PlaceHolderBoard />}
     </Container>
   );
 };

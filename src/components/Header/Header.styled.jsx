@@ -7,7 +7,7 @@ export const HeaderContainer = styled.header`
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  padding-right: 24px;
+  padding: 18px 32px;
   color: var(--header-theme-select-text-color);
   background-color: var(--header-bg-color);
 `;
