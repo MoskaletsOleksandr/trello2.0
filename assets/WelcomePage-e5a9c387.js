@@ -1,4 +1,4 @@
-import{L as o,j as t}from"./index-1e29e525.js";import{s as e,L as r}from"./Logo-f9a5907a.js";import{n}from"./emotion-styled.browser.esm-1ad9aeda.js";const i=n.div`
+import{L as o,j as t}from"./index-ee35cadf.js";import{s as e,L as r}from"./Logo-5d250e56.js";import{n}from"./emotion-styled.browser.esm-fb3b8e5c.js";const i=n.div`
   height: 100vh;
   width: 100%;
   display: flex;
@@ -65,7 +65,7 @@ import{L as o,j as t}from"./index-1e29e525.js";import{s as e,L as r}from"./Logo-
   background-color: transparent;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 500ms var(--timing-function),
+  transition: background-color 300ms var(--timing-function),
     color 300ms var(--timing-function);
 
   &:hover,
