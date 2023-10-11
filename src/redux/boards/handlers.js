@@ -33,3 +33,13 @@ export const handleGetBackgroundsFulfilled = (state, { payload }) => {
   state.isLoading = false;
   state.error = null;
 };
+
+export const handleThunkPending = (state) => {
+  state.isLoading = true;
+  state.error = null;
+};
+
+export const handleThunkRejected = (state, { payload }) => {
+  state.error = payload;
+  state.isLoading = false;
+};

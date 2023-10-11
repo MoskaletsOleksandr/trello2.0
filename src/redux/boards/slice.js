@@ -5,6 +5,8 @@ import {
   handleGetAllBoardsFulfilled,
   handleGetBackgroundsFulfilled,
   handleGetCurrentBoardFulfilled,
+  handleThunkPending,
+  handleThunkRejected,
   handleUpdateBoardByIdFulfilled,
 } from './handlers';
 import { initialState } from './initialState';
@@ -27,7 +29,12 @@ const boardSlice = createSlice({
       .addCase(createNewBoardThunk.fulfilled, handleCreateNewBoardFulfilled)
       .addCase(updateBoardByIdThunk.fulfilled, handleUpdateBoardByIdFulfilled)
       .addCase(deleteBoardByIdThunk.fulfilled, handleDeleteBoardByIdFulfilled)
-      .addCase(getBackgroundsThunk.fulfilled, handleGetBackgroundsFulfilled);
+      .addCase(getBackgroundsThunk.fulfilled, handleGetBackgroundsFulfilled)
+      .addMatcher(({ type }) => type.endsWith('/pending'), handleThunkPending)
+      .addMatcher(
+        ({ type }) => type.endsWith('/rejected'),
+        handleThunkRejected
+      );
   },
 });
 

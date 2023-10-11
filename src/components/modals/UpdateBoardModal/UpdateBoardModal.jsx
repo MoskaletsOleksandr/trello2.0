@@ -31,7 +31,7 @@ export const UpdateBoardModal = ({ boardId, onClose }) => {
   };
 
   return (
-    <Modal onClose={onClose} title={'New board'}>
+    <Modal onClose={onClose} title={'Edit board'}>
       <Formik
         initialValues={{
           title: currentBoard?.title,

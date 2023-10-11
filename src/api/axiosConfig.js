@@ -15,12 +15,22 @@ export const boardsInstance = axios.create({
   baseURL: 'http://localhost:5000/boards',
 });
 
+export const columnsInstance = axios.create({
+  withCredentials: true,
+  baseURL: 'http://localhost:5000/columns',
+});
+
 authInstance.interceptors.request.use((config) => {
   config.headers.Authorization = `Bearer ${localStorage.getItem('token')}`;
   return config;
 });
 
 boardsInstance.interceptors.request.use((config) => {
+  config.headers.Authorization = `Bearer ${localStorage.getItem('token')}`;
+  return config;
+});
+
+columnsInstance.interceptors.request.use((config) => {
   config.headers.Authorization = `Bearer ${localStorage.getItem('token')}`;
   return config;
 });
@@ -41,6 +51,30 @@ boardsInstance.interceptors.response.use(
         const { data } = await refreshInstance.get();
         localStorage.setItem('token', data.accessToken);
         return boardsInstance.request(originalRequest);
+      } catch (error) {
+        console.log('Not authorized');
+      }
+    }
+    throw error;
+  }
+);
+
+columnsInstance.interceptors.response.use(
+  (config) => {
+    return config;
+  },
+  async (error) => {
+    const originalRequest = error.config;
+    if (
+      error.response.status == 401 &&
+      error.config &&
+      !error.config._isRetry
+    ) {
+      originalRequest._isRetry = true;
+      try {
+        const { data } = await refreshInstance.get();
+        localStorage.setItem('token', data.accessToken);
+        return columnsInstance.request(originalRequest);
       } catch (error) {
         console.log('Not authorized');
       }

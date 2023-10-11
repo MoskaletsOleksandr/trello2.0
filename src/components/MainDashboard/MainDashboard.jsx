@@ -14,7 +14,7 @@ import {
 } from './MainDashboard.styled';
 import sprite from '../../assets/sprite.svg';
 import { Column } from '../Column';
-import { AddColumnButton } from '../common/AddColumnButton';
+import { AddColumnButton } from '../AddColumnButton';
 
 export const MainDashDoard = () => {
   const boardTitle = useSelector(selectBoardTitle);
@@ -33,11 +33,7 @@ export const MainDashDoard = () => {
       </Header>
       <BoardContainer>
         <Column />
-        <AddColumnButton
-          onClick={() => {
-            console.log('AddColumnButton');
-          }}
-        />
+        <AddColumnButton />
       </BoardContainer>
     </Container>
   );
