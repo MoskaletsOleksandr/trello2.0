@@ -51,6 +51,7 @@ export const BoardsList = () => {
 
   const handleDeleteBoard = (boardId) => {
     dispatch(deleteBoardByIdThunk(boardId));
+    navigate('/home');
   };
 
   return (

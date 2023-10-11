@@ -12,10 +12,10 @@ export const LogoutBtn = () => {
 
   return (
     <Button onClick={handleLogout}>
+      <BtnText>Log out</BtnText>
       <Icon width="32px" height="32px">
         <use href={`${sprite}#icon-login`} />
       </Icon>
-      <BtnText>Log out</BtnText>
     </Button>
   );
 };

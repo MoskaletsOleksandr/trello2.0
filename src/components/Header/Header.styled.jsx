@@ -8,20 +8,8 @@ export const HeaderContainer = styled.header`
   flex-direction: row;
   justify-content: space-between;
   padding-right: 24px;
-  color: black;
-  background-color: teal;
-  /* color: var(--header-theme-select-text-color);
-  background-color: var(--header-bg-color); */
-
-  @media (min-width: 768px) {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  @media (min-width: 1200px) {
-    padding-left: 20px;
-    padding-right: 32px;
-  }
+  color: var(--header-theme-select-text-color);
+  background-color: var(--header-bg-color);
 `;
 
 export const ButtonMenu = styled.button`
@@ -40,8 +28,7 @@ export const IconMenu = styled.svg`
   width: 32px;
   height: 32px;
   fill: none;
-  stroke: black;
-  /* stroke: var(--header-name-color); */
+  stroke: var(--header-name-color);
 `;
 
 export const HeaderInfo = styled.div`
@@ -60,8 +47,7 @@ export const IconDown = styled.svg`
   height: 16px;
   margin-left: 4px;
   fill: transparent;
-  stroke: black;
-  /* stroke: var(--header-theme-select-text-color); */
+  stroke: var(--header-theme-select-text-color);
 `;
 
 export const CustomSelect = styled.div`
@@ -70,17 +56,15 @@ export const CustomSelect = styled.div`
 
 export const CustomOptionList = styled.ul`
   position: absolute;
-  display: ${(props) => (props.open ? 'block' : 'none')};
+  display: ${({ open }) => (open ? 'block' : 'none')};
   top: 20px;
   left: -105px;
   margin: 0;
   padding: 18px 44px 18px 18px;
   list-style: none;
-  border: solid 1px black;
-  /* border: solid 1px var(--header-theme-select-border-color); */
+  border: solid 1px var(--header-theme-select-border-color);
   border-radius: 8px;
-  background-color: teal;
-  /* background-color: var(--header-theme-select-bg-color); */
+  background-color: var(--header-theme-select-bg-color);
   box-shadow: 0px 4px 16px 0px rgba(17, 17, 17, 0.1);
   z-index: 1;
 `;
@@ -88,17 +72,13 @@ export const CustomOptionList = styled.ul`
 export const CustomOption = styled.li`
   padding: 5px 10px;
   cursor: pointer;
-  color: black;
   text-transform: capitalize;
-  /* color: var(--header-theme-select-text-color); */
+  color: ${({ selected }) =>
+    selected
+      ? 'var(--header-theme-select-text-color-hover)'
+      : 'var(--header-theme-select-text-color)'};
 
-  /* &:hover {
+  &:hover {
     color: var(--header-theme-select-text-color-hover);
   }
-
-  ${(props) =>
-    props.selected &&
-    `
-      color: var(--header-theme-select-text-color-hover)
-    `} */
 `;

@@ -10,7 +10,7 @@ export const StyledButton = styled.button`
   margin-top: 40px;
   border-radius: 8px;
   border: none;
-  background-color: var(--auth-btn-bg-color);
+  background-color: var(--modal-btn-bg-color);
 
   color: var(--modal-btn-text-color);
   font-size: 14px;
@@ -19,7 +19,7 @@ export const StyledButton = styled.button`
 
   &:hover,
   :focus {
-    background-color: var(--auth-btn-bg-color-hover);
+    background-color: var(--modal-btn-bg-color-hover);
   }
 `;
 

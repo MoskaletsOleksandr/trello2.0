@@ -80,7 +80,7 @@ export const LoginBtn = styled(Link)`
   background-color: transparent;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 500ms var(--timing-function),
+  transition: background-color 300ms var(--timing-function),
     color 300ms var(--timing-function);
 
   &:hover,
