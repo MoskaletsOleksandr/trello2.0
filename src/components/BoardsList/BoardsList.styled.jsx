@@ -19,9 +19,16 @@ export const Item = styled.li`
   width: 100%;
   padding: 20px 14px;
   opacity: 0.4;
+  cursor: pointer;
+  transition: opacity 300ms linear;
 
   &:not(:last-child) {
     margin-bottom: 4px;
+  }
+
+  &:hover {
+    opacity: 1;
+    /* background-color: var(--sidebar-active-board-bg-color); */
   }
 `;
 
@@ -61,7 +68,6 @@ export const Title = styled.p`
   font-weight: 500;
   letter-spacing: -0.28px;
   margin-left: 14px;
-  cursor: pointer;
 `;
 
 export const ButtonsWrapper = styled.div`
@@ -79,10 +85,10 @@ export const Button = styled.button`
 export const ButtonIcon = styled.svg`
   stroke: var(--sidebar-inactive-icon-color);
   fill: var(--sidebar-active-board-bg-color);
+  cursor: pointer;
 
   &:hover,
   &:focus {
     stroke: var(--progress-popup-text-color-hover);
-    cursor: pointer;
   }
 `;
