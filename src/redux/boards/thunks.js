@@ -53,7 +53,6 @@ export const createNewBoardThunk = createAsyncThunk(
 export const updateBoardByIdThunk = createAsyncThunk(
   'boards/updateBoardById',
   async ({ boardId, body }, { rejectWithValue, dispatch }) => {
-    console.log(boardId, body);
     try {
       const data = await updateBoardById(boardId, body);
       await dispatch(getAllBoardsThunk());

@@ -15,10 +15,12 @@ import {
 import sprite from '../../assets/sprite.svg';
 import { Column } from '../Column';
 import { AddColumnButton } from '../AddColumnButton';
+import { selectBoardColumns } from '../../redux/columns/selectors';
 
 export const MainDashDoard = () => {
   const boardTitle = useSelector(selectBoardTitle);
   const boardBackgrounds = useSelector(selectBoardBackgrounds);
+  const boardColumns = useSelector(selectBoardColumns);
 
   return (
     <Container background={boardBackgrounds}>
@@ -32,7 +34,9 @@ export const MainDashDoard = () => {
         </FilterBtn>
       </Header>
       <BoardContainer>
-        <Column />
+        {boardColumns.map((column) => (
+          <Column key={column._id} column={column} />
+        ))}
         <AddColumnButton />
       </BoardContainer>
     </Container>

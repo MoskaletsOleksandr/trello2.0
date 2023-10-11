@@ -10,11 +10,17 @@ export const handleCreateNewColumnFulfilled = (state, { payload }) => {
   state.error = null;
 };
 
-// export const handleUpdateBoardByIdFulfilled = (state, { payload }) => {
-//   state.currentBoard = payload;
-//   state.isLoading = false;
-//   state.error = null;
-// };
+export const handleUpdateColumnByIdFulfilled = (state, { payload }) => {
+  const columnIndex = state.columns.findIndex(
+    (column) => column._id === payload._id
+  );
+  if (columnIndex !== -1) {
+    state.columns[columnIndex].title = payload.title;
+  }
+
+  state.isLoading = false;
+  state.error = null;
+};
 
 // export const handleDeleteBoardByIdFulfilled = (state, { payload }) => {
 //   state.currentBoard = null;

@@ -2,6 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import {
   createNewColumn,
   getBoardColumns,
+  updateColumnById,
 } from '../../api/columnsApi/columnsApi';
 
 export const getBoardColumnsThunk = createAsyncThunk(
@@ -18,7 +19,7 @@ export const getBoardColumnsThunk = createAsyncThunk(
 
 export const createNewColumnThunk = createAsyncThunk(
   'columns/createNewColumn',
-  async (body, { rejectWithValue, dispatch }) => {
+  async (body, { rejectWithValue }) => {
     try {
       const data = await createNewColumn(body);
       return data;
@@ -28,19 +29,17 @@ export const createNewColumnThunk = createAsyncThunk(
   }
 );
 
-// export const updateBoardByIdThunk = createAsyncThunk(
-//   'boards/updateBoardById',
-//   async ({ boardId, body }, { rejectWithValue, dispatch }) => {
-//     console.log(boardId, body);
-//     try {
-//       const data = await updateBoardById(boardId, body);
-//       await dispatch(getAllBoardsThunk());
-//       return data;
-//     } catch (error) {
-//       return rejectWithValue(error.message);
-//     }
-//   }
-// );
+export const updateColumnByIdThunk = createAsyncThunk(
+  'columns/updateColumnById',
+  async (body, { rejectWithValue }) => {
+    try {
+      const data = await updateColumnById(body);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
 
 // export const deleteBoardByIdThunk = createAsyncThunk(
 //   'boards/deleteBoardById',

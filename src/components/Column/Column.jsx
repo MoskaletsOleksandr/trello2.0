@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Button,
   ButtonIcon,
@@ -9,14 +9,26 @@ import {
   Container,
 } from './Column.styled';
 import sprite from '../../assets/sprite.svg';
+import { UpdateColumnModal } from '../modals/UpdateColumnModal';
 
-export const Column = () => {
+export const Column = ({ column }) => {
+  const { title, _id } = column;
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
   return (
     <Container>
       <ColumnTitleWrapper>
-        <ColumnTitle>Title</ColumnTitle>
+        <ColumnTitle>{title}</ColumnTitle>
         <ButtonsWrapper>
-          <Button type="button">
+          <Button type="button" onClick={openModal}>
             <ButtonIcon width="16px" height="16px">
               <use href={sprite + '#icon-pencil'}></use>
             </ButtonIcon>
@@ -29,6 +41,13 @@ export const Column = () => {
         </ButtonsWrapper>
       </ColumnTitleWrapper>
       <CardsContainer></CardsContainer>
+      {isModalOpen && (
+        <UpdateColumnModal
+          columnId={_id}
+          onClose={closeModal}
+          columnTitle={title}
+        />
+      )}
     </Container>
   );
 };

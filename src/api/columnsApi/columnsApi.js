@@ -10,10 +10,10 @@ export const createNewColumn = async (body) => {
   return data;
 };
 
-// export const updateBoardById = async (boardId, body) => {
-//   const { data } = await boardsInstance.put(`/${boardId}`, body);
-//   return data;
-// };
+export const updateColumnById = async (body) => {
+  const { data } = await columnsInstance.put('', body);
+  return data;
+};
 
 // export const deleteBoardById = async (board) => {
 //   const { data } = await boardsInstance.delete(`/${board}`);
