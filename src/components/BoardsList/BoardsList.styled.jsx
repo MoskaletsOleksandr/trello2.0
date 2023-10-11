@@ -77,7 +77,12 @@ export const ButtonsWrapper = styled.div`
 `;
 
 export const Button = styled.button`
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 16px;
+  height: 16px;
   background-color: transparent;
   border: none;
 `;

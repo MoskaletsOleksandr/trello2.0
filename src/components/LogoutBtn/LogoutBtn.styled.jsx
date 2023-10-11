@@ -12,7 +12,7 @@ export const Button = styled.button`
   justify-content: left;
   align-items: center;
   margin-left: 24px;
-  width: 305px;
+  width: 120px;
   height: 32px;
   background-color: transparent;
   border: none;
