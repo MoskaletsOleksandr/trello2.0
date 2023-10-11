@@ -1,12 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
   handleCreateNewColumnFulfilled,
+  handleDeleteColumnByIdFulfilled,
   handleGetBoardColumnsFulfilled,
   handleUpdateColumnByIdFulfilled,
 } from './handlers';
 import { initialState } from './initialState';
 import {
   createNewColumnThunk,
+  deleteColumnByIdThunk,
   getBoardColumnsThunk,
   updateColumnByIdThunk,
 } from './thunks';
@@ -18,11 +20,11 @@ const columnsSlice = createSlice({
     builder
       .addCase(getBoardColumnsThunk.fulfilled, handleGetBoardColumnsFulfilled)
       .addCase(createNewColumnThunk.fulfilled, handleCreateNewColumnFulfilled)
+      .addCase(updateColumnByIdThunk.fulfilled, handleUpdateColumnByIdFulfilled)
       .addCase(
-        updateColumnByIdThunk.fulfilled,
-        handleUpdateColumnByIdFulfilled
+        deleteColumnByIdThunk.fulfilled,
+        handleDeleteColumnByIdFulfilled
       );
-    //   .addCase(deleteBoardByIdThunk.fulfilled, handleDeleteBoardByIdFulfilled)
   },
 });
 

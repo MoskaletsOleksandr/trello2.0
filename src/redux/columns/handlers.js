@@ -22,11 +22,17 @@ export const handleUpdateColumnByIdFulfilled = (state, { payload }) => {
   state.error = null;
 };
 
-// export const handleDeleteBoardByIdFulfilled = (state, { payload }) => {
-//   state.currentBoard = null;
-//   state.isLoading = false;
-//   state.error = null;
-// };
+export const handleDeleteColumnByIdFulfilled = (state, { payload }) => {
+  const columnIndexToDelete = state.columns.findIndex(
+    (column) => column._id === payload._id
+  );
+  if (columnIndexToDelete !== -1) {
+    state.columns.splice(columnIndexToDelete, 1);
+  }
+
+  state.isLoading = false;
+  state.error = null;
+};
 
 // export const handleThunkPending = (state) => {
 //   state.isLoading = true;

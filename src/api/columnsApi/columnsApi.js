@@ -15,7 +15,7 @@ export const updateColumnById = async (body) => {
   return data;
 };
 
-// export const deleteBoardById = async (board) => {
-//   const { data } = await boardsInstance.delete(`/${board}`);
-//   return data;
-// };
+export const deleteColumnById = async (columnId) => {
+  const { data } = await columnsInstance.delete(`/${columnId}`);
+  return data;
+};
