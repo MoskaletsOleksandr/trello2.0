@@ -1,4 +1,4 @@
-import{L as o,j as t}from"./index-ee35cadf.js";import{s as e,L as r}from"./Logo-5d250e56.js";import{n}from"./emotion-styled.browser.esm-fb3b8e5c.js";const i=n.div`
+import{L as o,j as t}from"./index-e7e5bf2a.js";import{s as e}from"./sprite-33c0d800.js";import{L as r}from"./Logo-2b3ac7b6.js";import{n}from"./emotion-styled.browser.esm-8d191a60.js";const i=n.div`
   height: 100vh;
   width: 100%;
   display: flex;
@@ -78,4 +78,4 @@ import{L as o,j as t}from"./index-ee35cadf.js";import{s as e,L as r}from"./Logo-
     background-color: transparent;
     color: var(--dark-btn-text-color);
   }
-`,h=()=>t.jsx(i,{children:t.jsxs(a,{children:[t.jsx(c,{children:t.jsx("use",{href:e+"#icon-main-trello"})}),t.jsx(r,{large:!0}),t.jsx(s,{children:"Supercharge your productivity and take control of your tasks with this Task Manager - Don't wait, start achieving your goals now!"}),t.jsxs(l,{children:[t.jsx(x,{to:"/auth/login",children:"Log In"}),t.jsx(g,{to:"/auth/register",children:"Registration"})]})]})});export{h as default};
+`,u=()=>t.jsx(i,{children:t.jsxs(a,{children:[t.jsx(c,{children:t.jsx("use",{href:e+"#icon-main-trello"})}),t.jsx(r,{large:!0}),t.jsx(s,{children:"Supercharge your productivity and take control of your tasks with this Task Manager - Don't wait, start achieving your goals now!"}),t.jsxs(l,{children:[t.jsx(x,{to:"/auth/login",children:"Log In"}),t.jsx(g,{to:"/auth/register",children:"Registration"})]})]})});export{u as default};
