@@ -29,6 +29,7 @@ export const ColumnTitle = styled.h3`
 `;
 
 export const ButtonsWrapper = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   gap: 8px;

@@ -30,11 +30,11 @@ export const Header = ({ toggleSidebar }) => {
     setCustomOptionListOpen(!isCustomOptionListOpen);
   };
 
-  const handleThemeClick = (selectedTheme) => {
+  const handleChangeTheme = (selectedTheme) => {
     if (selectedTheme !== appTheme) {
       dispatch(updateThemeThunk({ theme: selectedTheme }));
+      toggleCustomOptionList();
     }
-    toggleCustomOptionList();
   };
 
   return (
@@ -51,7 +51,8 @@ export const Header = ({ toggleSidebar }) => {
       <HeaderInfo>
         <TheamBtn
           ref={theamBtnRef}
-          onClick={() => {
+          onClick={(event) => {
+            event.stopPropagation();
             toggleCustomOptionList();
           }}
         >
@@ -60,14 +61,16 @@ export const Header = ({ toggleSidebar }) => {
             <use href={`${sprite}#icon-chevron-down`}></use>
           </IconDown>
         </TheamBtn>
-        <CustomSelect
-          options={themes}
-          selectedOption={appTheme}
-          isOpen={isCustomOptionListOpen}
-          onClose={toggleCustomOptionList}
-          handleOptionClick={handleThemeClick}
-          openBtnRef={theamBtnRef}
-        />
+        {isCustomOptionListOpen && (
+          <CustomSelect
+            options={themes}
+            selectedOption={appTheme}
+            isOpen={isCustomOptionListOpen}
+            onClose={toggleCustomOptionList}
+            handleOptionClick={handleChangeTheme}
+            openBtnRef={theamBtnRef}
+          />
+        )}
       </HeaderInfo>
     </HeaderContainer>
   );

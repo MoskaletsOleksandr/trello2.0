@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import {
   Button,
   ButtonIcon,
@@ -11,14 +11,19 @@ import {
 import sprite from '../../assets/sprite.svg';
 import { UpdateColumnModal } from '../modals/UpdateColumnModal';
 import { deleteColumnByIdThunk } from '../../redux/columns/thunks';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectColumnsAmount } from '../../redux/columns/selectors';
+import { useDispatch } from 'react-redux';
+import { CustomSelect } from '../CustomSelect';
 
-export const Column = ({ column }) => {
+export const Column = ({ column, columns }) => {
   const dispatch = useDispatch();
   const { title, _id } = column;
   const [isModalOpen, setModalOpen] = useState(false);
-  const columnsAmount = useSelector(selectColumnsAmount);
+  const [isCustomOptionListOpen, setCustomOptionListOpen] = useState(false);
+  const columnsAmount = columns.length;
+  const moveColumnBtnRef = useRef(null);
+  const columnOptionsList = columns
+    .filter((column) => column._id !== _id)
+    .map((column) => column.title);
 
   const openModal = () => {
     setModalOpen(true);
@@ -28,8 +33,17 @@ export const Column = ({ column }) => {
     setModalOpen(false);
   };
 
+  const toggleCustomOptionList = () => {
+    setCustomOptionListOpen(!isCustomOptionListOpen);
+  };
+
   const handleDeleteColumn = () => {
     dispatch(deleteColumnByIdThunk(_id));
+  };
+
+  const handleMoveColumn = (selectedColumn) => {
+    // dispatch(updateThemeThunk({ theme: selectedTheme }));
+    toggleCustomOptionList();
   };
 
   return (
@@ -44,9 +58,11 @@ export const Column = ({ column }) => {
           </Button>
           {columnsAmount > 1 && (
             <Button
+              ref={moveColumnBtnRef}
               type="button"
-              onClick={() => {
-                console.log('move');
+              onClick={(event) => {
+                event.stopPropagation();
+                toggleCustomOptionList();
               }}
             >
               <ButtonIcon width="16px" height="16px">
@@ -64,6 +80,16 @@ export const Column = ({ column }) => {
               <use href={sprite + '#icon-trash'}></use>
             </ButtonIcon>
           </Button>
+          {isCustomOptionListOpen && (
+            <CustomSelect
+              options={columnOptionsList}
+              selectedOption={title}
+              isOpen={isCustomOptionListOpen}
+              onClose={toggleCustomOptionList}
+              handleOptionClick={handleMoveColumn}
+              openBtnRef={moveColumnBtnRef}
+            />
+          )}
         </ButtonsWrapper>
       </ColumnTitleWrapper>
       <CardsContainer></CardsContainer>

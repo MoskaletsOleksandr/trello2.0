@@ -35,7 +35,7 @@ export const MainDashDoard = () => {
       </Header>
       <BoardContainer>
         {boardColumns.map((column) => (
-          <Column key={column._id} column={column} />
+          <Column key={column._id} column={column} columns={boardColumns} />
         ))}
         <AddColumnButton />
       </BoardContainer>
