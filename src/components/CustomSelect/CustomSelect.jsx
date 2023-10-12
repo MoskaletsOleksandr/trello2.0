@@ -1,11 +1,14 @@
 import React, { useEffect, useRef } from 'react';
 import {
   Container,
+  Current,
   CustomOption,
   CustomOptionList,
+  Title,
 } from './CustomSelect.styled';
 
 export const CustomSelect = ({
+  title,
   options,
   selectedOption,
   isOpen,
@@ -40,7 +43,8 @@ export const CustomSelect = ({
 
   return (
     <Container ref={customOptionListRef}>
-      <CustomOptionList isOpen={isOpen}>
+      <Title>{title}</Title>
+      <CustomOptionList>
         {options.map((option) => {
           return (
             <CustomOption
@@ -49,6 +53,7 @@ export const CustomSelect = ({
               selected={selectedOption === option}
             >
               {option}
+              {selectedOption === option && <Current>(current)</Current>}
             </CustomOption>
           );
         })}

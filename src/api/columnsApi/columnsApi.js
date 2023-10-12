@@ -11,7 +11,12 @@ export const createNewColumn = async (body) => {
 };
 
 export const updateColumnById = async (columnId, body) => {
-  const { data } = await columnsInstance.put(`/${columnId}`, body);
+  const { data } = await columnsInstance.patch(`/update/${columnId}`, body);
+  return data;
+};
+
+export const moveColumnById = async (columnId, body) => {
+  const { data } = await columnsInstance.patch(`/move/${columnId}`, body);
   return data;
 };
 

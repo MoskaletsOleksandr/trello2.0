@@ -22,14 +22,14 @@ export const handleUpdateColumnByIdFulfilled = (state, { payload }) => {
   state.error = null;
 };
 
-export const handleDeleteColumnByIdFulfilled = (state, { payload }) => {
-  const columnIndexToDelete = state.columns.findIndex(
-    (column) => column._id === payload._id
-  );
-  if (columnIndexToDelete !== -1) {
-    state.columns.splice(columnIndexToDelete, 1);
-  }
+export const handleMoveColumnByIdFulfilled = (state, { payload }) => {
+  state.columns = payload;
+  state.isLoading = false;
+  state.error = null;
+};
 
+export const handleDeleteColumnByIdFulfilled = (state, { payload }) => {
+  state.columns = payload;
   state.isLoading = false;
   state.error = null;
 };

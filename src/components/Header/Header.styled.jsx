@@ -32,6 +32,7 @@ export const IconMenu = styled.svg`
 `;
 
 export const HeaderInfo = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
 `;

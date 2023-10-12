@@ -1,17 +1,12 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
-  position: relative;
-`;
-
-export const CustomOptionList = styled.ul`
   position: absolute;
-  display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
+  /* display: ${({ isOpen }) => (isOpen ? 'block' : 'none')}; */
   top: 20px;
-  left: -105px;
+  left: -135px;
   margin: 0;
   padding: 18px 44px 18px 18px;
-  list-style: none;
   border: solid 1px var(--header-theme-select-border-color);
   border-radius: 8px;
   background-color: var(--header-theme-select-bg-color);
@@ -19,7 +14,14 @@ export const CustomOptionList = styled.ul`
   z-index: 1;
 `;
 
+export const CustomOptionList = styled.ul`
+  list-style: none;
+`;
+
 export const CustomOption = styled.li`
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
   padding: 5px 10px;
   cursor: pointer;
   text-transform: capitalize;
@@ -31,4 +33,14 @@ export const CustomOption = styled.li`
   &:hover {
     color: var(--header-theme-select-text-color-hover);
   }
+`;
+
+export const Title = styled.h4`
+  font-weight: 500;
+  margin-bottom: 10px;
+`;
+
+export const Current = styled.span`
+  font-size: 12px;
+  text-transform: lowercase;
 `;

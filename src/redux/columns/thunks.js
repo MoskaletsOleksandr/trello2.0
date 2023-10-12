@@ -3,6 +3,7 @@ import {
   createNewColumn,
   deleteColumnById,
   getBoardColumns,
+  moveColumnById,
   updateColumnById,
 } from '../../api/columnsApi/columnsApi';
 
@@ -35,6 +36,18 @@ export const updateColumnByIdThunk = createAsyncThunk(
   async ({ columnId, body }, { rejectWithValue }) => {
     try {
       const data = await updateColumnById(columnId, body);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const moveColumnByIdThunk = createAsyncThunk(
+  'columns/moveColumnById',
+  async ({ columnId, body }, { rejectWithValue }) => {
+    try {
+      const data = await moveColumnById(columnId, body);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);

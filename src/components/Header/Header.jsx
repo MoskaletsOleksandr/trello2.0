@@ -62,6 +62,7 @@ export const Header = ({ toggleSidebar }) => {
         </TheamBtn>
         {isCustomOptionListOpen && (
           <CustomSelect
+            title="Select theme"
             options={themes}
             selectedOption={appTheme}
             isOpen={isCustomOptionListOpen}

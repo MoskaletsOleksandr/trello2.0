@@ -10,20 +10,21 @@ import {
 } from './Column.styled';
 import sprite from '../../assets/sprite.svg';
 import { UpdateColumnModal } from '../modals/UpdateColumnModal';
-import { deleteColumnByIdThunk } from '../../redux/columns/thunks';
+import {
+  deleteColumnByIdThunk,
+  moveColumnByIdThunk,
+} from '../../redux/columns/thunks';
 import { useDispatch } from 'react-redux';
 import { CustomSelect } from '../CustomSelect';
 
 export const Column = ({ column, columns }) => {
   const dispatch = useDispatch();
-  const { title, _id } = column;
+  const { title, _id: columnId, order } = column;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isCustomOptionListOpen, setCustomOptionListOpen] = useState(false);
   const columnsAmount = columns.length;
   const moveColumnBtnRef = useRef(null);
-  const columnOptionsList = columns
-    .filter((column) => column._id !== _id)
-    .map((column) => column.title);
+  const columnOptionsList = columns.map((column) => column.order);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -43,11 +44,18 @@ export const Column = ({ column, columns }) => {
   };
 
   const handleDeleteColumn = () => {
-    dispatch(deleteColumnByIdThunk(_id));
+    dispatch(deleteColumnByIdThunk(columnId));
   };
 
   const handleMoveColumn = (selectedColumn) => {
-    // dispatch(updateThemeThunk({ theme: selectedTheme }));
+    if (selectedColumn === order) {
+      return;
+    }
+    const body = {
+      oldOrder: order,
+      newOrder: selectedColumn,
+    };
+    dispatch(moveColumnByIdThunk({ columnId, body }));
     toggleCustomOptionList();
   };
 
@@ -55,6 +63,7 @@ export const Column = ({ column, columns }) => {
     <Container>
       <ColumnTitleWrapper>
         <ColumnTitle>{title}</ColumnTitle>
+        <p>order {order}</p>
         <ButtonsWrapper>
           <Button type="button" onClick={openModal}>
             <ButtonIcon width="16px" height="16px">
@@ -84,8 +93,9 @@ export const Column = ({ column, columns }) => {
           </Button>
           {isCustomOptionListOpen && (
             <CustomSelect
+              title="Move to position"
               options={columnOptionsList}
-              selectedOption={title}
+              selectedOption={order}
               isOpen={isCustomOptionListOpen}
               onClose={toggleCustomOptionList}
               handleOptionClick={handleMoveColumn}
@@ -97,7 +107,7 @@ export const Column = ({ column, columns }) => {
       <CardsContainer></CardsContainer>
       {isModalOpen && (
         <UpdateColumnModal
-          columnId={_id}
+          columnId={columnId}
           onClose={closeModal}
           columnTitle={title}
         />
