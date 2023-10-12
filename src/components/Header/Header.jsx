@@ -1,8 +1,5 @@
 import {
   ButtonMenu,
-  CustomOption,
-  CustomOptionList,
-  CustomSelect,
   HeaderContainer,
   HeaderInfo,
   IconDown,
@@ -15,12 +12,12 @@ import sprite from '../../assets/sprite.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectTheme } from '../../redux/auth/selectors';
 import { updateThemeThunk } from '../../redux/auth/thunks';
+import { CustomSelect } from '../CustomSelect';
+import { themes } from '../../data/constants';
 
 export const Header = ({ toggleSidebar }) => {
-  const themes = ['light', 'dark', 'violet'];
   const appTheme = useSelector(selectTheme);
   const [isCustomOptionListOpen, setCustomOptionListOpen] = useState(false);
-  const customOptionListRef = useRef(null);
   const theamBtnRef = useRef(null);
   const dispatch = useDispatch();
 
@@ -29,35 +26,14 @@ export const Header = ({ toggleSidebar }) => {
     document.body.classList.add(appTheme);
   }, [appTheme]);
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (
-        isCustomOptionListOpen &&
-        customOptionListRef.current &&
-        !customOptionListRef.current.contains(event.target) &&
-        theamBtnRef.current !== event.target
-      ) {
-        toggleCustomOptionList();
-      }
-    };
-
-    if (isCustomOptionListOpen) {
-      document.addEventListener('click', handleClickOutside);
-    } else {
-      document.removeEventListener('click', handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
-  }, [isCustomOptionListOpen]);
-
   const toggleCustomOptionList = () => {
     setCustomOptionListOpen(!isCustomOptionListOpen);
   };
 
   const handleThemeClick = (selectedTheme) => {
-    dispatch(updateThemeThunk({ theme: selectedTheme }));
+    if (selectedTheme !== appTheme) {
+      dispatch(updateThemeThunk({ theme: selectedTheme }));
+    }
     toggleCustomOptionList();
   };
 
@@ -84,21 +60,14 @@ export const Header = ({ toggleSidebar }) => {
             <use href={`${sprite}#icon-chevron-down`}></use>
           </IconDown>
         </TheamBtn>
-        <CustomSelect ref={customOptionListRef}>
-          <CustomOptionList open={isCustomOptionListOpen}>
-            {themes.map((theme) => {
-              return (
-                <CustomOption
-                  key={theme}
-                  onClick={() => handleThemeClick(theme)}
-                  selected={appTheme === theme}
-                >
-                  {theme}
-                </CustomOption>
-              );
-            })}
-          </CustomOptionList>
-        </CustomSelect>
+        <CustomSelect
+          options={themes}
+          selectedOption={appTheme}
+          isOpen={isCustomOptionListOpen}
+          onClose={toggleCustomOptionList}
+          handleOptionClick={handleThemeClick}
+          openBtnRef={theamBtnRef}
+        />
       </HeaderInfo>
     </HeaderContainer>
   );

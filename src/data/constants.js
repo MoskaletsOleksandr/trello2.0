@@ -8,3 +8,5 @@ export const icons = [
   'icon-colors',
   'icon-hexagon',
 ];
+
+export const themes = ['light', 'dark', 'violet'];
