@@ -10,8 +10,8 @@ export const createNewColumn = async (body) => {
   return data;
 };
 
-export const updateColumnById = async (body) => {
-  const { data } = await columnsInstance.put('', body);
+export const updateColumnById = async (columnId, body) => {
+  const { data } = await columnsInstance.put(`/${columnId}`, body);
   return data;
 };
 

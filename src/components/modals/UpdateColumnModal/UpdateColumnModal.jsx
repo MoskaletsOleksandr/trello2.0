@@ -17,9 +17,8 @@ export const UpdateColumnModal = ({ columnId, onClose, columnTitle }) => {
   const handleSubmit = (values) => {
     const body = {
       title: values.title,
-      columnId,
     };
-    dispatch(updateColumnByIdThunk(body));
+    dispatch(updateColumnByIdThunk({ columnId, body }));
     onClose();
   };
 

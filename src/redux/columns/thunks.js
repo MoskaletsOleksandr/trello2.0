@@ -32,9 +32,9 @@ export const createNewColumnThunk = createAsyncThunk(
 
 export const updateColumnByIdThunk = createAsyncThunk(
   'columns/updateColumnById',
-  async (body, { rejectWithValue }) => {
+  async ({ columnId, body }, { rejectWithValue }) => {
     try {
-      const data = await updateColumnById(body);
+      const data = await updateColumnById(columnId, body);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);

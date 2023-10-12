@@ -17,7 +17,7 @@ import { CustomSelect } from '../CustomSelect';
 export const Column = ({ column, columns }) => {
   const dispatch = useDispatch();
   const { title, _id } = column;
-  const [isModalOpen, setModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isCustomOptionListOpen, setCustomOptionListOpen] = useState(false);
   const columnsAmount = columns.length;
   const moveColumnBtnRef = useRef(null);
@@ -26,15 +26,20 @@ export const Column = ({ column, columns }) => {
     .map((column) => column.title);
 
   const openModal = () => {
-    setModalOpen(true);
+    setIsModalOpen(true);
   };
 
   const closeModal = () => {
-    setModalOpen(false);
+    setIsModalOpen(false);
   };
 
   const toggleCustomOptionList = () => {
     setCustomOptionListOpen(!isCustomOptionListOpen);
+  };
+
+  const openCustomOptionList = (event) => {
+    event.stopPropagation();
+    toggleCustomOptionList();
   };
 
   const handleDeleteColumn = () => {
@@ -60,10 +65,7 @@ export const Column = ({ column, columns }) => {
             <Button
               ref={moveColumnBtnRef}
               type="button"
-              onClick={(event) => {
-                event.stopPropagation();
-                toggleCustomOptionList();
-              }}
+              onClick={openCustomOptionList}
             >
               <ButtonIcon width="16px" height="16px">
                 <use href={sprite + '#icon-arrow-circle-broken-right'}></use>
