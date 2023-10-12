@@ -63,7 +63,6 @@ export const Column = ({ column, columns }) => {
     <Container>
       <ColumnTitleWrapper>
         <ColumnTitle>{title}</ColumnTitle>
-        <p>order {order}</p>
         <ButtonsWrapper>
           <Button type="button" onClick={openModal}>
             <ButtonIcon width="16px" height="16px">

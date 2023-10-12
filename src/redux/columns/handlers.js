@@ -34,12 +34,12 @@ export const handleDeleteColumnByIdFulfilled = (state, { payload }) => {
   state.error = null;
 };
 
-// export const handleThunkPending = (state) => {
-//   state.isLoading = true;
-//   state.error = null;
-// };
+export const handleThunkPending = (state) => {
+  state.isLoading = true;
+  state.error = null;
+};
 
-// export const handleThunkRejected = (state, { payload }) => {
-//   state.error = payload;
-//   state.isLoading = false;
-// };
+export const handleThunkRejected = (state, { payload }) => {
+  state.error = payload;
+  state.isLoading = false;
+};

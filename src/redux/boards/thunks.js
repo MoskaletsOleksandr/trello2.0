@@ -43,6 +43,7 @@ export const createNewBoardThunk = createAsyncThunk(
       const data = await createNewBoard(body);
       await dispatch(getAllBoardsThunk());
       await dispatch(updateCurrentBoardIdThunk({ boardId: data._id }));
+      await dispatch(getBoardColumnsThunk(data._id));
       return data;
     } catch (error) {
       return rejectWithValue(error.message);

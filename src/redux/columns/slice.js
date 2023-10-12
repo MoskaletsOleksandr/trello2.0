@@ -4,6 +4,8 @@ import {
   handleDeleteColumnByIdFulfilled,
   handleGetBoardColumnsFulfilled,
   handleMoveColumnByIdFulfilled,
+  handleThunkPending,
+  handleThunkRejected,
   handleUpdateColumnByIdFulfilled,
 } from './handlers';
 import { initialState } from './initialState';
@@ -24,9 +26,11 @@ const columnsSlice = createSlice({
       .addCase(createNewColumnThunk.fulfilled, handleCreateNewColumnFulfilled)
       .addCase(updateColumnByIdThunk.fulfilled, handleUpdateColumnByIdFulfilled)
       .addCase(moveColumnByIdThunk.fulfilled, handleMoveColumnByIdFulfilled)
-      .addCase(
-        deleteColumnByIdThunk.fulfilled,
-        handleDeleteColumnByIdFulfilled
+      .addCase(deleteColumnByIdThunk.fulfilled, handleDeleteColumnByIdFulfilled)
+      .addMatcher(({ type }) => type.endsWith('/pending'), handleThunkPending)
+      .addMatcher(
+        ({ type }) => type.endsWith('/rejected'),
+        handleThunkRejected
       );
   },
 });

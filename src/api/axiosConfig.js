@@ -1,23 +1,30 @@
 import axios from 'axios';
 
+const baseURL = 'http://localhost:5000';
+
 export const refreshInstance = axios.create({
   withCredentials: true,
-  baseURL: 'http://localhost:5000/users/refresh',
+  baseURL: `${baseURL}/users/refresh`,
 });
 
 export const authInstance = axios.create({
   withCredentials: true,
-  baseURL: 'http://localhost:5000/users',
+  baseURL: `${baseURL}/users`,
 });
 
 export const boardsInstance = axios.create({
   withCredentials: true,
-  baseURL: 'http://localhost:5000/boards',
+  baseURL: `${baseURL}/boards`,
 });
 
 export const columnsInstance = axios.create({
   withCredentials: true,
-  baseURL: 'http://localhost:5000/columns',
+  baseURL: `${baseURL}/columns`,
+});
+
+export const cardsInstance = axios.create({
+  withCredentials: true,
+  baseURL: `${baseURL}/cards`,
 });
 
 authInstance.interceptors.request.use((config) => {
@@ -34,6 +41,35 @@ columnsInstance.interceptors.request.use((config) => {
   config.headers.Authorization = `Bearer ${localStorage.getItem('token')}`;
   return config;
 });
+
+cardsInstance.interceptors.request.use((config) => {
+  config.headers.Authorization = `Bearer ${localStorage.getItem('token')}`;
+  return config;
+});
+
+authInstance.interceptors.response.use(
+  (config) => {
+    return config;
+  },
+  async (error) => {
+    const originalRequest = error.config;
+    if (
+      error.response.status == 401 &&
+      error.config &&
+      !error.config._isRetry
+    ) {
+      originalRequest._isRetry = true;
+      try {
+        const { data } = await refreshInstance.get();
+        localStorage.setItem('token', data.accessToken);
+        return authInstance.request(originalRequest);
+      } catch (error) {
+        console.log('Not authorized');
+      }
+    }
+    throw error;
+  }
+);
 
 boardsInstance.interceptors.response.use(
   (config) => {
@@ -83,7 +119,7 @@ columnsInstance.interceptors.response.use(
   }
 );
 
-authInstance.interceptors.response.use(
+cardsInstance.interceptors.response.use(
   (config) => {
     return config;
   },
@@ -98,7 +134,7 @@ authInstance.interceptors.response.use(
       try {
         const { data } = await refreshInstance.get();
         localStorage.setItem('token', data.accessToken);
-        return authInstance.request(originalRequest);
+        return cardsInstance.request(originalRequest);
       } catch (error) {
         console.log('Not authorized');
       }

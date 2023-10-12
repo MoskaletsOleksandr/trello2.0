@@ -99,6 +99,4 @@ export const BoardContainer = styled.div`
   align-items: start;
   gap: 34px;
   padding: 36px 24px;
-
-  background-color: #00808067;
 `;
