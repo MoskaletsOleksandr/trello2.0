@@ -117,10 +117,10 @@ export const GlobalStyles = () => {
             --filter-popup-tertiary-text-color: #ffffff80;//vit not use
             --filter-popup-border-color: #BEDBB080;
             --filter-without-priority-color: #9b9b9b; 
-            --filter-low-color: #8FA1D0;
-            --filter-medium-color: #E09CB5;
-            --filter-high-color: #BEDBB0;
-            --filter-checked-color: #ffffff; //vit
+            --filter-low-priority-color: #8FA1D0;
+            --filter-medium-priority-color: #E09CB5;
+            --filter-high-priority-color: #BEDBB0;
+            --filter-checked-color: #ffffff; 
             
             //variables for columns
             --vertical-scroll-bar-bg-color: #121212;
@@ -134,12 +134,12 @@ export const GlobalStyles = () => {
 
             //variables for cards
             --card-bg-color: #121212;
+            --card-bg-color-hover: #191919;
             --card-title-color: #ffffff;
             --card-primary-text-color: #ffffff;
             --card-secondary-text-color: #ffffff80;
             --card-border-color: #FFFFFF4D;
             --card-icon-color: #ffffff80;
-            --card-hover: #191919;
             // #262626;
 
 
@@ -233,9 +233,9 @@ export const GlobalStyles = () => {
             --filter-popup-tertiary-text-color: #16161650;
             --filter-popup-border-color: #ffffff;
             --filter-without-priority-color: #c3c3c3;
-            --filter-low-color: #8FA1D0;
-            --filter-medium-color: #E09CB5;
-            --filter-high-color: #BEDBB0;
+            --filter-low-priority-color: #8FA1D0;
+            --filter-medium-priority-color: #E09CB5;
+            --filter-high-priority-color: #BEDBB0;
             --filter-checked-color: #161616; //vit
 
             //variables for columns
@@ -250,12 +250,12 @@ export const GlobalStyles = () => {
 
             //variables for cards
             --card-bg-color: #ffffff;
+            --card-bg-color-hover: #f7f7f7;
             --card-title-color: #161616;
             --card-primary-text-color: #161616B2;
             --card-secondary-text-color: #16161680;
             --card-icon-color: #16161680;
             --card-border-color: #e8e8e8;
-            --card-hover: #f7f7f7;
 
 
             //variables for modals
@@ -348,9 +348,9 @@ export const GlobalStyles = () => {
             --filter-popup-tertiary-text-color: #16161650;
             --filter-popup-border-color: #ffffff;
             --filter-without-priority-color: #c3c3c3;
-            --filter-low-color: #8FA1D0;
-            --filter-medium-color: #E09CB5;
-            --filter-high-color: #BEDBB0;
+            --filter-low-priority-color: #8FA1D0;
+            --filter-medium-priority-color: #E09CB5;
+            --filter-high-priority-color: #BEDBB0;
             --filter-checked-color: #5255BC; //vit
 
             //variables for columns
@@ -365,12 +365,12 @@ export const GlobalStyles = () => {
 
             //variables for cards
             --card-bg-color: #ffffff;
+            --card-bg-color-hover: #f7f7f7;
             --card-title-color: #161616;
             --card-primary-text-color: #161616B2;
             --card-secondary-text-color: #16161680;
             --card-icon-color: #16161680;
             --card-border-color: #e8e8e8;
-            --card-hover: #f7f7f7;
 
             //variables for modals
             --modal-bg-color: #FCFCFC;

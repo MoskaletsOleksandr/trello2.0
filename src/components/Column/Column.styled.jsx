@@ -6,8 +6,6 @@ export const Container = styled.div`
   display: flex;
   gap: 14px;
   flex-direction: column;
-
-  background-color: #ffa60078;
 `;
 
 export const ColumnTitleWrapper = styled.div`
@@ -58,6 +56,7 @@ export const ButtonIcon = styled.svg`
 `;
 
 export const CardsContainer = styled.div`
-  background-color: red;
-  height: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 `;

@@ -14,17 +14,23 @@ import {
   deleteColumnByIdThunk,
   moveColumnByIdThunk,
 } from '../../redux/columns/thunks';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { CustomSelect } from '../CustomSelect';
+import { Card } from '../Card';
+import { selectBoardCards } from '../../redux/cards/selectors';
 
 export const Column = ({ column, columns }) => {
   const dispatch = useDispatch();
   const { title, _id: columnId, order } = column;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isCustomOptionListOpen, setCustomOptionListOpen] = useState(false);
+  const boardCards = useSelector(selectBoardCards);
   const columnsAmount = columns.length;
   const moveColumnBtnRef = useRef(null);
   const columnOptionsList = columns.map((column) => column.order);
+  const columnCards = boardCards.find(
+    (columnCards) => columnCards.columnId === columnId
+  );
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -103,7 +109,11 @@ export const Column = ({ column, columns }) => {
           )}
         </ButtonsWrapper>
       </ColumnTitleWrapper>
-      <CardsContainer></CardsContainer>
+      <CardsContainer>
+        {columnCards.cards.map((card) => (
+          <Card key={card._id} card={card} />
+        ))}
+      </CardsContainer>
       {isModalOpen && (
         <UpdateColumnModal
           columnId={columnId}
