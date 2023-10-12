@@ -1,5 +1,5 @@
 export const initialState = {
-  columns: [],
+  cards: [],
   error: null,
   isLoading: false,
 };

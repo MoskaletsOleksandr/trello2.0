@@ -22,6 +22,9 @@ import {
 const boardSlice = createSlice({
   name: 'boards',
   initialState,
+  reducers: {
+    resetBoardsState: () => initialState,
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getAllBoardsThunk.fulfilled, handleGetAllBoardsFulfilled)
@@ -39,3 +42,4 @@ const boardSlice = createSlice({
 });
 
 export const boardsReducer = boardSlice.reducer;
+export const { resetBoardsState } = boardSlice.actions;

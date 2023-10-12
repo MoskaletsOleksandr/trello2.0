@@ -1,11 +1,11 @@
 export const handleGetBoardCardsFulfilled = (state, { payload }) => {
-  state.columns = payload;
+  state.cards = payload;
   state.isLoading = false;
   state.error = null;
 };
 
 export const handleCreateNewCardFulfilled = (state, { payload }) => {
-  state.columns.push(payload);
+  state.cards.push(payload);
   state.isLoading = false;
   state.error = null;
 };

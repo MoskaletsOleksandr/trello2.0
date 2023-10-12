@@ -20,6 +20,9 @@ import {
 const columnsSlice = createSlice({
   name: 'columns',
   initialState,
+  reducers: {
+    resetColumnsState: () => initialState,
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getBoardColumnsThunk.fulfilled, handleGetBoardColumnsFulfilled)
@@ -36,3 +39,4 @@ const columnsSlice = createSlice({
 });
 
 export const columnsReducer = columnsSlice.reducer;
+export const { resetColumnsState } = columnsSlice.actions;

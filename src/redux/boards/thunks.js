@@ -8,6 +8,7 @@ import {
   updateBoardById,
 } from '../../api/boardsApi/boardsApi';
 import { updateCurrentBoardIdThunk } from '../auth/thunks';
+import { getBoardCardsThunk } from '../cards/thunks';
 import { getBoardColumnsThunk } from '../columns/thunks';
 
 export const getAllBoardsThunk = createAsyncThunk(
@@ -29,6 +30,7 @@ export const getCurrentBoardThunk = createAsyncThunk(
       const data = await getCurrentBoard(id);
       await dispatch(updateCurrentBoardIdThunk({ boardId: id }));
       await dispatch(getBoardColumnsThunk(id));
+      await dispatch(getBoardCardsThunk(id));
       return data;
     } catch (error) {
       return rejectWithValue(error.message);

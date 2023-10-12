@@ -9,6 +9,10 @@ import { createNewCardThunk, getBoardCardsThunk } from './thunks';
 const cardsSlice = createSlice({
   name: 'cards',
   initialState,
+  reducers: {
+    resetCardsState: () => initialState,
+  },
+
   extraReducers: (builder) => {
     builder
       .addCase(getBoardCardsThunk.fulfilled, handleGetBoardCardsFulfilled)
@@ -25,3 +29,4 @@ const cardsSlice = createSlice({
 });
 
 export const cardsReducer = cardsSlice.reducer;
+export const { resetCardsState } = cardsSlice.actions;

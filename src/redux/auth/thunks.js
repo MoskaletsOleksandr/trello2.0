@@ -7,6 +7,9 @@ import {
   updateCurrentBoardId,
   updateTheme,
 } from '../../api/authApi/authApi';
+import { resetBoardsState } from '../boards/slice';
+import { resetCardsState } from '../cards/slice';
+import { resetColumnsState } from '../columns/slice';
 
 export const registerThunk = createAsyncThunk(
   'auth/register',
@@ -34,9 +37,12 @@ export const loginThunk = createAsyncThunk(
 
 export const logoutThunk = createAsyncThunk(
   'auth/logout',
-  async (body, { rejectWithValue }) => {
+  async (body, { rejectWithValue, dispatch }) => {
     try {
       await logout(body);
+      dispatch(resetBoardsState());
+      dispatch(resetCardsState());
+      dispatch(resetColumnsState());
     } catch (error) {
       return rejectWithValue(error.message);
     }
