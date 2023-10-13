@@ -27,7 +27,13 @@ export const AddCardButton = ({ columnId }) => {
         </IconContainer>
         Add another card
       </StyledButton>
-      {isModalOpen && <CreateCardModal onClose={closeModal} />}
+      {isModalOpen && (
+        <CreateCardModal
+          onClose={closeModal}
+          columnId={columnId}
+          boardId={boardId}
+        />
+      )}
     </>
   );
 };

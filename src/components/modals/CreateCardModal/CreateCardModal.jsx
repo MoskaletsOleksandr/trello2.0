@@ -1,4 +1,4 @@
-import { Formik } from 'formik';
+import { Field, Formik } from 'formik';
 import * as Yup from 'yup';
 import React from 'react';
 import { Modal } from '../../common/Modal';
@@ -12,19 +12,21 @@ import {
 import { Button } from '../../common/Button';
 import { useDispatch } from 'react-redux';
 import { PriorityRadioBtns } from '../../common/ModalComponents/PriorityRadioBtns';
+import { createNewCardThunk } from '../../../redux/cards/thunks';
 
-export const CreateCardModal = ({ onClose }) => {
+export const CreateCardModal = ({ onClose, columnId, boardId }) => {
   const dispatch = useDispatch();
 
   const handleSubmit = (values) => {
     const body = {
       title: values.title,
       text: values.text,
-      selectedPriority: values.selectedPriority,
-      selectedDate: values.selectedDate,
+      priority: values.selectedPriority,
+      deadline: values.selectedDate,
+      columnId,
+      boardId,
     };
-    console.log(body);
-    // dispatch(createNewBoardThunk(body));
+    dispatch(createNewCardThunk(body));
     onClose();
   };
 
@@ -60,6 +62,7 @@ export const CreateCardModal = ({ onClose }) => {
           {/* <IconRadioBtns name={'selectedIcon'} icons={icons} /> */}
           <StyledErrorMessage name="selectedPriority" />
           <CardModalTitle>Deadline</CardModalTitle>
+          <Field type="date" name="selectedDate" />
           {/* <StyledErrorMessage name="selectedDate" /> */}
           <Button type="submit">Add</Button>
         </StyledForm>

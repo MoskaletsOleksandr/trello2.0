@@ -5,7 +5,19 @@ export const handleGetBoardCardsFulfilled = (state, { payload }) => {
 };
 
 export const handleCreateNewCardFulfilled = (state, { payload }) => {
-  state.cards.push(payload);
+  const column = state.cards.find(
+    (column) => column.columnId === payload.columnId
+  );
+
+  if (column) {
+    column.cards.push(payload);
+  } else {
+    const newColumn = {
+      columnId: payload.columnId,
+      cards: [payload],
+    };
+    state.cards.push(newColumn);
+  }
   state.isLoading = false;
   state.error = null;
 };
