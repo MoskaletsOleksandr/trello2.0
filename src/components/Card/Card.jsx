@@ -66,7 +66,6 @@ export const Card = ({ card, columnTitle }) => {
     const body = {
       newColumnId,
     };
-    // console.log(body);
     dispatch(moveCardByIdThunk({ cardId, body }));
     toggleCustomOptionList();
   };
