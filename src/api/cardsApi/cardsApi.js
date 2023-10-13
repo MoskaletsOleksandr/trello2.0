@@ -15,12 +15,12 @@ export const updateCardById = async (cardId, body) => {
   return data;
 };
 
-// export const moveColumnById = async (columnId, body) => {
-//   const { data } = await columnsInstance.patch(`/move/${columnId}`, body);
-//   return data;
-// };
+export const moveCardById = async (cardId, body) => {
+  const { data } = await cardsInstance.patch(`/move/${cardId}`, body);
+  return data;
+};
 
-// export const deleteColumnById = async (columnId) => {
-//   const { data } = await columnsInstance.delete(`/${columnId}`);
-//   return data;
-// };
+export const deleteCardById = async (cardId) => {
+  const { data } = await cardsInstance.delete(`/${cardId}`);
+  return data;
+};

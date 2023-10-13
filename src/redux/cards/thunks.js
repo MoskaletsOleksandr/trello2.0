@@ -1,7 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import {
   createNewCard,
+  deleteCardById,
   getBoardCards,
+  moveCardById,
   updateCardById,
 } from '../../api/cardsApi/cardsApi';
 
@@ -41,26 +43,26 @@ export const updateCardByIdThunk = createAsyncThunk(
   }
 );
 
-// export const moveColumnByIdThunk = createAsyncThunk(
-//   'columns/moveColumnById',
-//   async ({ columnId, body }, { rejectWithValue }) => {
-//     try {
-//       const data = await moveColumnById(columnId, body);
-//       return data;
-//     } catch (error) {
-//       return rejectWithValue(error.message);
-//     }
-//   }
-// );
+export const moveCardByIdThunk = createAsyncThunk(
+  'cards/moveCardById',
+  async ({ cardId, body }, { rejectWithValue }) => {
+    try {
+      const data = await moveCardById(cardId, body);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
 
-// export const deleteColumnByIdThunk = createAsyncThunk(
-//   'columns/deleteColumnById',
-//   async (columnId, { rejectWithValue }) => {
-//     try {
-//       const data = await deleteColumnById(columnId);
-//       return data;
-//     } catch (error) {
-//       return rejectWithValue(error.message);
-//     }
-//   }
-// );
+export const deleteCardByIdThunk = createAsyncThunk(
+  'cards/deleteCardById',
+  async (cardId, { rejectWithValue }) => {
+    try {
+      const data = await deleteCardById(cardId);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);

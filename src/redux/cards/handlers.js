@@ -33,24 +33,42 @@ export const handleUpdateCardByIdFulfilled = (state, { payload }) => {
   state.error = null;
 };
 
-// export const handleMoveColumnByIdFulfilled = (state, { payload }) => {
-//   state.columns = payload;
-//   state.isLoading = false;
-//   state.error = null;
-// };
+export const handleMoveCardByIdFulfilled = (state, { payload }) => {
+  const columnId1 = payload[0].columnId;
+  const columnId2 = payload[1].columnId;
 
-// export const handleDeleteColumnByIdFulfilled = (state, { payload }) => {
-//   state.columns = payload;
-//   state.isLoading = false;
-//   state.error = null;
-// };
+  const index1 = state.cards.findIndex(
+    (column) => column.columnId === columnId1
+  );
+  const index2 = state.cards.findIndex(
+    (column) => column.columnId === columnId2
+  );
 
-// export const handleThunkPending = (state) => {
-//   state.isLoading = true;
-//   state.error = null;
-// };
+  if (index1 !== -1 && index2 !== -1) {
+    state.cards[index1] = { ...state.cards[index1], cards: payload[0].cards };
+    state.cards[index2] = { ...state.cards[index2], cards: payload[1].cards };
+  } else {
+    state.cards[index1] = { ...state.cards[index1], cards: payload[0].cards };
+    state.cards.push(payload[1]);
+  }
 
-// export const handleThunkRejected = (state, { payload }) => {
-//   state.error = payload;
-//   state.isLoading = false;
-// };
+  state.isLoading = false;
+  state.error = null;
+};
+
+export const handleDeleteCardByIdFulfilled = (state, { payload }) => {
+  const column = state.cards.find((col) => col.columnId === payload.columnId);
+  column.cards = payload.cards;
+  state.isLoading = false;
+  state.error = null;
+};
+
+export const handleThunkPending = (state) => {
+  state.isLoading = true;
+  state.error = null;
+};
+
+export const handleThunkRejected = (state, { payload }) => {
+  state.error = payload;
+  state.isLoading = false;
+};

@@ -59,7 +59,6 @@ export const Column = ({ column, columns }) => {
       return;
     }
     const body = {
-      oldOrder: order,
       newOrder: selectedColumn,
     };
     dispatch(moveColumnByIdThunk({ columnId, body }));
@@ -112,7 +111,7 @@ export const Column = ({ column, columns }) => {
       </ColumnTitleWrapper>
       <CardsContainer>
         {columnCards?.cards.map((card) => (
-          <Card key={card._id} card={card} />
+          <Card key={card._id} card={card} columnTitle={title} />
         ))}
       </CardsContainer>
       <AddCardButton columnId={columnId} />

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import {
   CardInfo,
   InfoList,
@@ -17,11 +17,24 @@ import {
 } from './Card.styled';
 import sprite from '../../assets/sprite.svg';
 import { UpdateCardModal } from '../modals/UpdateCardModal';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  deleteCardByIdThunk,
+  moveCardByIdThunk,
+} from '../../redux/cards/thunks';
+import { CustomSelect } from '../CustomSelect';
+import { selectBoardColumns } from '../../redux/columns/selectors';
 
-export const Card = ({ card }) => {
+export const Card = ({ card, columnTitle }) => {
+  const moveCardBtnRef = useRef(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { _id, title, text, priority, deadline, order } = card;
+  const [isCustomOptionListOpen, setCustomOptionListOpen] = useState(false);
+  const dispatch = useDispatch();
+  const boardColumns = useSelector(selectBoardColumns);
+  const { _id: cardId, title, text, priority, deadline, order } = card;
 
+  const columnOptionsList = boardColumns.map((column) => column.title);
+  const columnsAmount = columnOptionsList.length;
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -30,9 +43,37 @@ export const Card = ({ card }) => {
     setIsModalOpen(false);
   };
 
+  const handleDeleteCard = () => {
+    dispatch(deleteCardByIdThunk(cardId));
+  };
+
+  const toggleCustomOptionList = () => {
+    setCustomOptionListOpen(!isCustomOptionListOpen);
+  };
+
+  const openCustomOptionList = (event) => {
+    event.stopPropagation();
+    toggleCustomOptionList();
+  };
+
+  const handleMoveCard = (selectedColumnTitle) => {
+    if (selectedColumnTitle === columnTitle) {
+      return;
+    }
+    const newColumnId = boardColumns.find(
+      (column) => column.title === selectedColumnTitle
+    )._id;
+    const body = {
+      newColumnId,
+    };
+    // console.log(body);
+    dispatch(moveCardByIdThunk({ cardId, body }));
+    toggleCustomOptionList();
+  };
   return (
     <Container priority={priority}>
       <CardTitle>{title}</CardTitle>
+      <p>Order: {order}</p>
       <CardTextContainer>
         <CardText>{text}</CardText>
       </CardTextContainer>
@@ -56,27 +97,38 @@ export const Card = ({ card }) => {
               <use href={sprite + '#icon-pencil'}></use>
             </ButtonIcon>
           </Button>
-          {/* {columnsAmount > 1 && ( */}
+          {columnsAmount > 1 && (
+            <Button
+              ref={moveCardBtnRef}
+              type="button"
+              onClick={openCustomOptionList}
+            >
+              <ButtonIcon width="16px" height="16px">
+                <use href={sprite + '#icon-arrow-circle-broken-right'}></use>
+              </ButtonIcon>
+            </Button>
+          )}
           <Button
-            // ref={moveColumnBtnRef}
             type="button"
-            // onClick={openCustomOptionList}
-          >
-            <ButtonIcon width="16px" height="16px">
-              <use href={sprite + '#icon-arrow-circle-broken-right'}></use>
-            </ButtonIcon>
-          </Button>
-          {/* )} */}
-          <Button
-            type="button"
-            // onClick={() => {
-            //   handleDeleteColumn();
-            // }}
+            onClick={() => {
+              handleDeleteCard();
+            }}
           >
             <ButtonIcon width="16px" height="16px">
               <use href={sprite + '#icon-trash'}></use>
             </ButtonIcon>
           </Button>
+          {isCustomOptionListOpen && (
+            <CustomSelect
+              title="Move to column"
+              options={columnOptionsList}
+              selectedOption={columnTitle}
+              isOpen={isCustomOptionListOpen}
+              onClose={toggleCustomOptionList}
+              handleOptionClick={handleMoveCard}
+              openBtnRef={moveCardBtnRef}
+            />
+          )}
         </ButtonsWrapper>
       </CardInfo>
       {isModalOpen && <UpdateCardModal onClose={closeModal} card={card} />}
