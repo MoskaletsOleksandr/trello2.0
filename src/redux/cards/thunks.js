@@ -1,5 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { createNewCard, getBoardCards } from '../../api/cardsApi/cardsApi';
+import {
+  createNewCard,
+  getBoardCards,
+  updateCardById,
+} from '../../api/cardsApi/cardsApi';
 
 export const getBoardCardsThunk = createAsyncThunk(
   'cards/getBoardCards',
@@ -25,17 +29,17 @@ export const createNewCardThunk = createAsyncThunk(
   }
 );
 
-// export const updateColumnByIdThunk = createAsyncThunk(
-//   'columns/updateColumnById',
-//   async ({ columnId, body }, { rejectWithValue }) => {
-//     try {
-//       const data = await updateColumnById(columnId, body);
-//       return data;
-//     } catch (error) {
-//       return rejectWithValue(error.message);
-//     }
-//   }
-// );
+export const updateCardByIdThunk = createAsyncThunk(
+  'cards/updateCardById',
+  async ({ cardId, body }, { rejectWithValue }) => {
+    try {
+      const data = await updateCardById(cardId, body);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
 
 // export const moveColumnByIdThunk = createAsyncThunk(
 //   'columns/moveColumnById',

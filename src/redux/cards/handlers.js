@@ -22,17 +22,16 @@ export const handleCreateNewCardFulfilled = (state, { payload }) => {
   state.error = null;
 };
 
-// export const handleUpdateColumnByIdFulfilled = (state, { payload }) => {
-//   const columnIndex = state.columns.findIndex(
-//     (column) => column._id === payload._id
-//   );
-//   if (columnIndex !== -1) {
-//     state.columns[columnIndex].title = payload.title;
-//   }
+export const handleUpdateCardByIdFulfilled = (state, { payload }) => {
+  const column = state.cards.find((col) => col.columnId === payload.columnId);
+  const cardIndex = column.cards.findIndex((card) => card._id === payload._id);
 
-//   state.isLoading = false;
-//   state.error = null;
-// };
+  if (cardIndex !== -1) {
+    column.cards.splice(cardIndex, 1, payload);
+  }
+  state.isLoading = false;
+  state.error = null;
+};
 
 // export const handleMoveColumnByIdFulfilled = (state, { payload }) => {
 //   state.columns = payload;

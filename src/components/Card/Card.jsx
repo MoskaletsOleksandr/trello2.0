@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   CardInfo,
   InfoList,
@@ -16,9 +16,20 @@ import {
   ButtonIcon,
 } from './Card.styled';
 import sprite from '../../assets/sprite.svg';
+import { UpdateCardModal } from '../modals/UpdateCardModal';
 
 export const Card = ({ card }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const { _id, title, text, priority, deadline, order } = card;
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <Container priority={priority}>
       <CardTitle>{title}</CardTitle>
@@ -40,10 +51,7 @@ export const Card = ({ card }) => {
           </InfoItem>
         </InfoList>
         <ButtonsWrapper>
-          <Button
-            type="button"
-            // onClick={openModal}
-          >
+          <Button type="button" onClick={openModal}>
             <ButtonIcon width="16px" height="16px">
               <use href={sprite + '#icon-pencil'}></use>
             </ButtonIcon>
@@ -71,6 +79,7 @@ export const Card = ({ card }) => {
           </Button>
         </ButtonsWrapper>
       </CardInfo>
+      {isModalOpen && <UpdateCardModal onClose={closeModal} card={card} />}
     </Container>
   );
 };

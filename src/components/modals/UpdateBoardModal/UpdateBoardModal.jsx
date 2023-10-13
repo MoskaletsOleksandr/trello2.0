@@ -14,7 +14,6 @@ import { Button } from '../../common/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateBoardByIdThunk } from '../../../redux/boards/thunks';
 import { selectCurrentBoard } from '../../../redux/boards/selectors';
-import { icons } from '../../../data/constants';
 
 export const UpdateBoardModal = ({ boardId, onClose }) => {
   const currentBoard = useSelector(selectCurrentBoard);
@@ -53,7 +52,6 @@ export const UpdateBoardModal = ({ boardId, onClose }) => {
           <BoardModalTitle>Icons</BoardModalTitle>
           <IconRadioBtns
             name={'selectedIcon'}
-            icons={icons}
             selectedItem={currentBoard?.icon}
           />
           <StyledErrorMessage name="selectedIcon" />

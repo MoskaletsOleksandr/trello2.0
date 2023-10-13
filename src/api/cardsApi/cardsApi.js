@@ -10,10 +10,10 @@ export const createNewCard = async (body) => {
   return data;
 };
 
-// export const updateColumnById = async (columnId, body) => {
-//   const { data } = await columnsInstance.patch(`/update/${columnId}`, body);
-//   return data;
-// };
+export const updateCardById = async (cardId, body) => {
+  const { data } = await cardsInstance.put(`/update/${cardId}`, body);
+  return data;
+};
 
 // export const moveColumnById = async (columnId, body) => {
 //   const { data } = await columnsInstance.patch(`/move/${columnId}`, body);

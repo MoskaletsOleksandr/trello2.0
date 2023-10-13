@@ -41,6 +41,10 @@ export const CardText = styled.p`
   font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
 `;
 
 export const CardInfo = styled.div`
@@ -86,6 +90,7 @@ export const ItemInfo = styled.p`
   font-size: 10px;
   font-weight: 400;
   color: var(--card-primary-text-color);
+  text-transform: capitalize;
 `;
 
 export const ButtonsWrapper = styled.div`

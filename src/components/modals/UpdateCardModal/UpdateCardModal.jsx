@@ -12,10 +12,14 @@ import {
 import { Button } from '../../common/Button';
 import { useDispatch } from 'react-redux';
 import { PriorityRadioBtns } from '../../common/ModalComponents/PriorityRadioBtns';
-import { createNewCardThunk } from '../../../redux/cards/thunks';
+import {
+  createNewCardThunk,
+  updateCardByIdThunk,
+} from '../../../redux/cards/thunks';
 
-export const CreateCardModal = ({ onClose, columnId, boardId }) => {
+export const UpdateCardModal = ({ onClose, card }) => {
   const dispatch = useDispatch();
+  const { _id: cardId } = card;
 
   const handleSubmit = (values) => {
     const body = {
@@ -23,21 +27,19 @@ export const CreateCardModal = ({ onClose, columnId, boardId }) => {
       text: values.text,
       priority: values.selectedPriority,
       deadline: values.selectedDate,
-      columnId,
-      boardId,
     };
-    dispatch(createNewCardThunk(body));
+    dispatch(updateCardByIdThunk({ cardId, body }));
     onClose();
   };
 
   return (
-    <Modal onClose={onClose} title={'Add card'}>
+    <Modal onClose={onClose} title={'Edit card'}>
       <Formik
         initialValues={{
-          title: '',
-          text: '',
-          selectedPriority: '',
-          selectedDate: '',
+          title: card.title,
+          text: card.text,
+          selectedPriority: card.priority,
+          selectedDate: card.deadline,
         }}
         validationSchema={Yup.object({
           title: Yup.string()
@@ -58,12 +60,15 @@ export const CreateCardModal = ({ onClose, columnId, boardId }) => {
           <StyledTextarea as="textarea" name="text" placeholder="Description" />
           <StyledErrorMessage name="text" />
           <CardModalTitle>Priority color</CardModalTitle>
-          <PriorityRadioBtns name={'selectedPriority'} />
+          <PriorityRadioBtns
+            name={'selectedPriority'}
+            selectedItem={card?.priority}
+          />
           <StyledErrorMessage name="selectedPriority" />
           <CardModalTitle>Deadline</CardModalTitle>
           <Field type="date" name="selectedDate" />
           <StyledErrorMessage name="selectedDate" />
-          <Button type="submit">Add</Button>
+          <Button type="submit">Edit</Button>
         </StyledForm>
       </Formik>
     </Modal>
