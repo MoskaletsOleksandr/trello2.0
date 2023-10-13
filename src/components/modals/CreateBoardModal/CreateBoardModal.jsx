@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 import React from 'react';
 import { Modal } from '../../common/Modal';
 import {
-  RadioBtnsTitle,
+  BoardModalTitle,
   StyledErrorMessage,
   StyledField,
   StyledForm,
@@ -13,7 +13,6 @@ import { BgRadioBtns } from '../../common/ModalComponents/BgRadioBtns';
 import { Button } from '../../common/Button';
 import { useDispatch } from 'react-redux';
 import { createNewBoardThunk } from '../../../redux/boards/thunks';
-import { icons } from '../../../data/constants';
 
 export const CreateBoardModal = ({ onClose }) => {
   const dispatch = useDispatch();
@@ -48,10 +47,10 @@ export const CreateBoardModal = ({ onClose }) => {
         <StyledForm>
           <StyledField type="text" name="title" placeholder="Title" />
           <StyledErrorMessage name="title" />
-          <RadioBtnsTitle>Icons</RadioBtnsTitle>
-          <IconRadioBtns name={'selectedIcon'} icons={icons} />
+          <BoardModalTitle>Icons</BoardModalTitle>
+          <IconRadioBtns name={'selectedIcon'} />
           <StyledErrorMessage name="selectedIcon" />
-          <RadioBtnsTitle>Backgrounds</RadioBtnsTitle>
+          <BoardModalTitle>Backgrounds</BoardModalTitle>
           <BgRadioBtns name={'selectedBg'} />
           <StyledErrorMessage name="selectedBg" />
           <Button type="submit">Create</Button>

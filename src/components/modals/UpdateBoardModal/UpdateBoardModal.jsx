@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 import React from 'react';
 import { Modal } from '../../common/Modal';
 import {
-  RadioBtnsTitle,
+  BoardModalTitle,
   StyledErrorMessage,
   StyledField,
   StyledForm,
@@ -50,14 +50,14 @@ export const UpdateBoardModal = ({ boardId, onClose }) => {
         <StyledForm>
           <StyledField type="text" name="title" placeholder="Title" />
           <StyledErrorMessage name="title" />
-          <RadioBtnsTitle>Icons</RadioBtnsTitle>
+          <BoardModalTitle>Icons</BoardModalTitle>
           <IconRadioBtns
             name={'selectedIcon'}
             icons={icons}
             selectedItem={currentBoard?.icon}
           />
           <StyledErrorMessage name="selectedIcon" />
-          <RadioBtnsTitle>Backgrounds</RadioBtnsTitle>
+          <BoardModalTitle>Backgrounds</BoardModalTitle>
           <BgRadioBtns
             name={'selectedBg'}
             selectedItem={currentBoard?.background?._id}

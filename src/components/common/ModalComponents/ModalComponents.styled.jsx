@@ -40,11 +40,28 @@ export const StyledField = styled(Field)`
   }
 `;
 
-export const RadioBtnsTitle = styled.span`
+export const StyledTextarea = styled(StyledField)`
+  resize: none;
+  height: 154px;
+  margin-top: 14px;
+`;
+
+export const BoardModalTitle = styled.span`
   font-size: 14px;
   font-weight: 500;
   margin-top: 24px;
   margin-bottom: 14px;
+`;
+
+export const CardModalTitle = styled.span`
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 24px;
+  margin-bottom: 4px;
+
+  &:last-of-type {
+    margin-top: 14px;
+  }
 `;
 
 export const StyledErrorMessage = styled(ErrorMessage)``;

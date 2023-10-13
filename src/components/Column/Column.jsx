@@ -18,6 +18,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { CustomSelect } from '../CustomSelect';
 import { Card } from '../Card';
 import { selectBoardCards } from '../../redux/cards/selectors';
+import { AddCardButton } from '../AddCardButton';
 
 export const Column = ({ column, columns }) => {
   const dispatch = useDispatch();
@@ -110,10 +111,11 @@ export const Column = ({ column, columns }) => {
         </ButtonsWrapper>
       </ColumnTitleWrapper>
       <CardsContainer>
-        {columnCards.cards.map((card) => (
+        {columnCards?.cards.map((card) => (
           <Card key={card._id} card={card} />
         ))}
       </CardsContainer>
+      <AddCardButton columnId={columnId} />
       {isModalOpen && (
         <UpdateColumnModal
           columnId={columnId}

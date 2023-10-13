@@ -1,6 +1,9 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 334px;
   height: 154px;
   border-radius: 8px;
@@ -18,6 +21,7 @@ export const Container = styled.div`
 
 export const CardTitle = styled.h4`
   font-size: 14px;
+  font-weight: 600;
   color: var(--card-title-color);
   text-transform: capitalize;
 `;
@@ -41,8 +45,7 @@ export const CardText = styled.p`
 
 export const CardInfo = styled.div`
   display: flex;
-  /* padding-top: 14px;
-  margin-top: 14px; */
+  padding-top: 14px;
   align-items: flex-end;
   justify-content: space-between;
   border-top: 1px solid var(--card-border-color);
@@ -50,6 +53,7 @@ export const CardInfo = styled.div`
 
 export const InfoList = styled.ul`
   display: flex;
+  gap: 14px;
 `;
 
 export const InfoItem = styled.li`
@@ -59,7 +63,8 @@ export const InfoItem = styled.li`
 `;
 
 export const ItemTitle = styled.p`
-  font-size: 12px;
+  font-size: 8px;
+  font-weight: 400;
   color: var(--card-secondary-text-color);
 `;
 
@@ -72,12 +77,42 @@ export const PriorityWrapper = styled.div`
 export const PriorityCircle = styled.div`
   width: 12px;
   height: 12px;
-  border-radius: 50px;
+  border-radius: 50%;
   background-color: ${({ priority }) =>
     `var(--filter-${priority}-priority-color)`};
 `;
 
 export const ItemInfo = styled.p`
-  font-size: 12px;
+  font-size: 10px;
+  font-weight: 400;
   color: var(--card-primary-text-color);
+`;
+
+export const ButtonsWrapper = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+`;
+
+export const Button = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  border: none;
+`;
+
+export const ButtonIcon = styled.svg`
+  stroke: var(--card-icon-color);
+  fill: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    stroke: var(--progress-popup-text-color-hover);
+  }
 `;
