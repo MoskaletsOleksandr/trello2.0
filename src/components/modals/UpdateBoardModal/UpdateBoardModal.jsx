@@ -35,7 +35,7 @@ export const UpdateBoardModal = ({ boardId, onClose }) => {
         initialValues={{
           title: currentBoard?.title,
           selectedIcon: currentBoard?.icon,
-          selectedBg: currentBoard?.background?._id,
+          selectedBg: currentBoard?.background?._id || 'null',
         }}
         validationSchema={Yup.object({
           title: Yup.string()
@@ -58,7 +58,7 @@ export const UpdateBoardModal = ({ boardId, onClose }) => {
           <BoardModalTitle>Backgrounds</BoardModalTitle>
           <BgRadioBtns
             name={'selectedBg'}
-            selectedItem={currentBoard?.background?._id}
+            selectedItem={currentBoard?.background?._id || 'null'}
           />
           <StyledErrorMessage name="selectedBg" />
           <Button type="submit">Edit</Button>
