@@ -18,21 +18,41 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { CustomSelect } from '../CustomSelect';
 import { Card } from '../Card';
-import { selectBoardCards } from '../../redux/cards/selectors';
+import { selectBoardCards, selectPriority } from '../../redux/cards/selectors';
 import { AddCardButton } from '../AddCardButton';
+import { useEffect } from 'react';
+import { changePriority } from '../../redux/cards/slice';
 
 export const Column = ({ column, columns }) => {
   const dispatch = useDispatch();
   const { title, _id: columnId, order } = column;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isCustomOptionListOpen, setCustomOptionListOpen] = useState(false);
+  const [filteredColumnCards, setFilteredColumnCards] = useState([]);
   const boardCards = useSelector(selectBoardCards);
   const columnsAmount = columns.length;
   const moveColumnBtnRef = useRef(null);
+  const priority = useSelector(selectPriority);
   const columnOptionsList = columns.map((column) => column.order);
   const columnCards = boardCards.find(
     (columnCards) => columnCards.columnId === columnId
   );
+
+  useEffect(() => {
+    setFilteredColumnCards((prevFilteredCards) =>
+      columnCards?.cards.filter((card) => {
+        if (priority === 'all priorities') {
+          return true;
+        } else {
+          return card.priority === priority;
+        }
+      })
+    );
+  }, [priority]);
+
+  useEffect(() => {
+    dispatch(changePriority('all priorities'));
+  }, [columnCards]);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -112,9 +132,10 @@ export const Column = ({ column, columns }) => {
       </ColumnTitleWrapper>
       <CardsContainer>
         <ScrollContent>
-          {columnCards?.cards.map((card) => (
-            <Card key={card._id} card={card} columnTitle={title} />
-          ))}
+          {filteredColumnCards &&
+            filteredColumnCards.map((card) => (
+              <Card key={card._id} card={card} columnTitle={title} />
+            ))}
         </ScrollContent>
       </CardsContainer>
       <AddCardButton columnId={columnId} />

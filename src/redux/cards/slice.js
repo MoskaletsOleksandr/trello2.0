@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
+  handleChangePriority,
   handleCreateNewCardFulfilled,
   handleDeleteCardByIdFulfilled,
   handleGetBoardCardsFulfilled,
@@ -22,6 +23,7 @@ const cardsSlice = createSlice({
   initialState,
   reducers: {
     resetCardsState: () => initialState,
+    changePriority: handleChangePriority,
   },
   extraReducers: (builder) => {
     builder
@@ -39,4 +41,4 @@ const cardsSlice = createSlice({
 });
 
 export const cardsReducer = cardsSlice.reducer;
-export const { resetCardsState } = cardsSlice.actions;
+export const { resetCardsState, changePriority } = cardsSlice.actions;

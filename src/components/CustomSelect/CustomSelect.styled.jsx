@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 
 export const Container = styled.div`
   position: absolute;
-  /* display: ${({ isOpen }) => (isOpen ? 'block' : 'none')}; */
   top: 20px;
   left: -135px;
   margin: 0;

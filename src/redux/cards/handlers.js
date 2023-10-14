@@ -72,3 +72,9 @@ export const handleThunkRejected = (state, { payload }) => {
   state.error = payload;
   state.isLoading = false;
 };
+
+export const handleChangePriority = (state, { payload }) => {
+  state.priority = payload;
+  state.isLoading = false;
+  state.error = null;
+};

@@ -40,6 +40,7 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -60,6 +61,10 @@ export const Title = styled.h2`
   font-weight: 500;
   color: var(--header-dashboard-title-color);
   text-transform: capitalize;
+`;
+
+export const FilterBtnWrapper = styled.div`
+  position: relative;
 `;
 
 export const FilterBtn = styled.button`
