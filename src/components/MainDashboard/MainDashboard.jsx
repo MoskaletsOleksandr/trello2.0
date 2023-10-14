@@ -6,6 +6,7 @@ import {
 } from '../../redux/boards/selectors';
 import {
   BoardContainer,
+  BoardSection,
   Container,
   FilterBtn,
   FilterIcon,
@@ -33,12 +34,14 @@ export const MainDashDoard = () => {
           Filters
         </FilterBtn>
       </Header>
-      <BoardContainer>
-        {boardColumns.map((column) => (
-          <Column key={column._id} column={column} columns={boardColumns} />
-        ))}
-        <AddColumnButton />
-      </BoardContainer>
+      <BoardSection>
+        <BoardContainer>
+          {boardColumns.map((column) => (
+            <Column key={column._id} column={column} columns={boardColumns} />
+          ))}
+          <AddColumnButton />
+        </BoardContainer>
+      </BoardSection>
     </Container>
   );
 };

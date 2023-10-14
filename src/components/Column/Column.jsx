@@ -7,6 +7,7 @@ import {
   ColumnTitle,
   ColumnTitleWrapper,
   Container,
+  ScrollContent,
 } from './Column.styled';
 import sprite from '../../assets/sprite.svg';
 import { UpdateColumnModal } from '../modals/UpdateColumnModal';
@@ -110,9 +111,11 @@ export const Column = ({ column, columns }) => {
         </ButtonsWrapper>
       </ColumnTitleWrapper>
       <CardsContainer>
-        {columnCards?.cards.map((card) => (
-          <Card key={card._id} card={card} columnTitle={title} />
-        ))}
+        <ScrollContent>
+          {columnCards?.cards.map((card) => (
+            <Card key={card._id} card={card} columnTitle={title} />
+          ))}
+        </ScrollContent>
       </CardsContainer>
       <AddCardButton columnId={columnId} />
       {isModalOpen && (

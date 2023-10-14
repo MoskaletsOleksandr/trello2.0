@@ -92,11 +92,33 @@ export const FilterIcon = styled.svg`
   transition: transform 300ms var(--timing-function);
 `;
 
-export const BoardContainer = styled.div`
+export const BoardSection = styled.section`
+  display: flex;
+  flex-direction: row;
   width: 100%;
-  height: 100%;
+  padding: 36px 24px;
+  overflow-x: auto;
+
+  ::-webkit-scrollbar {
+    height: 12px;
+    width: 100w;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--horizontal-scroll-slider-bg-color);
+    border-radius: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: var(--horizontal-scroll-bar-bg-color);
+    border-radius: 12px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+`;
+
+export const BoardContainer = styled.div`
   display: flex;
   align-items: start;
-  gap: 34px;
-  padding: 36px 24px;
+  gap: 18px;
 `;
