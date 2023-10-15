@@ -29,6 +29,7 @@ export const cardsInstance = axios.create({
 
 authInstance.interceptors.request.use((config) => {
   config.headers.Authorization = `Bearer ${localStorage.getItem('token')}`;
+  config.headers['X-Device-Id'] = localStorage.getItem('deviceId');
   return config;
 });
 
@@ -44,6 +45,11 @@ columnsInstance.interceptors.request.use((config) => {
 
 cardsInstance.interceptors.request.use((config) => {
   config.headers.Authorization = `Bearer ${localStorage.getItem('token')}`;
+  return config;
+});
+
+refreshInstance.interceptors.request.use((config) => {
+  config.headers['X-Device-Id'] = localStorage.getItem('deviceId');
   return config;
 });
 

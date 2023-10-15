@@ -2,18 +2,21 @@ import { authInstance, refreshInstance } from '../axiosConfig';
 
 export const register = async (body) => {
   const { data } = await authInstance.post('/register', body);
+  localStorage.setItem('deviceId', data.deviceId);
   localStorage.setItem('token', data.accessToken);
   return data;
 };
 
 export const login = async (body) => {
   const { data } = await authInstance.post('/login', body);
+  localStorage.setItem('deviceId', data.deviceId);
   localStorage.setItem('token', data.accessToken);
   return data;
 };
 
 export const logout = async () => {
   await authInstance.post('/logout');
+  localStorage.removeItem('deviceId');
   localStorage.removeItem('token');
 };
 

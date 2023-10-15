@@ -132,7 +132,6 @@ export const Column = ({ column, columns }) => {
       </ColumnTitleWrapper>
       <CardsContainer>
         <ScrollContent>
-          {/* {columnCards?.cards.map((card) => ( */}
           {filteredColumnCards &&
             filteredColumnCards.map((card) => (
               <Card key={card._id} card={card} columnTitle={title} />
