@@ -10,7 +10,6 @@ import {
   StyledLink,
 } from '../common/FormComponents/FormComponents.styled';
 import { useDispatch } from 'react-redux';
-import { loginThunk } from '../../redux/auth/thunks';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -20,8 +19,12 @@ export const LoginForm = () => {
       email: values.email,
       password: values.password,
     };
-
-    dispatch(loginThunk(body));
+    const payload = { type: 'login', data: body };
+    console.log(payload);
+    dispatch({
+      type: 'socket/send',
+      payload,
+    });
   };
 
   return (

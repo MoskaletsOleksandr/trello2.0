@@ -14,10 +14,18 @@ const CardsPage = lazy(() => import('./pages/CardsPage/CardsPage'));
 
 export const App = () => {
   const dispatch = useDispatch();
+  // useEffect(() => {
+  //   if (localStorage.getItem('token')) {
+  //     dispatch(refreshUserThunk());
+  //   }
+  // }, []);
+
   useEffect(() => {
-    if (localStorage.getItem('token')) {
-      dispatch(refreshUserThunk());
-    }
+    dispatch({ type: 'socket/connect' });
+
+    return () => {
+      dispatch({ type: 'socket/disconnect' });
+    };
   }, []);
 
   return (
