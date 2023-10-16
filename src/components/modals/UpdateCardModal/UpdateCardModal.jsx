@@ -17,7 +17,7 @@ import { updateCardByIdThunk } from '../../../redux/cards/thunks';
 
 export const UpdateCardModal = ({ onClose, card }) => {
   const dispatch = useDispatch();
-  const { _id: cardId, deadline } = card;
+  const { _id: cardId } = card;
 
   const handleSubmit = (values) => {
     const body = {

@@ -15,6 +15,7 @@ export const CustomSelect = ({
   onClose,
   handleOptionClick,
   openBtnRef,
+  forCard,
 }) => {
   const customOptionListRef = useRef(null);
 
@@ -42,7 +43,7 @@ export const CustomSelect = ({
   }, [isOpen]);
 
   return (
-    <Container ref={customOptionListRef}>
+    <Container ref={customOptionListRef} forCard={forCard}>
       <Title>{title}</Title>
       <CustomOptionList>
         {options.map((option) => {
