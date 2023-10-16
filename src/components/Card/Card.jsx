@@ -24,6 +24,7 @@ import {
 } from '../../redux/cards/thunks';
 import { CustomSelect } from '../CustomSelect';
 import { selectBoardColumns } from '../../redux/columns/selectors';
+import { format } from 'date-fns';
 
 export const Card = ({ card, columnTitle }) => {
   const moveCardBtnRef = useRef(null);
@@ -32,6 +33,7 @@ export const Card = ({ card, columnTitle }) => {
   const dispatch = useDispatch();
   const boardColumns = useSelector(selectBoardColumns);
   const { _id: cardId, title, text, priority, deadline, order } = card;
+  const formatedDeadline = format(new Date(deadline), 'dd-MM-yyyy');
 
   const columnOptionsList = boardColumns.map((column) => column.title);
   const columnsAmount = columnOptionsList.length;
@@ -87,7 +89,7 @@ export const Card = ({ card, columnTitle }) => {
           </InfoItem>
           <InfoItem>
             <ItemTitle>Deadline:</ItemTitle>
-            <ItemInfo>{deadline}</ItemInfo>
+            <ItemInfo>{formatedDeadline}</ItemInfo>
           </InfoItem>
         </InfoList>
         <ButtonsWrapper>

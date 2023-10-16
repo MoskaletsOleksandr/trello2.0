@@ -4,6 +4,7 @@ import React from 'react';
 import { Modal } from '../../common/Modal';
 import {
   CardModalTitle,
+  StyledDataPicker,
   StyledErrorMessage,
   StyledField,
   StyledForm,
@@ -13,9 +14,11 @@ import { Button } from '../../common/Button';
 import { useDispatch } from 'react-redux';
 import { PriorityRadioBtns } from '../../common/ModalComponents/PriorityRadioBtns';
 import { createNewCardThunk } from '../../../redux/cards/thunks';
+import { format } from 'date-fns';
 
 export const CreateCardModal = ({ onClose, columnId, boardId }) => {
   const dispatch = useDispatch();
+  const today = format(new Date(), 'yyyy-MM-dd');
 
   const handleSubmit = (values) => {
     const body = {
@@ -37,7 +40,7 @@ export const CreateCardModal = ({ onClose, columnId, boardId }) => {
           title: '',
           text: '',
           selectedPriority: '',
-          selectedDate: '',
+          selectedDate: today,
         }}
         validationSchema={Yup.object({
           title: Yup.string()
@@ -61,7 +64,7 @@ export const CreateCardModal = ({ onClose, columnId, boardId }) => {
           <PriorityRadioBtns name={'selectedPriority'} />
           <StyledErrorMessage name="selectedPriority" />
           <CardModalTitle>Deadline</CardModalTitle>
-          <Field type="date" name="selectedDate" />
+          <StyledDataPicker type="date" name="selectedDate" />
           <StyledErrorMessage name="selectedDate" />
           <Button type="submit">Add</Button>
         </StyledForm>

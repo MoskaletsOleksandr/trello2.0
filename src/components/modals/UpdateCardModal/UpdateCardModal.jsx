@@ -4,6 +4,7 @@ import React from 'react';
 import { Modal } from '../../common/Modal';
 import {
   CardModalTitle,
+  StyledDataPicker,
   StyledErrorMessage,
   StyledField,
   StyledForm,
@@ -12,14 +13,11 @@ import {
 import { Button } from '../../common/Button';
 import { useDispatch } from 'react-redux';
 import { PriorityRadioBtns } from '../../common/ModalComponents/PriorityRadioBtns';
-import {
-  createNewCardThunk,
-  updateCardByIdThunk,
-} from '../../../redux/cards/thunks';
+import { updateCardByIdThunk } from '../../../redux/cards/thunks';
 
 export const UpdateCardModal = ({ onClose, card }) => {
   const dispatch = useDispatch();
-  const { _id: cardId } = card;
+  const { _id: cardId, deadline } = card;
 
   const handleSubmit = (values) => {
     const body = {
@@ -66,7 +64,7 @@ export const UpdateCardModal = ({ onClose, card }) => {
           />
           <StyledErrorMessage name="selectedPriority" />
           <CardModalTitle>Deadline</CardModalTitle>
-          <Field type="date" name="selectedDate" />
+          <StyledDataPicker type="date" name="selectedDate" />
           <StyledErrorMessage name="selectedDate" />
           <Button type="submit">Edit</Button>
         </StyledForm>

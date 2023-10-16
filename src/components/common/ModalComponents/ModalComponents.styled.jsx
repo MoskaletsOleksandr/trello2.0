@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { Field, Form, ErrorMessage } from 'formik';
+import icon from '../../../assets/icon-calendar.png';
 
 export const StyledForm = styled(Form)`
   display: flex;
@@ -44,6 +45,22 @@ export const StyledTextarea = styled(StyledField)`
   resize: none;
   height: 154px;
   margin-top: 14px;
+`;
+
+export const StyledDataPicker = styled(StyledField)`
+  width: 125px;
+  padding: 6px 10px;
+  font-size: 14px;
+  cursor: text;
+  background: url(${icon});
+  background-size: 32px;
+  background-repeat: no-repeat;
+  background-position: 95%;
+
+  &::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    cursor: pointer;
+  }
 `;
 
 export const BoardModalTitle = styled.span`
