@@ -22,8 +22,16 @@ import { selectBoardCards, selectPriority } from '../../redux/cards/selectors';
 import { AddCardButton } from '../AddCardButton';
 import { useEffect } from 'react';
 import { changePriority } from '../../redux/cards/slice';
+import { moveCardByIdThunk } from '../../redux/cards/thunks';
 
-export const Column = ({ column, columns }) => {
+export const Column = ({
+  column,
+  columns,
+  currentCard,
+  setCurrentCard,
+  currentColumn,
+  setCurrentColumn,
+}) => {
   const dispatch = useDispatch();
   const { title, _id: columnId, order } = column;
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -86,6 +94,36 @@ export const Column = ({ column, columns }) => {
     toggleCustomOptionList();
   };
 
+  const dragStartHandler = (e, column, card) => {
+    console.log('drag column', column);
+    console.log('drag card', card);
+    setCurrentColumn(column);
+    setCurrentCard(card);
+  };
+
+  const dragEndHandler = (e) => {
+    e.stopPropagation();
+    e.target.style.boxShadow = 'none';
+  };
+
+  const dragOverHandler = (e) => {
+    e.preventDefault();
+    e.target.style.boxShadow = '0 4px 3px grey';
+  };
+
+  const dropHandler = (e, column, card) => {
+    e.preventDefault();
+    const cardId = currentCard._id;
+    // console.log('drop column', column);
+    // console.log('drop card', card);
+    const body = {
+      newColumnId: card.columnId,
+    };
+    // console.log('currentCard: ', currentCard);
+    // console.log('currentColumn: ', currentColumn);
+    dispatch(moveCardByIdThunk({ cardId, body }));
+  };
+
   return (
     <Container>
       <ColumnTitleWrapper>
@@ -134,7 +172,27 @@ export const Column = ({ column, columns }) => {
         <ScrollContent>
           {filteredColumnCards &&
             filteredColumnCards.map((card) => (
-              <Card key={card._id} card={card} columnTitle={title} />
+              <div
+                key={card._id}
+                draggable={true}
+                onDragStart={(e) => {
+                  dragStartHandler(e, column, card);
+                }}
+                onDragLeave={(e) => {
+                  dragEndHandler(e);
+                }}
+                onDragEnd={(e) => {
+                  dragEndHandler(e);
+                }}
+                onDragOver={(e) => {
+                  dragOverHandler(e);
+                }}
+                onDrop={(e) => {
+                  dropHandler(e, column, card);
+                }}
+              >
+                <Card card={card} columnTitle={title} />
+              </div>
             ))}
         </ScrollContent>
       </CardsContainer>

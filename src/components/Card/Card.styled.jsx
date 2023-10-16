@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
+  cursor: grab;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

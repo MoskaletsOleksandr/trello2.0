@@ -22,6 +22,7 @@ import { selectPriority } from '../../redux/cards/selectors';
 import { CustomSelect } from '../CustomSelect';
 import { priorities } from '../../data/constants';
 import { changePriority } from '../../redux/cards/slice';
+// import { Board } from '../Board';
 
 export const MainDashDoard = () => {
   const boardTitle = useSelector(selectBoardTitle);
@@ -29,6 +30,8 @@ export const MainDashDoard = () => {
   const boardColumns = useSelector(selectBoardColumns);
   const priority = useSelector(selectPriority);
   const [isCustomOptionListOpen, setCustomOptionListOpen] = useState(false);
+  const [currentCard, setCurrentCard] = useState(null);
+  const [currentColumn, setCurrentColumn] = useState(null);
   const filterBtnRef = useRef(null);
   const dispatch = useDispatch();
 
@@ -74,8 +77,17 @@ export const MainDashDoard = () => {
       </Header>
       <BoardSection>
         <BoardContainer>
+          {/* <Board /> */}
           {boardColumns.map((column) => (
-            <Column key={column._id} column={column} columns={boardColumns} />
+            <Column
+              key={column._id}
+              column={column}
+              columns={boardColumns}
+              currentCard={currentCard}
+              setCurrentCard={setCurrentCard}
+              currentColumn={currentColumn}
+              setCurrentColumn={setCurrentColumn}
+            />
           ))}
           <AddColumnButton />
         </BoardContainer>
