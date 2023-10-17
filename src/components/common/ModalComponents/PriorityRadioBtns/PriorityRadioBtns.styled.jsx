@@ -12,7 +12,9 @@ export const Item = styled.li`
   height: 18px;
 `;
 
-export const Label = styled.label``;
+export const Label = styled.label`
+  cursor: pointer;
+`;
 
 export const StyledField = styled(Field)`
   display: none;

@@ -72,17 +72,17 @@ export const MainDashDoard = () => {
     e.preventDefault();
     if (currentCard && !isCardOverAnotherCard) {
       const newColumnId = column._id;
-      const oldColumnId = currentCard.columnId;
-      const newOrderInColumn = null;
+      // const oldColumnId = currentCard.columnId;
+      const newOrderInColumn = 'null';
 
-      if (newColumnId !== oldColumnId) {
-        const cardId = currentCard._id;
-        const body = {
-          newColumnId,
-          newOrderInColumn,
-        };
-        dispatch(moveCardByIdThunk({ cardId, body }));
-      }
+      // if (newColumnId !== oldColumnId) {
+      const cardId = currentCard._id;
+      const body = {
+        newColumnId,
+        newOrderInColumn,
+      };
+      dispatch(moveCardByIdThunk({ cardId, body }));
+      // }
     }
 
     const newOrder = column.order;

@@ -118,17 +118,17 @@ export const Column = ({
   const dropHandler = (e, column, card) => {
     if (currentCard) {
       const newColumnId = card.columnId;
-      const oldColumnId = currentCard.columnId;
+      // const oldColumnId = currentCard.columnId;
       const newOrderInColumn = card.order;
 
-      if (newColumnId !== oldColumnId) {
-        const cardId = currentCard._id;
-        const body = {
-          newColumnId,
-          newOrderInColumn,
-        };
-        dispatch(moveCardByIdThunk({ cardId, body }));
-      }
+      // if (newColumnId !== oldColumnId) {
+      const cardId = currentCard._id;
+      const body = {
+        newColumnId,
+        newOrderInColumn,
+      };
+      dispatch(moveCardByIdThunk({ cardId, body }));
+      // }
     }
     setCurrentColumn(null);
     setCurrentCard(null);

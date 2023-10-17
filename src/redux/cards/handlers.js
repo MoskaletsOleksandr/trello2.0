@@ -35,7 +35,8 @@ export const handleUpdateCardByIdFulfilled = (state, { payload }) => {
 
 export const handleMoveCardByIdFulfilled = (state, { payload }) => {
   const columnId1 = payload[0].columnId;
-  const columnId2 = payload[1].columnId;
+  const columnId2 = payload[1]?.columnId;
+  console.log('columnId2: ', columnId2);
 
   const index1 = state.cards.findIndex(
     (column) => column.columnId === columnId1
@@ -47,7 +48,9 @@ export const handleMoveCardByIdFulfilled = (state, { payload }) => {
   if (index1 !== -1 && index2 !== -1) {
     state.cards[index1] = { ...state.cards[index1], cards: payload[0].cards };
     state.cards[index2] = { ...state.cards[index2], cards: payload[1].cards };
-  } else {
+  } else if (index1 !== -1 && !columnId2) {
+    state.cards[index1] = { ...state.cards[index1], cards: payload[0].cards };
+  } else if (index1 !== -1 && index2 === -1) {
     state.cards[index1] = { ...state.cards[index1], cards: payload[0].cards };
     state.cards.push(payload[1]);
   }
