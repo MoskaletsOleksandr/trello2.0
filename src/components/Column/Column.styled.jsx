@@ -17,6 +17,7 @@ export const ColumnTitleWrapper = styled.div`
   padding: 0 18px;
   background-color: var(--card-bg-color);
   border-radius: 8px;
+  cursor: grab;
 `;
 
 export const ColumnTitle = styled.h3`
@@ -30,7 +31,8 @@ export const ButtonsWrapper = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 1px;
+  cursor: auto;
 `;
 
 export const Button = styled.button`
@@ -38,21 +40,25 @@ export const Button = styled.button`
   justify-content: center;
   align-items: center;
   padding: 0;
-  width: 16px;
-  height: 16px;
+  width: 24px;
+  height: 24px;
   background-color: transparent;
   border: none;
+  cursor: pointer;
+
+  &:hover svg {
+    stroke: var(--progress-popup-text-color-hover);
+  }
+
+  &:focus svg {
+    stroke: var(--progress-popup-text-color-hover);
+  }
 `;
 
 export const ButtonIcon = styled.svg`
   stroke: var(--card-icon-color);
   fill: none;
-  cursor: pointer;
-
-  &:hover,
-  &:focus {
-    stroke: var(--progress-popup-text-color-hover);
-  }
+  transition: stroke 300ms var(--timing-function);
 `;
 
 export const CardsContainer = styled.div`

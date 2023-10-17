@@ -95,8 +95,7 @@ export const Column = ({
   };
 
   const dragStartHandler = (e, column, card) => {
-    console.log('drag column', column);
-    console.log('drag card', card);
+    e.target.style.opacity = '0.5';
     setCurrentColumn(column);
     setCurrentCard(card);
   };
@@ -112,16 +111,23 @@ export const Column = ({
   };
 
   const dropHandler = (e, column, card) => {
-    e.preventDefault();
-    const cardId = currentCard._id;
-    // console.log('drop column', column);
-    // console.log('drop card', card);
-    const body = {
-      newColumnId: card.columnId,
-    };
-    // console.log('currentCard: ', currentCard);
-    // console.log('currentColumn: ', currentColumn);
-    dispatch(moveCardByIdThunk({ cardId, body }));
+    if (currentCard) {
+      const newColumnId = card.columnId;
+      const oldColumnId = currentCard.columnId;
+      // console.log('newColumnId: ', newColumnId);
+      // console.log('oldColumnId: ', oldColumnId);
+      // console.log('newColumnId !== oldColumnId: ', newColumnId !== oldColumnId);
+
+      if (newColumnId !== oldColumnId) {
+        const cardId = currentCard._id;
+        const body = {
+          newColumnId,
+        };
+        dispatch(moveCardByIdThunk({ cardId, body }));
+      }
+    }
+    setCurrentColumn(null);
+    setCurrentCard(null);
   };
 
   return (

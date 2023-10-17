@@ -32,7 +32,6 @@ export const Card = ({ card, columnTitle }) => {
   const [isCustomOptionListOpen, setCustomOptionListOpen] = useState(false);
   const dispatch = useDispatch();
   const boardColumns = useSelector(selectBoardColumns);
-  // const [currentCard, setCurrentCard] = useState(null);
   const { _id: cardId, title, text, priority, deadline } = card;
   const formatedDeadline = format(new Date(deadline), 'dd-MM-yyyy');
 

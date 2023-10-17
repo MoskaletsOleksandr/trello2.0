@@ -22,7 +22,8 @@ import { selectPriority } from '../../redux/cards/selectors';
 import { CustomSelect } from '../CustomSelect';
 import { priorities } from '../../data/constants';
 import { changePriority } from '../../redux/cards/slice';
-// import { Board } from '../Board';
+import { moveColumnByIdThunk } from '../../redux/columns/thunks';
+import { moveCardByIdThunk } from '../../redux/cards/thunks';
 
 export const MainDashDoard = () => {
   const boardTitle = useSelector(selectBoardTitle);
@@ -32,6 +33,7 @@ export const MainDashDoard = () => {
   const [isCustomOptionListOpen, setCustomOptionListOpen] = useState(false);
   const [currentCard, setCurrentCard] = useState(null);
   const [currentColumn, setCurrentColumn] = useState(null);
+  const [columnToMove, setColumnToMove] = useState(null);
   const filterBtnRef = useRef(null);
   const dispatch = useDispatch();
 
@@ -49,6 +51,49 @@ export const MainDashDoard = () => {
       dispatch(changePriority(selectedPriority));
       toggleCustomOptionList();
     }
+  };
+
+  const dragStartHandler = (e, column) => {
+    setColumnToMove(column);
+  };
+
+  const dragEndHandler = (e) => {
+    e.stopPropagation();
+    e.target.style.boxShadow = 'none';
+  };
+
+  const dragOverHandler = (e) => {
+    e.preventDefault();
+    e.target.style.boxShadow = '0 4px 3px grey';
+  };
+
+  const dropHandler = (e, column) => {
+    e.preventDefault();
+    if (currentCard) {
+      const newColumnId = column._id;
+      const oldColumnId = currentCard.columnId;
+
+      if (newColumnId !== oldColumnId) {
+        const cardId = currentCard._id;
+        const body = {
+          newColumnId,
+        };
+        dispatch(moveCardByIdThunk({ cardId, body }));
+      }
+    }
+
+    const newOrder = column.order;
+    const columnToMoveOrder = columnToMove.order;
+    if (newOrder !== columnToMoveOrder) {
+      const body = {
+        newOrder,
+      };
+      const columnId = columnToMove._id;
+      if (!currentCard) {
+        dispatch(moveColumnByIdThunk({ columnId, body }));
+      }
+    }
+    setCurrentCard(null);
   };
 
   return (
@@ -77,17 +122,35 @@ export const MainDashDoard = () => {
       </Header>
       <BoardSection>
         <BoardContainer>
-          {/* <Board /> */}
           {boardColumns.map((column) => (
-            <Column
+            <div
               key={column._id}
-              column={column}
-              columns={boardColumns}
-              currentCard={currentCard}
-              setCurrentCard={setCurrentCard}
-              currentColumn={currentColumn}
-              setCurrentColumn={setCurrentColumn}
-            />
+              draggable={true}
+              onDragStart={(e) => {
+                dragStartHandler(e, column);
+              }}
+              onDragLeave={(e) => {
+                dragEndHandler(e);
+              }}
+              onDragEnd={(e) => {
+                dragEndHandler(e);
+              }}
+              onDragOver={(e) => {
+                dragOverHandler(e);
+              }}
+              onDrop={(e) => {
+                dropHandler(e, column);
+              }}
+            >
+              <Column
+                column={column}
+                columns={boardColumns}
+                currentCard={currentCard}
+                setCurrentCard={setCurrentCard}
+                currentColumn={currentColumn}
+                setCurrentColumn={setCurrentColumn}
+              />
+            </div>
           ))}
           <AddColumnButton />
         </BoardContainer>
