@@ -1,4 +1,4 @@
-import{L as o,j as t}from"./index-d0694a1d.js";import{s as e}from"./sprite-33c0d800.js";import{L as r}from"./Logo-e22da54e.js";import{n}from"./emotion-styled.browser.esm-051bf8a0.js";const i=n.div`
+import{L as o,j as t}from"./index-8b1b127f.js";import{s as e}from"./sprite-33c0d800.js";import{L as r}from"./Logo-2c6ff066.js";import{n}from"./emotion-styled.browser.esm-abb5721d.js";const i=n.div`
   height: 100vh;
   width: 100%;
   display: flex;
