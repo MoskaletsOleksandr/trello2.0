@@ -31,6 +31,7 @@ export const Column = ({
   setCurrentCard,
   currentColumn,
   setCurrentColumn,
+  setIsCardOverAnotherCard,
 }) => {
   const dispatch = useDispatch();
   const { title, _id: columnId, order } = column;
@@ -103,25 +104,28 @@ export const Column = ({
   const dragEndHandler = (e) => {
     e.stopPropagation();
     e.target.style.boxShadow = 'none';
+    setIsCardOverAnotherCard(false);
   };
 
   const dragOverHandler = (e) => {
     e.preventDefault();
     e.target.style.boxShadow = '0 4px 3px grey';
+    if (currentCard) {
+      setIsCardOverAnotherCard(true);
+    }
   };
 
   const dropHandler = (e, column, card) => {
     if (currentCard) {
       const newColumnId = card.columnId;
       const oldColumnId = currentCard.columnId;
-      // console.log('newColumnId: ', newColumnId);
-      // console.log('oldColumnId: ', oldColumnId);
-      // console.log('newColumnId !== oldColumnId: ', newColumnId !== oldColumnId);
+      const newOrderInColumn = card.order;
 
       if (newColumnId !== oldColumnId) {
         const cardId = currentCard._id;
         const body = {
           newColumnId,
+          newOrderInColumn,
         };
         dispatch(moveCardByIdThunk({ cardId, body }));
       }

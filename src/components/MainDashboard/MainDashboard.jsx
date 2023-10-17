@@ -34,6 +34,7 @@ export const MainDashDoard = () => {
   const [currentCard, setCurrentCard] = useState(null);
   const [currentColumn, setCurrentColumn] = useState(null);
   const [columnToMove, setColumnToMove] = useState(null);
+  const [isCardOverAnotherCard, setIsCardOverAnotherCard] = useState(false);
   const filterBtnRef = useRef(null);
   const dispatch = useDispatch();
 
@@ -69,14 +70,16 @@ export const MainDashDoard = () => {
 
   const dropHandler = (e, column) => {
     e.preventDefault();
-    if (currentCard) {
+    if (currentCard && !isCardOverAnotherCard) {
       const newColumnId = column._id;
       const oldColumnId = currentCard.columnId;
+      const newOrderInColumn = null;
 
       if (newColumnId !== oldColumnId) {
         const cardId = currentCard._id;
         const body = {
           newColumnId,
+          newOrderInColumn,
         };
         dispatch(moveCardByIdThunk({ cardId, body }));
       }
@@ -149,6 +152,7 @@ export const MainDashDoard = () => {
                 setCurrentCard={setCurrentCard}
                 currentColumn={currentColumn}
                 setCurrentColumn={setCurrentColumn}
+                setIsCardOverAnotherCard={setIsCardOverAnotherCard}
               />
             </div>
           ))}
