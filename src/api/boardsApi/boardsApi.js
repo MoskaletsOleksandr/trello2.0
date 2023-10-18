@@ -1,31 +1,55 @@
 import { boardsInstance } from '../axiosConfig';
 
 export const getAllBoards = async () => {
-  const { data } = await boardsInstance.get();
-  return data;
+  try {
+    const { data } = await boardsInstance.get();
+    return data;
+  } catch (error) {
+    throw new Error(error.response.data.message);
+  }
 };
 
 export const getCurrentBoard = async (id) => {
-  const { data } = await boardsInstance.get(`/${id}`);
-  return data;
+  try {
+    const { data } = await boardsInstance.get(`/${id}`);
+    return data;
+  } catch (error) {
+    throw new Error(error.response.data.message);
+  }
 };
 
 export const createNewBoard = async (body) => {
-  const { data } = await boardsInstance.post('', body);
-  return data;
+  try {
+    const { data } = await boardsInstance.post('', body);
+    return data;
+  } catch (error) {
+    throw new Error(error.response.data.message);
+  }
 };
 
 export const updateBoardById = async (boardId, body) => {
-  const { data } = await boardsInstance.put(`/${boardId}`, body);
-  return data;
+  try {
+    const { data } = await boardsInstance.put(`/${boardId}`, body);
+    return data;
+  } catch (error) {
+    throw new Error(error.response.data.message);
+  }
 };
 
 export const deleteBoardById = async (boardId) => {
-  const { data } = await boardsInstance.delete(`/${boardId}`);
-  return data;
+  try {
+    const { data } = await boardsInstance.delete(`/${boardId}`);
+    return data;
+  } catch (error) {
+    throw new Error(error.response.data.message);
+  }
 };
 
 export const getBackgrounds = async () => {
-  const { data } = await boardsInstance.get(`/backgrounds`);
-  return data;
+  try {
+    const { data } = await boardsInstance.get(`/backgrounds`);
+    return data;
+  } catch (error) {
+    throw new Error(error.response.data.message);
+  }
 };

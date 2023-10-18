@@ -1,10 +1,14 @@
 import { authInstance, refreshInstance } from '../axiosConfig';
 
 export const register = async (body) => {
-  const { data } = await authInstance.post('/register', body);
-  localStorage.setItem('deviceId', data.deviceId);
-  localStorage.setItem('token', data.accessToken);
-  return data;
+  try {
+    const { data } = await authInstance.post('/register', body);
+    localStorage.setItem('deviceId', data.deviceId);
+    localStorage.setItem('token', data.accessToken);
+    return data;
+  } catch (error) {
+    throw new Error(error.response.data.message);
+  }
 };
 
 export const login = async (body) => {
@@ -19,24 +23,40 @@ export const login = async (body) => {
 };
 
 export const logout = async () => {
-  await authInstance.post('/logout');
-  localStorage.removeItem('deviceId');
-  localStorage.removeItem('token');
+  try {
+    await authInstance.post('/logout');
+    localStorage.removeItem('deviceId');
+    localStorage.removeItem('token');
+  } catch (error) {
+    throw new Error(error.response.data.message);
+  }
 };
 
 export const refresh = async () => {
-  const { data } = await refreshInstance.get();
-  return data;
+  try {
+    const { data } = await refreshInstance.get();
+    return data;
+  } catch (error) {
+    throw new Error(error.response.data.message);
+  }
 };
 
 export const updateTheme = async (theme) => {
-  const { data } = await authInstance.patch('/theme', theme);
-  return data;
+  try {
+    const { data } = await authInstance.patch('/theme', theme);
+    return data;
+  } catch (error) {
+    throw new Error(error.response.data.message);
+  }
 };
 
 export const updateCurrentBoardId = async (boardId) => {
-  const { data } = await authInstance.patch('/board', boardId);
-  return data;
+  try {
+    const { data } = await authInstance.patch('/board', boardId);
+    return data;
+  } catch (error) {
+    throw new Error(error.response.data.message);
+  }
 };
 
 export const wakeUpBackend = async () => {

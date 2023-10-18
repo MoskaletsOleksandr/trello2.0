@@ -1,5 +1,5 @@
 export const initialState = {
   columns: [],
-  error: null,
+  columnsError: null,
   isColumnsLoading: false,
 };

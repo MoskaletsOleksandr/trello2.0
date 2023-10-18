@@ -1,7 +1,7 @@
 export const handleGetBoardCardsFulfilled = (state, { payload }) => {
   state.cards = payload;
   state.isCardsLoading = false;
-  state.error = null;
+  state.cardsError = null;
 };
 
 export const handleCreateNewCardFulfilled = (state, { payload }) => {
@@ -19,7 +19,7 @@ export const handleCreateNewCardFulfilled = (state, { payload }) => {
     state.cards.push(newColumn);
   }
   state.isCardsLoading = false;
-  state.error = null;
+  state.cardsError = null;
 };
 
 export const handleUpdateCardByIdFulfilled = (state, { payload }) => {
@@ -30,7 +30,7 @@ export const handleUpdateCardByIdFulfilled = (state, { payload }) => {
     column.cards.splice(cardIndex, 1, payload);
   }
   state.isCardsLoading = false;
-  state.error = null;
+  state.cardsError = null;
 };
 
 export const handleMoveCardByIdFulfilled = (state, { payload }) => {
@@ -55,28 +55,28 @@ export const handleMoveCardByIdFulfilled = (state, { payload }) => {
   }
 
   state.isCardsLoading = false;
-  state.error = null;
+  state.cardsError = null;
 };
 
 export const handleDeleteCardByIdFulfilled = (state, { payload }) => {
   const column = state.cards.find((col) => col.columnId === payload.columnId);
   column.cards = payload.cards;
   state.isCardsLoading = false;
-  state.error = null;
+  state.cardsError = null;
 };
 
 export const handleCardsThunkPending = (state) => {
   state.isCardsLoading = true;
-  state.error = null;
+  state.cardsError = null;
 };
 
 export const handleCardsThunkRejected = (state, { payload }) => {
-  state.error = payload;
+  state.cardsError = payload;
   state.isCardsLoading = false;
 };
 
 export const handleChangePriority = (state, { payload }) => {
   state.priority = payload;
   state.isCardsLoading = false;
-  state.error = null;
+  state.cardsError = null;
 };

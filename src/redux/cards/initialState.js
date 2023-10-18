@@ -1,6 +1,6 @@
 export const initialState = {
   cards: [],
   priority: 'all priorities',
-  error: null,
+  cardsError: null,
   isCardsLoading: false,
 };
