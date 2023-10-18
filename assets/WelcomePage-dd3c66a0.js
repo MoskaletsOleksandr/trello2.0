@@ -1,4 +1,4 @@
-import{n as e,j as t,G as r,L as o,u as a,a as s,s as c,r as l,w as d}from"./index-63a99336.js";import{s as g}from"./sprite-33c0d800.js";import{L as x}from"./Logo-341f5bfe.js";const p=e.div`
+import{n as e,j as t,G as l,L as r,u as d,a as g,s as x,r as n,w as h}from"./index-407cfe72.js";import{s as p}from"./sprite-33c0d800.js";import{L as u}from"./Logo-7832f9cf.js";const f=e.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -10,13 +10,13 @@ import{n as e,j as t,G as r,L as o,u as a,a as s,s as c,r as l,w as d}from"./ind
   flex-direction: column;
   align-items: center;
   justify-content: center;
-`,h=e.h2`
+`,m=e.h2`
   font-size: 50px;
   color: white;
-`,f=e.p`
+`,b=e.p`
   font-size: 28px;
   color: white;
-`,u=()=>t.jsxs(p,{children:[t.jsx(h,{children:"Welcome to the app Trello2.0"}),t.jsx(f,{children:"Sometimes render.com falls asleep, wait until we wake up our backend"}),t.jsx(r,{height:"240",width:"240",color:"green",ariaLabel:"grid-loading",radius:"12.5",visible:!0})]}),m=e.div`
+`,v=()=>t.jsxs(f,{children:[t.jsx(m,{children:"Welcome to the app Trello2.0"}),t.jsx(b,{children:"Sometimes render.com falls asleep, wait until we wake up our backend"}),t.jsx(l,{height:"240",width:"240",color:"green",ariaLabel:"grid-loading",radius:"12.5",visible:!0})]}),w=e.div`
   height: 100vh;
   width: 100%;
   display: flex;
@@ -24,16 +24,16 @@ import{n as e,j as t,G as r,L as o,u as a,a as s,s as c,r as l,w as d}from"./ind
   align-items: center;
   justify-content: center;
   background: linear-gradient(180deg, #ffffff 0%, #ffffff 25%, #bedbb0 100%);
-`,b=e.div`
+`,y=e.div`
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-`,v=e.svg`
+`,j=e.svg`
   width: 200px;
   height: 200px;
-`,y=e.p`
+`,k=e.p`
   color: var(--welcome-primary-text-color);
   text-align: center;
   font-size: 14px;
@@ -43,12 +43,12 @@ import{n as e,j as t,G as r,L as o,u as a,a as s,s as c,r as l,w as d}from"./ind
   letter-spacing: -0.2px;
   width: 473px;
   margin-bottom: 48px;
-`,k=e.div`
+`,L=e.div`
   align-items: center;
   display: flex;
   flex-direction: column;
   gap: 14px;
-`,w=e(o)`
+`,T=e(r)`
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -67,7 +67,7 @@ import{n as e,j as t,G as r,L as o,u as a,a as s,s as c,r as l,w as d}from"./ind
   cursor: pointer;
   transition: background-color 500ms var(--timing-function),
     color 300ms var(--timing-function);
-`,j=e(o)`
+`,S=e(r)`
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -96,4 +96,4 @@ import{n as e,j as t,G as r,L as o,u as a,a as s,s as c,r as l,w as d}from"./ind
     background-color: transparent;
     color: var(--dark-btn-text-color);
   }
-`,T=()=>{const i=a(),n=s(c);return l.useEffect(()=>{i(d())},[]),console.log("isBackendReady: ",n),t.jsxs(m,{children:[t.jsxs(b,{children:[t.jsx(v,{children:t.jsx("use",{href:g+"#icon-main-trello"})}),t.jsx(x,{large:!0}),t.jsx(y,{children:"Supercharge your productivity and take control of your tasks with this Task Manager - Don't wait, start achieving your goals now!"}),t.jsxs(k,{children:[t.jsx(j,{to:"/auth/login",children:"Log In"}),t.jsx(w,{to:"/auth/register",children:"Registration"})]})]}),!n&&t.jsx(u,{})]})};export{T as default};
+`,C=()=>{const i=d(),o=g(x),[s,a]=n.useState(!1);return n.useEffect(()=>{i(h());const c=setTimeout(()=>{o||a(!0)},1500);return()=>{clearTimeout(c)}},[]),t.jsxs(w,{children:[t.jsxs(y,{children:[t.jsx(j,{children:t.jsx("use",{href:p+"#icon-main-trello"})}),t.jsx(u,{large:!0}),t.jsx(k,{children:"Supercharge your productivity and take control of your tasks with this Task Manager - Don't wait, start achieving your goals now!"}),t.jsxs(L,{children:[t.jsx(S,{to:"/auth/login",children:"Log In"}),t.jsx(T,{to:"/auth/register",children:"Registration"})]})]}),s&&!o&&t.jsx(v,{})]})};export{C as default};
