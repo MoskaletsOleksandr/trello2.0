@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import sprite from '../../assets/sprite.svg';
 import Logo from '../../components/Logo/Logo';
@@ -19,12 +19,22 @@ import {
 const WelcomePage = () => {
   const dispatch = useDispatch();
   const isBackendReady = useSelector(selectIsBackendReady);
+  const [showLoader, setShowLoader] = useState(false);
 
   useEffect(() => {
     dispatch(wakeUpBackendThunk());
+
+    const timeout = setTimeout(() => {
+      if (!isBackendReady) {
+        setShowLoader(true);
+      }
+    }, 1500);
+
+    return () => {
+      clearTimeout(timeout);
+    };
   }, []);
 
-  console.log('isBackendReady: ', isBackendReady);
   return (
     <Container>
       <MainContent>
@@ -41,7 +51,7 @@ const WelcomePage = () => {
           <RegistrationBtn to="/auth/register">Registration</RegistrationBtn>
         </Nav>
       </MainContent>
-      {!isBackendReady && <WitingLoader />}
+      {showLoader && !isBackendReady && <WitingLoader />}
     </Container>
   );
 };
