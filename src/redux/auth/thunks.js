@@ -6,6 +6,7 @@ import {
   register,
   updateCurrentBoardId,
   updateTheme,
+  wakeUpBackend,
 } from '../../api/authApi/authApi';
 import { resetBoardsState } from '../boards/slice';
 import { resetCardsState } from '../cards/slice';
@@ -79,6 +80,17 @@ export const refreshUserThunk = createAsyncThunk(
     try {
       const data = await refresh();
       return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const wakeUpBackendThunk = createAsyncThunk(
+  'auth/wakeUpBackend',
+  async (_, { rejectWithValue }) => {
+    try {
+      await wakeUpBackend();
     } catch (error) {
       return rejectWithValue(error.message);
     }

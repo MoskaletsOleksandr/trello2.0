@@ -9,6 +9,9 @@ import {
   handleThunkRejected,
   handleUpdateCurrentBoardIdFulfilled,
   handleUpdateThemeFulfilled,
+  wakeUpBackendFulfilled,
+  wakeUpBackendPending,
+  wakeUpBackendRejected,
 } from './handlers';
 import { initialState } from './initialState';
 import {
@@ -18,6 +21,7 @@ import {
   registerThunk,
   updateCurrentBoardIdThunk,
   updateThemeThunk,
+  wakeUpBackendThunk,
 } from './thunks';
 
 const authSlice = createSlice({
@@ -41,6 +45,9 @@ const authSlice = createSlice({
       .addCase(refreshUserThunk.fulfilled, handleRefreshUserFulfilled)
       .addCase(refreshUserThunk.pending, handleAuthThunkPending)
       .addCase(refreshUserThunk.rejected, handleRefreshUserRejected)
+      .addCase(wakeUpBackendThunk.fulfilled, wakeUpBackendFulfilled)
+      .addCase(wakeUpBackendThunk.pending, wakeUpBackendPending)
+      .addCase(wakeUpBackendThunk.rejected, wakeUpBackendRejected)
       .addMatcher(
         ({ type }) => type.endsWith('/rejected'),
         handleThunkRejected

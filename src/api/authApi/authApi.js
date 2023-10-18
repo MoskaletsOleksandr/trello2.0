@@ -8,10 +8,14 @@ export const register = async (body) => {
 };
 
 export const login = async (body) => {
-  const { data } = await authInstance.post('/login', body);
-  localStorage.setItem('deviceId', data.deviceId);
-  localStorage.setItem('token', data.accessToken);
-  return data;
+  try {
+    const { data } = await authInstance.post('/login', body);
+    localStorage.setItem('deviceId', data.deviceId);
+    localStorage.setItem('token', data.accessToken);
+    return data;
+  } catch (error) {
+    throw new Error(error.response.data.message);
+  }
 };
 
 export const logout = async () => {
@@ -33,4 +37,12 @@ export const updateTheme = async (theme) => {
 export const updateCurrentBoardId = async (boardId) => {
   const { data } = await authInstance.patch('/board', boardId);
   return data;
+};
+
+export const wakeUpBackend = async () => {
+  try {
+    await authInstance.get('/wakeUp');
+  } catch (error) {
+    throw new Error(error.response.data.message);
+  }
 };

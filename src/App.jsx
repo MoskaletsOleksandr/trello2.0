@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { refreshUserThunk } from './redux/auth/thunks';
 import GlobalStyles from './GlobalStyles';
+import { Loader } from './components/Loader';
 
 const WelcomePage = lazy(() => import('./pages/WelcomePage/WelcomePage'));
 const AuthPage = lazy(() => import('./pages/AuthPage/AuthPage'));
@@ -14,6 +15,7 @@ const CardsPage = lazy(() => import('./pages/CardsPage/CardsPage'));
 
 export const App = () => {
   const dispatch = useDispatch();
+
   useEffect(() => {
     if (localStorage.getItem('token')) {
       dispatch(refreshUserThunk());
@@ -21,7 +23,7 @@ export const App = () => {
   }, []);
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Loader />}>
       <GlobalStyles />
       <Routes>
         <Route

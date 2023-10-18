@@ -40,6 +40,21 @@ export const handleRefreshUserRejected = (state, { payload }) => {
   state.error = payload;
 };
 
+export const wakeUpBackendFulfilled = (state, { payload }) => {
+  state.isBackendReady = true;
+  state.error = null;
+};
+
+export const wakeUpBackendPending = (state, { payload }) => {
+  state.isBackendReady = false;
+  state.error = null;
+};
+
+export const wakeUpBackendRejected = (state, { payload }) => {
+  state.isBackendReady = false;
+  state.error = payload;
+};
+
 export const handleAuthThunkPending = (state) => {
   state.isAuthLoading = true;
   state.error = null;

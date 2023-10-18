@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import sprite from '../../assets/sprite.svg';
 import Logo from '../../components/Logo/Logo';
+import { WitingLoader } from '../../components/WaitingLoader';
+import { selectIsBackendReady } from '../../redux/auth/selectors';
+import { wakeUpBackendThunk } from '../../redux/auth/thunks';
 
 import {
   Container,
@@ -13,6 +17,14 @@ import {
 } from './WelcomePage.styled';
 
 const WelcomePage = () => {
+  const dispatch = useDispatch();
+  const isBackendReady = useSelector(selectIsBackendReady);
+
+  useEffect(() => {
+    dispatch(wakeUpBackendThunk());
+  }, []);
+
+  console.log('isBackendReady: ', isBackendReady);
   return (
     <Container>
       <MainContent>
@@ -29,6 +41,7 @@ const WelcomePage = () => {
           <RegistrationBtn to="/auth/register">Registration</RegistrationBtn>
         </Nav>
       </MainContent>
+      {!isBackendReady && <WitingLoader />}
     </Container>
   );
 };
