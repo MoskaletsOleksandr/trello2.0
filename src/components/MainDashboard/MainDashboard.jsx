@@ -26,7 +26,6 @@ import { changePriority } from '../../redux/cards/slice';
 import { moveColumnByIdThunk } from '../../redux/columns/thunks';
 import { moveCardByIdThunk } from '../../redux/cards/thunks';
 import { AddCardButton } from '../AddCardButton';
-import { selectIsLoading } from '../../redux/selectors';
 
 export const MainDashDoard = () => {
   const boardTitle = useSelector(selectBoardTitle);
@@ -41,8 +40,6 @@ export const MainDashDoard = () => {
   const filterBtnRef = useRef(null);
   const dispatch = useDispatch();
 
-  const isLoading = useSelector(selectIsLoading);
-  console.log('isLoading: ', isLoading);
   const toggleCustomOptionList = () => {
     setCustomOptionListOpen(!isCustomOptionListOpen);
   };

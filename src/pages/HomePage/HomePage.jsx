@@ -14,6 +14,8 @@ import {
 import { Container } from './Homepage.styled';
 import { Outlet } from 'react-router-dom';
 import { PlaceHolderBoard } from '../../components/PlaceHolderBoard/PlaceHolderBoard';
+import { selectIsLoading } from '../../redux/selectors';
+import { Loader } from '../../components/Loader';
 
 const HomePage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,6 +23,7 @@ const HomePage = () => {
   const currentBoard = useSelector(selectCurrentBoard);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const isLoading = useSelector(selectIsLoading);
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
@@ -48,6 +51,7 @@ const HomePage = () => {
       <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
       <Header toggleSidebar={toggleSidebar} />
       {currentBoard ? <Outlet /> : <PlaceHolderBoard />}
+      {isLoading && <Loader />}
     </Container>
   );
 };
