@@ -14,20 +14,18 @@ import {
 import { Container } from './Homepage.styled';
 import { Outlet } from 'react-router-dom';
 import { PlaceHolderBoard } from '../../components/PlaceHolderBoard/PlaceHolderBoard';
-import { selectIsLoading } from '../../redux/selectors';
+import { selectError, selectIsLoading } from '../../redux/selectors';
 import { Loader } from '../../components/Loader';
+import toast, { Toaster } from 'react-hot-toast';
 
 const HomePage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const currentBoardId = useSelector(selectCurrentBoardId);
   const currentBoard = useSelector(selectCurrentBoard);
+  const errorMessage = useSelector(selectError);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isLoading = useSelector(selectIsLoading);
-
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
 
   useEffect(() => {
     dispatch(getAllBoardsThunk());
@@ -46,11 +44,22 @@ const HomePage = () => {
     }
   }, [currentBoard]);
 
+  useEffect(() => {
+    if (errorMessage) {
+      toast.error(errorMessage);
+    }
+  }, [errorMessage]);
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <Container>
       <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
       <Header toggleSidebar={toggleSidebar} />
       {currentBoard ? <Outlet /> : <PlaceHolderBoard />}
+      <Toaster position="bottom-right" reverseOrder={false} />
       {isLoading && <Loader />}
     </Container>
   );

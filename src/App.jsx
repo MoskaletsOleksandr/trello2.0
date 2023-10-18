@@ -3,11 +3,10 @@ import { Suspense, lazy } from 'react';
 import PublicRoute from './components/PublicRoute/PublicRoute';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { refreshUserThunk } from './redux/auth/thunks';
 import GlobalStyles from './GlobalStyles';
 import { Loader } from './components/Loader';
-import { selectError } from './redux/selectors';
 
 const WelcomePage = lazy(() => import('./pages/WelcomePage/WelcomePage'));
 const AuthPage = lazy(() => import('./pages/AuthPage/AuthPage'));
@@ -16,8 +15,6 @@ const CardsPage = lazy(() => import('./pages/CardsPage/CardsPage'));
 
 export const App = () => {
   const dispatch = useDispatch();
-  const errorMessage = useSelector(selectError);
-  // console.log('errorMessage: ', errorMessage);
 
   useEffect(() => {
     if (localStorage.getItem('token')) {
