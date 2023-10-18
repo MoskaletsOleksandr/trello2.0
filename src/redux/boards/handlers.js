@@ -39,7 +39,7 @@ export const handleBoardsThunkPending = (state) => {
   state.error = null;
 };
 
-export const handleThunkRejected = (state, { payload }) => {
+export const handleBoardsThunkRejected = (state, { payload }) => {
   state.error = payload;
   state.isBoardsLoading = false;
 };

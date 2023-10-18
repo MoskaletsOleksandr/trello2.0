@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
   handleAuthThunkPending,
+  handleAuthThunkRejected,
   handleLoginFulfilled,
   handleLogoutFulfilled,
   handleRefreshUserFulfilled,
   handleRefreshUserRejected,
   handleRegisterFulfilled,
-  handleThunkRejected,
   handleUpdateCurrentBoardIdFulfilled,
   handleUpdateThemeFulfilled,
   wakeUpBackendFulfilled,
@@ -29,29 +29,30 @@ const authSlice = createSlice({
   initialState,
   extraReducers: (builder) => {
     builder
-      .addCase(registerThunk.fulfilled, handleRegisterFulfilled)
       .addCase(registerThunk.pending, handleAuthThunkPending)
-      .addCase(loginThunk.fulfilled, handleLoginFulfilled)
+      .addCase(registerThunk.fulfilled, handleRegisterFulfilled)
+      .addCase(registerThunk.rejected, handleAuthThunkRejected)
       .addCase(loginThunk.pending, handleAuthThunkPending)
-      .addCase(logoutThunk.fulfilled, handleLogoutFulfilled)
+      .addCase(loginThunk.fulfilled, handleLoginFulfilled)
+      .addCase(loginThunk.rejected, handleAuthThunkRejected)
       .addCase(logoutThunk.pending, handleAuthThunkPending)
-      .addCase(updateThemeThunk.fulfilled, handleUpdateThemeFulfilled)
+      .addCase(logoutThunk.fulfilled, handleLogoutFulfilled)
+      .addCase(logoutThunk.rejected, handleAuthThunkRejected)
       .addCase(updateThemeThunk.pending, handleAuthThunkPending)
+      .addCase(updateThemeThunk.fulfilled, handleUpdateThemeFulfilled)
+      .addCase(updateThemeThunk.rejected, handleAuthThunkRejected)
+      .addCase(updateCurrentBoardIdThunk.pending, handleAuthThunkPending)
       .addCase(
         updateCurrentBoardIdThunk.fulfilled,
         handleUpdateCurrentBoardIdFulfilled
       )
-      .addCase(updateCurrentBoardIdThunk.pending, handleAuthThunkPending)
-      .addCase(refreshUserThunk.fulfilled, handleRefreshUserFulfilled)
+      .addCase(updateCurrentBoardIdThunk.rejected, handleAuthThunkRejected)
       .addCase(refreshUserThunk.pending, handleAuthThunkPending)
+      .addCase(refreshUserThunk.fulfilled, handleRefreshUserFulfilled)
       .addCase(refreshUserThunk.rejected, handleRefreshUserRejected)
-      .addCase(wakeUpBackendThunk.fulfilled, wakeUpBackendFulfilled)
       .addCase(wakeUpBackendThunk.pending, wakeUpBackendPending)
-      .addCase(wakeUpBackendThunk.rejected, wakeUpBackendRejected)
-      .addMatcher(
-        ({ type }) => type.endsWith('/rejected'),
-        handleThunkRejected
-      );
+      .addCase(wakeUpBackendThunk.fulfilled, wakeUpBackendFulfilled)
+      .addCase(wakeUpBackendThunk.rejected, wakeUpBackendRejected);
   },
 });
 

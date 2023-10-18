@@ -70,7 +70,7 @@ export const handleCardsThunkPending = (state) => {
   state.error = null;
 };
 
-export const handleThunkRejected = (state, { payload }) => {
+export const handleCardsThunkRejected = (state, { payload }) => {
   state.error = payload;
   state.isCardsLoading = false;
 };

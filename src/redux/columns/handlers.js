@@ -39,7 +39,7 @@ export const handleColumnsThunkPending = (state) => {
   state.error = null;
 };
 
-export const handleThunkRejected = (state, { payload }) => {
+export const handleColumnsThunkRejected = (state, { payload }) => {
   state.error = payload;
   state.isColumnsLoading = false;
 };

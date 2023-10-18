@@ -60,7 +60,7 @@ export const handleAuthThunkPending = (state) => {
   state.error = null;
 };
 
-export const handleThunkRejected = (state, { payload }) => {
+export const handleAuthThunkRejected = (state, { payload }) => {
   state.error = payload;
   state.isAuthLoading = false;
 };
