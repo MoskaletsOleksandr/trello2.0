@@ -1,4 +1,4 @@
-import{N as g,u,j as r,l as f,r as j,a as w}from"./index-93d77279.js";import{F as v,a as y,E as k,b as p,c as m,d as a}from"./index.esm-2cf43524.js";import{n as e}from"./emotion-styled.browser.esm-f98b9362.js";const x=e(v)`
+import{n as e,N as g,u,j as r,l as f,b as j,c as w}from"./index-63a99336.js";import{F as v,a as y,E as k,b as p,c as m,d as a}from"./index.esm-be11cb17.js";const x=e(v)`
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -82,4 +82,4 @@ import{N as g,u,j as r,l as f,r as j,a as w}from"./index-93d77279.js";import{F a
   align-items: center;
   justify-content: center;
   background: linear-gradient(180deg, #ffffff 0%, #ffffff 25%, #bedbb0 100%);
-`,z=()=>{const{id:o}=w();if(o==="register")return r.jsx(c,{children:r.jsx(S,{})});if(o==="login")return r.jsx(c,{children:r.jsx(E,{})})};export{z as default};
+`,L=()=>{const{id:o}=w();if(o==="register")return r.jsx(c,{children:r.jsx(S,{})});if(o==="login")return r.jsx(c,{children:r.jsx(E,{})})};export{L as default};

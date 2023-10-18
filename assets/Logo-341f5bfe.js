@@ -1,11 +1,11 @@
-import{j as t}from"./index-93d77279.js";import{s as e}from"./sprite-33c0d800.js";import{n as r}from"./emotion-styled.browser.esm-f98b9362.js";const i=r.div`
+import{n as r,j as t}from"./index-63a99336.js";import{s as e}from"./sprite-33c0d800.js";const n=r.div`
   display: flex;
   gap: 14px;
   align-items: center;
   justify-content: ${({large:o})=>o?"center":"flex-start"};
   margin-left: ${({large:o})=>o?"0":"14px"};
   margin-bottom: ${({large:o})=>o?"24px":"72px"};
-`,n=r.div`
+`,i=r.div`
   display: flex;
   width: ${({large:o})=>o?"48px":"32px"};
   height: ${({large:o})=>o?"48px":"32px"};
@@ -24,4 +24,4 @@ import{j as t}from"./index-93d77279.js";import{s as e}from"./sprite-33c0d800.js"
   font-weight: 600;
   line-height: normal;
   letter-spacing: ${({large:o})=>o?"-1.6px":"-0.2px"};
-`,a=({large:o})=>t.jsxs(i,{large:o,children:[t.jsx(n,{large:o,children:t.jsx(s,{large:o,children:t.jsx("use",{href:e+"#icon-trello"})})}),t.jsx(l,{large:o,children:"Trello2.0"})]});export{a as L};
+`,p=({large:o})=>t.jsxs(n,{large:o,children:[t.jsx(i,{large:o,children:t.jsx(s,{large:o,children:t.jsx("use",{href:e+"#icon-trello"})})}),t.jsx(l,{large:o,children:"Trello2.0"})]});export{p as L};
