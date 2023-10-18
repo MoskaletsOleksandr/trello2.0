@@ -32,7 +32,7 @@ export const Card = ({ card, columnTitle }) => {
   const [isCustomOptionListOpen, setCustomOptionListOpen] = useState(false);
   const dispatch = useDispatch();
   const boardColumns = useSelector(selectBoardColumns);
-  const { _id: cardId, title, text, priority, deadline, order } = card;
+  const { _id: cardId, title, text, priority, deadline } = card;
   const formatedDeadline = format(new Date(deadline), 'dd-MM-yyyy');
 
   const columnOptionsList = boardColumns.map((column) => column.title);
@@ -67,6 +67,7 @@ export const Card = ({ card, columnTitle }) => {
     )._id;
     const body = {
       newColumnId,
+      newOrderInColumn: 'last',
     };
     dispatch(moveCardByIdThunk({ cardId, body }));
     toggleCustomOptionList();
@@ -75,7 +76,6 @@ export const Card = ({ card, columnTitle }) => {
   return (
     <Container priority={priority}>
       <CardTitle>{title}</CardTitle>
-      <p>Order: {order}</p>
       <CardTextContainer>
         <CardText>{text}</CardText>
       </CardTextContainer>

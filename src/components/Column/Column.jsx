@@ -7,6 +7,7 @@ import {
   ColumnTitle,
   ColumnTitleWrapper,
   Container,
+  DndWrapper,
   ScrollContent,
 } from './Column.styled';
 import sprite from '../../assets/sprite.svg';
@@ -19,7 +20,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { CustomSelect } from '../CustomSelect';
 import { Card } from '../Card';
 import { selectBoardCards, selectPriority } from '../../redux/cards/selectors';
-import { AddCardButton } from '../AddCardButton';
 import { useEffect } from 'react';
 import { changePriority } from '../../redux/cards/slice';
 import { moveCardByIdThunk } from '../../redux/cards/thunks';
@@ -96,39 +96,43 @@ export const Column = ({
   };
 
   const dragStartHandler = (e, column, card) => {
-    e.target.style.opacity = '0.5';
     setCurrentColumn(column);
     setCurrentCard(card);
   };
 
   const dragEndHandler = (e) => {
-    e.stopPropagation();
-    e.target.style.boxShadow = 'none';
+    e.currentTarget.style.marginTop = '0';
+    e.currentTarget.style.transform = 'none';
     setIsCardOverAnotherCard(false);
   };
 
   const dragOverHandler = (e) => {
+    e.stopPropagation();
     e.preventDefault();
-    e.target.style.boxShadow = '0 4px 3px grey';
+    e.currentTarget.style.transition =
+      'transform 0.5s ease, margin-top 0.5s ease';
+    e.currentTarget.style.marginTop = '15px';
+    e.currentTarget.style.transform = 'translateY(10px)';
+    e.currentTarget.style.transform = 'scale(0.95)';
     if (currentCard) {
       setIsCardOverAnotherCard(true);
     }
   };
 
-  const dropHandler = (e, column, card) => {
+  const dropHandler = (e, card) => {
+    e.currentTarget.style.marginTop = '0';
+    e.currentTarget.style.transform = 'none';
+
     if (currentCard) {
       const newColumnId = card.columnId;
-      // const oldColumnId = currentCard.columnId;
       const newOrderInColumn = card.order;
 
-      // if (newColumnId !== oldColumnId) {
       const cardId = currentCard._id;
       const body = {
         newColumnId,
         newOrderInColumn,
       };
       dispatch(moveCardByIdThunk({ cardId, body }));
-      // }
     }
     setCurrentColumn(null);
     setCurrentCard(null);
@@ -182,7 +186,8 @@ export const Column = ({
         <ScrollContent>
           {filteredColumnCards &&
             filteredColumnCards.map((card) => (
-              <div
+              <DndWrapper
+                className="DndWrapper"
                 key={card._id}
                 draggable={true}
                 onDragStart={(e) => {
@@ -198,15 +203,14 @@ export const Column = ({
                   dragOverHandler(e);
                 }}
                 onDrop={(e) => {
-                  dropHandler(e, column, card);
+                  dropHandler(e, card);
                 }}
               >
                 <Card card={card} columnTitle={title} />
-              </div>
+              </DndWrapper>
             ))}
         </ScrollContent>
       </CardsContainer>
-      <AddCardButton columnId={columnId} />
       {isModalOpen && (
         <UpdateColumnModal
           columnId={columnId}

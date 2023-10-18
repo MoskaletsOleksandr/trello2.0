@@ -8,6 +8,7 @@ import {
   BoardContainer,
   BoardSection,
   Container,
+  DndWrapper,
   FilterBtn,
   FilterBtnWrapper,
   FilterIcon,
@@ -24,6 +25,7 @@ import { priorities } from '../../data/constants';
 import { changePriority } from '../../redux/cards/slice';
 import { moveColumnByIdThunk } from '../../redux/columns/thunks';
 import { moveCardByIdThunk } from '../../redux/cards/thunks';
+import { AddCardButton } from '../AddCardButton';
 
 export const MainDashDoard = () => {
   const boardTitle = useSelector(selectBoardTitle);
@@ -58,31 +60,24 @@ export const MainDashDoard = () => {
     setColumnToMove(column);
   };
 
-  const dragEndHandler = (e) => {
-    e.stopPropagation();
-    e.target.style.boxShadow = 'none';
-  };
+  const dragEndHandler = (e) => {};
 
   const dragOverHandler = (e) => {
     e.preventDefault();
-    e.target.style.boxShadow = '0 4px 3px grey';
   };
 
   const dropHandler = (e, column) => {
     e.preventDefault();
     if (currentCard && !isCardOverAnotherCard) {
       const newColumnId = column._id;
-      // const oldColumnId = currentCard.columnId;
-      const newOrderInColumn = 'null';
+      const newOrderInColumn = 'last';
 
-      // if (newColumnId !== oldColumnId) {
       const cardId = currentCard._id;
       const body = {
         newColumnId,
         newOrderInColumn,
       };
       dispatch(moveCardByIdThunk({ cardId, body }));
-      // }
     }
 
     const newOrder = column.order;
@@ -126,7 +121,7 @@ export const MainDashDoard = () => {
       <BoardSection>
         <BoardContainer>
           {boardColumns.map((column) => (
-            <div
+            <DndWrapper
               key={column._id}
               draggable={true}
               onDragStart={(e) => {
@@ -154,7 +149,8 @@ export const MainDashDoard = () => {
                 setCurrentColumn={setCurrentColumn}
                 setIsCardOverAnotherCard={setIsCardOverAnotherCard}
               />
-            </div>
+              <AddCardButton columnId={column._id} />
+            </DndWrapper>
           ))}
           <AddColumnButton />
         </BoardContainer>

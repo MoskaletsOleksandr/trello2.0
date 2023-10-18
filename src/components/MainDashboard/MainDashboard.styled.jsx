@@ -124,6 +124,10 @@ export const BoardSection = styled.section`
 
 export const BoardContainer = styled.div`
   display: flex;
-  align-items: start;
   gap: 18px;
+`;
+
+export const DndWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
 `;

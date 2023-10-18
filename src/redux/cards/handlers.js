@@ -36,7 +36,6 @@ export const handleUpdateCardByIdFulfilled = (state, { payload }) => {
 export const handleMoveCardByIdFulfilled = (state, { payload }) => {
   const columnId1 = payload[0].columnId;
   const columnId2 = payload[1]?.columnId;
-  console.log('columnId2: ', columnId2);
 
   const index1 = state.cards.findIndex(
     (column) => column.columnId === columnId1

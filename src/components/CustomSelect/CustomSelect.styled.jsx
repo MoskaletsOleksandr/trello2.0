@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const Container = styled.div`
   max-height: ${({ forCard }) => (forCard ? '145px' : '200px')};
   position: absolute;
-  top: ${({ forCard }) => (forCard ? '-120px' : '20px')};
+  top: ${({ forCard }) => (forCard ? '-112px' : '20px')};
   left: ${({ forCard }) => (forCard ? '-150px' : '-135px')};
   margin: 0;
   padding: 18px;

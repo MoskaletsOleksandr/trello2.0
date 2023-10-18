@@ -1,7 +1,9 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
+  /* background: linear-gradient(to right, red 333px, transparent 334px); */
   width: 350px;
+  height: auto;
   height: 100%;
   display: flex;
   gap: 14px;
@@ -95,3 +97,5 @@ export const ScrollContent = styled.div`
     margin-left: 8px;
   }
 `;
+
+export const DndWrapper = styled.div``;

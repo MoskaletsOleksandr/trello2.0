@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
+  position: relative;
   cursor: grab;
   display: flex;
   flex-direction: column;
@@ -18,6 +19,17 @@ export const Container = styled.div`
   &:hover {
     background-color: var(--card-bg-color-hover);
   }
+
+  /* &::before {
+    content: '';
+    width: 334px;
+    height: 154px;
+    background-color: red;
+    position: absolute;
+    top: -10px;
+    left: -4px;
+    border-radius: 8px;
+  } */
 `;
 
 export const CardTitle = styled.h4`
