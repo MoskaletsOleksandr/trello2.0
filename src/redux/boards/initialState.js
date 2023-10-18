@@ -3,5 +3,5 @@ export const initialState = {
   currentBoard: null,
   backgrounds: [],
   error: null,
-  isLoading: false,
+  isBoardsLoading: false,
 };

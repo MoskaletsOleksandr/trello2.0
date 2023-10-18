@@ -1,12 +1,12 @@
 export const handleGetBoardColumnsFulfilled = (state, { payload }) => {
   state.columns = payload;
-  state.isLoading = false;
+  state.isColumnsLoading = false;
   state.error = null;
 };
 
 export const handleCreateNewColumnFulfilled = (state, { payload }) => {
   state.columns.push(payload);
-  state.isLoading = false;
+  state.isColumnsLoading = false;
   state.error = null;
 };
 
@@ -18,28 +18,28 @@ export const handleUpdateColumnByIdFulfilled = (state, { payload }) => {
     state.columns[columnIndex].title = payload.title;
   }
 
-  state.isLoading = false;
+  state.isColumnsLoading = false;
   state.error = null;
 };
 
 export const handleMoveColumnByIdFulfilled = (state, { payload }) => {
   state.columns = payload;
-  state.isLoading = false;
+  state.isColumnsLoading = false;
   state.error = null;
 };
 
 export const handleDeleteColumnByIdFulfilled = (state, { payload }) => {
   state.columns = payload;
-  state.isLoading = false;
+  state.isColumnsLoading = false;
   state.error = null;
 };
 
-export const handleThunkPending = (state) => {
-  state.isLoading = true;
+export const handleColumnsThunkPending = (state) => {
+  state.isColumnsLoading = true;
   state.error = null;
 };
 
 export const handleThunkRejected = (state, { payload }) => {
   state.error = payload;
-  state.isLoading = false;
+  state.isColumnsLoading = false;
 };

@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
+  handleBoardsThunkPending,
   handleCreateNewBoardFulfilled,
   handleDeleteBoardByIdFulfilled,
   handleGetAllBoardsFulfilled,
   handleGetBackgroundsFulfilled,
   handleGetCurrentBoardFulfilled,
-  handleThunkPending,
   handleThunkRejected,
   handleUpdateBoardByIdFulfilled,
 } from './handlers';
@@ -28,12 +28,17 @@ const boardSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getAllBoardsThunk.fulfilled, handleGetAllBoardsFulfilled)
+      .addCase(getAllBoardsThunk.pending, handleBoardsThunkPending)
       .addCase(getCurrentBoardThunk.fulfilled, handleGetCurrentBoardFulfilled)
+      .addCase(getCurrentBoardThunk.pending, handleBoardsThunkPending)
       .addCase(createNewBoardThunk.fulfilled, handleCreateNewBoardFulfilled)
+      .addCase(createNewBoardThunk.pending, handleBoardsThunkPending)
       .addCase(updateBoardByIdThunk.fulfilled, handleUpdateBoardByIdFulfilled)
+      .addCase(updateBoardByIdThunk.pending, handleBoardsThunkPending)
       .addCase(deleteBoardByIdThunk.fulfilled, handleDeleteBoardByIdFulfilled)
+      .addCase(deleteBoardByIdThunk.pending, handleBoardsThunkPending)
       .addCase(getBackgroundsThunk.fulfilled, handleGetBackgroundsFulfilled)
-      .addMatcher(({ type }) => type.endsWith('/pending'), handleThunkPending)
+      .addCase(getBackgroundsThunk.pending, handleBoardsThunkPending)
       .addMatcher(
         ({ type }) => type.endsWith('/rejected'),
         handleThunkRejected

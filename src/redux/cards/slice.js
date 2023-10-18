@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
+  handleCardsThunkPending,
   handleChangePriority,
   handleCreateNewCardFulfilled,
   handleDeleteCardByIdFulfilled,
   handleGetBoardCardsFulfilled,
   handleMoveCardByIdFulfilled,
-  handleThunkPending,
   handleThunkRejected,
   handleUpdateCardByIdFulfilled,
 } from './handlers';
@@ -28,11 +28,15 @@ const cardsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getBoardCardsThunk.fulfilled, handleGetBoardCardsFulfilled)
+      .addCase(getBoardCardsThunk.pending, handleCardsThunkPending)
       .addCase(createNewCardThunk.fulfilled, handleCreateNewCardFulfilled)
+      .addCase(createNewCardThunk.pending, handleCardsThunkPending)
       .addCase(updateCardByIdThunk.fulfilled, handleUpdateCardByIdFulfilled)
+      .addCase(updateCardByIdThunk.pending, handleCardsThunkPending)
       .addCase(moveCardByIdThunk.fulfilled, handleMoveCardByIdFulfilled)
+      .addCase(moveCardByIdThunk.pending, handleCardsThunkPending)
       .addCase(deleteCardByIdThunk.fulfilled, handleDeleteCardByIdFulfilled)
-      .addMatcher(({ type }) => type.endsWith('/pending'), handleThunkPending)
+      .addCase(deleteCardByIdThunk.pending, handleCardsThunkPending)
       .addMatcher(
         ({ type }) => type.endsWith('/rejected'),
         handleThunkRejected

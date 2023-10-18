@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
+  handleColumnsThunkPending,
   handleCreateNewColumnFulfilled,
   handleDeleteColumnByIdFulfilled,
   handleGetBoardColumnsFulfilled,
   handleMoveColumnByIdFulfilled,
-  handleThunkPending,
   handleThunkRejected,
   handleUpdateColumnByIdFulfilled,
 } from './handlers';
@@ -26,11 +26,15 @@ const columnsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getBoardColumnsThunk.fulfilled, handleGetBoardColumnsFulfilled)
+      .addCase(getBoardColumnsThunk.pending, handleColumnsThunkPending)
       .addCase(createNewColumnThunk.fulfilled, handleCreateNewColumnFulfilled)
+      .addCase(createNewColumnThunk.pending, handleColumnsThunkPending)
       .addCase(updateColumnByIdThunk.fulfilled, handleUpdateColumnByIdFulfilled)
+      .addCase(updateColumnByIdThunk.pending, handleColumnsThunkPending)
       .addCase(moveColumnByIdThunk.fulfilled, handleMoveColumnByIdFulfilled)
+      .addCase(moveColumnByIdThunk.pending, handleColumnsThunkPending)
       .addCase(deleteColumnByIdThunk.fulfilled, handleDeleteColumnByIdFulfilled)
-      .addMatcher(({ type }) => type.endsWith('/pending'), handleThunkPending)
+      .addCase(deleteColumnByIdThunk.pending, handleColumnsThunkPending)
       .addMatcher(
         ({ type }) => type.endsWith('/rejected'),
         handleThunkRejected
