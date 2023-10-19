@@ -78,7 +78,7 @@ export const GlobalStyles = () => {
             --sidebar-active-board-bg-color: #1f1f1f;
             --sidebar-inactive-board-text-color: #ffffff80;
             --sidebar-needhelp-icon-color: #ffffff;
-            --sidebar-border-left-color: #BEDBB0;
+            --sidebar-border-right-color: #BEDBB0;
             --sidebar-logout-icon-color: #bedbb0;
             --sidebar-logout-icon-color-hover: #9dc888;
             --sidebar-inactive-icon-color: #ffffff80;
@@ -196,7 +196,7 @@ export const GlobalStyles = () => {
             --sidebar-needhelp-icon-color: #161616;
             --sidebar-logout-icon-color: #bedbb0;
             --sidebar-logout-icon-color-hover: #9dc888;
-            --sidebar-border-left-color: #BEDBB0;
+            --sidebar-border-right-color: #BEDBB0;
             --sidebar-inactive-icon-color: #16161680;
             --sidebar-active-icon-color: #BEDBB0;
             --icon-stroke: #000000;
@@ -311,7 +311,7 @@ export const GlobalStyles = () => {
             --sidebar-needhelp-icon-color: #ffffff;
             --sidebar-logout-icon-color: #ffffff;
             --sidebar-logout-icon-color-hover: #ffffff80;
-            --sidebar-border-left-color: #FFFFFF;
+            --sidebar-border-right-color: #FFFFFF;
             --sidebar-inactive-icon-color:#f2f2f2;
             --sidebar-active-icon-color: #5255BC;
             --icon-stroke: #ffffff;

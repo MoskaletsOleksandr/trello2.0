@@ -3,7 +3,12 @@ import { AddBoardButton } from '../AddBoardBtn';
 import { BoardsList } from '../BoardsList/BoardsList';
 import Logo from '../Logo/Logo';
 import { LogoutBtn } from '../LogoutBtn';
-import { BackDrop, SidebarContainer, Title } from './Sidebar.styled';
+import {
+  BackDrop,
+  HelpContainer,
+  SidebarContainer,
+  Title,
+} from './Sidebar.styled';
 
 export const Sidebar = ({ isOpen, toggleSidebar }) => {
   return (
@@ -21,6 +26,7 @@ export const Sidebar = ({ isOpen, toggleSidebar }) => {
         <Title>My boards</Title>
         <AddBoardButton />
         <BoardsList />
+        <HelpContainer />
         <LogoutBtn />
       </SidebarContainer>
     </>

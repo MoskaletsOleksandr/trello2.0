@@ -32,8 +32,12 @@ export const Text = styled.p`
   font-weight: 400;
   line-height: 18px;
   letter-spacing: -0.2px;
-  width: 473px;
+  width: 335px;
   margin-bottom: 48px;
+
+  @media screen and (min-width: 768px) {
+    width: 473px;
+  }
 `;
 
 export const Nav = styled.div`
@@ -50,7 +54,7 @@ export const RegistrationBtn = styled(Link)`
   line-height: 21px;
   text-align: center;
   letter-spacing: -0.02px;
-  width: 344px;
+  width: 335px;
   height: 49px;
   display: flex;
   justify-content: center;
@@ -62,6 +66,10 @@ export const RegistrationBtn = styled(Link)`
   cursor: pointer;
   transition: background-color 500ms var(--timing-function),
     color 300ms var(--timing-function);
+
+  @media screen and (min-width: 768px) {
+    width: 344px;
+  }
 `;
 
 export const LoginBtn = styled(Link)`
@@ -72,7 +80,7 @@ export const LoginBtn = styled(Link)`
   letter-spacing: -0.02px;
   color: var(--dark-btn-text-color);
   text-decoration: none;
-  width: 344px;
+  width: 335px;
   height: 49px;
   display: flex;
   justify-content: center;
@@ -92,5 +100,9 @@ export const LoginBtn = styled(Link)`
   &:hover + * {
     background-color: transparent;
     color: var(--dark-btn-text-color);
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 344px;
   }
 `;

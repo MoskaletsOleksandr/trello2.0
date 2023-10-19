@@ -10,6 +10,11 @@ export const ButtonWrapper = styled.div`
   padding: 14px 4px 14px 0;
   border-top: 1px solid var(--sidebar-button-plus-border-color);
   border-bottom: 1px solid var(--sidebar-button-plus-border-color);
+
+  @media screen and (min-width: 768px) {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
 `;
 
 export const Text = styled.p`

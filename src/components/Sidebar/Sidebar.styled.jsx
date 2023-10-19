@@ -7,15 +7,21 @@ export const SidebarContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  width: 225px;
+  padding-top: 14px;
+  padding-bottom: 14px;
   background-color: var(--sidebar-bg-color);
   transform: ${({ isOpen }) =>
     isOpen ? 'translateX(0)' : 'translateX(-100%)'};
   z-index: 3;
-  width: 260px;
 
   transition: transform 500ms var(--timing-function);
+
+  @media screen and (min-width: 768px) {
+    width: 260px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
 `;
 
 export const BackDrop = styled.div`
@@ -37,4 +43,20 @@ export const Title = styled.h2`
   font-size: 14px;
   font-weight: 400;
   letter-spacing: -0.24px;
+`;
+
+export const HelpContainer = styled.div`
+  width: 197px;
+  height: 138px;
+  background-color: teal;
+  margin-left: 14px;
+  margin-right: 14px;
+  margin-bottom: 24px;
+
+  @media screen and (min-width: 768px) {
+    width: 212px;
+    height: 178px;
+    margin-left: 24px;
+    margin-right: 24px;
+  }
 `;

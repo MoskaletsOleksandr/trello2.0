@@ -123,7 +123,7 @@ export const Column = ({
     e.currentTarget.style.marginTop = '0';
     e.currentTarget.style.transform = 'none';
 
-    if (currentCard) {
+    if (currentCard && currentCard !== card) {
       const newColumnId = card.columnId;
       const newOrderInColumn = card.order;
 

@@ -7,8 +7,20 @@ export const List = styled.ul`
   scroll-behavior: smooth;
   overflow-y: auto;
 
-  &::-webkit-scrollbar {
-    width: 0px;
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--vertical-scroll-bar-bg-color);
+    border-radius: 4px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: var(--vertical-scroll-slider-bg-color);
+    border-radius: 4px;
+    height: 130px;
   }
 `;
 
@@ -17,7 +29,7 @@ export const Item = styled.li`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 20px 14px;
+  padding: 22px 14px;
   opacity: 0.4;
   cursor: pointer;
   transition: opacity 300ms linear;
@@ -28,14 +40,17 @@ export const Item = styled.li`
 
   &:hover {
     opacity: 1;
-    /* background-color: var(--sidebar-active-board-bg-color); */
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 22px 24px;
   }
 `;
 
 export const ActiveItem = styled.li`
   position: relative;
   display: flex;
-  padding: 20px 14px;
+  padding: 22px 18px 22px 14px;
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -46,11 +61,15 @@ export const ActiveItem = styled.li`
     content: '';
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
     height: 100%;
-    border-left: 4px solid var(--sidebar-border-left-color);
-    border-bottom-left-radius: 4px;
-    border-top-left-radius: 4px;
+    border-right: 5px solid var(--sidebar-border-right-color);
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 22px 24px;
   }
 `;
 
@@ -67,7 +86,11 @@ export const Title = styled.p`
   font-size: 14px;
   font-weight: 500;
   letter-spacing: -0.28px;
-  margin-left: 14px;
+  margin-left: 4px;
+
+  @media screen and (min-width: 768px) {
+    margin-left: 14px;
+  }
 `;
 
 export const ButtonsWrapper = styled.div`

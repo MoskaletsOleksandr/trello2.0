@@ -6,8 +6,8 @@ export const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
   gap: 14px;
-  width: 424px;
-  padding: 40px;
+  width: 335px;
+  padding: 24px;
   background-color: var(--auth-form-bg-color);
   font-size: 14px;
   border: solid 1px black;
@@ -16,6 +16,11 @@ export const StyledForm = styled(Form)`
 
   & > :last-child {
     margin-top: 10px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 424px;
+    padding: 40px;
   }
 `;
 

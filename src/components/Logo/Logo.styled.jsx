@@ -6,7 +6,7 @@ export const LogoContainer = styled.div`
   align-items: center;
   justify-content: ${({ large }) => (large ? 'center' : 'flex-start')};
   margin-left: ${({ large }) => (large ? '0' : '14px')};
-  margin-bottom: ${({ large }) => (large ? '24px' : '72px')};
+  margin-bottom: ${({ large }) => (large ? '24px' : '50px')};
 `;
 
 export const IconContainer = styled.div`

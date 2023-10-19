@@ -11,7 +11,6 @@ import { useEffect } from 'react';
 const AuthPage = () => {
   const { id } = useParams();
   const errorMessage = useSelector(selectError);
-  console.log('errorMessage: ', errorMessage);
 
   useEffect(() => {
     if (errorMessage) {
