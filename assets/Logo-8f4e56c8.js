@@ -1,10 +1,10 @@
-import{n as r,j as t}from"./index-e78a3173.js";import{s as e}from"./sprite-33c0d800.js";const n=r.div`
+import{n as r,j as t}from"./index-30ddec65.js";import{s as e}from"./sprite-33c0d800.js";const n=r.div`
   display: flex;
   gap: 14px;
   align-items: center;
   justify-content: ${({large:o})=>o?"center":"flex-start"};
   margin-left: ${({large:o})=>o?"0":"14px"};
-  margin-bottom: ${({large:o})=>o?"24px":"72px"};
+  margin-bottom: ${({large:o})=>o?"24px":"50px"};
 `,i=r.div`
   display: flex;
   width: ${({large:o})=>o?"48px":"32px"};
