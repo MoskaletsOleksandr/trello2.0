@@ -15,13 +15,17 @@ export const ModalBackdrop = styled.div`
 
 export const ModalContent = styled.div`
   position: relative;
-  width: 400px;
+  width: 335px;
   background-color: var(--modal-bg-color);
   padding: 24px;
   padding-top: 75px;
   border-radius: 14px;
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+
+  @media screen and (min-width: 768px) {
+    width: 350px;
+  }
 `;
 
 export const ModalTitle = styled.h2`

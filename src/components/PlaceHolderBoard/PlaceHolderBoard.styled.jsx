@@ -17,12 +17,16 @@ export const MainIcon = styled.svg`
 `;
 
 export const InfoText = styled.p`
-  width: 486px;
+  width: 335px;
   font-weight: normal;
   font-size: 14px;
   line-height: 18px;
   text-align: center;
   color: var(--placeholder-board-text-color);
+
+  @media screen and (min-width: 768px) {
+    width: 486px;
+  }
 `;
 
 export const InfoTextAccent = styled.span`

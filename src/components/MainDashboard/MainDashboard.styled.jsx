@@ -44,7 +44,7 @@ export const Header = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px;
+  padding: 0 20px;
   width: 100%;
   height: 48px;
   background: linear-gradient(
@@ -54,13 +54,21 @@ export const Header = styled.div`
     transparent,
     var(--header-dashboard-bg-color)
   );
+
+  @media screen and (min-width: 768px) {
+    padding: 0 24px;
+  }
 `;
 
 export const Title = styled.h2`
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--header-dashboard-title-color);
   text-transform: capitalize;
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 export const FilterBtnWrapper = styled.div`
@@ -101,8 +109,12 @@ export const BoardSection = styled.section`
   display: flex;
   flex-direction: row;
   width: 100%;
-  padding: 36px 24px;
+  padding: 36px 20px;
   overflow-x: auto;
+
+  @media screen and (min-width: 768px) {
+    padding: 36px 32px;
+  }
 
   ::-webkit-scrollbar {
     height: 12px;
