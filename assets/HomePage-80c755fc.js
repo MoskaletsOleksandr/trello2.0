@@ -1,4 +1,4 @@
-import{n as t,a as u,d as X,r as d,u as b,j as e,e as G,f as J,g as K,h as T,i as L,k as Q,m as Y,o as Z,p as ee,q as te,O as oe,t as se}from"./index-0fcdc4d2.js";import{s as x}from"./sprite-33c0d800.js";import{C as ne,t as ie,i as re,s as ae,M as O,S as E,a as H,b as m,B as j,c as _,d as w,e as ce}from"./Button-be4d790e.js";import{a as q,u as z,b as F,c as R,d as f}from"./index.esm-12594866.js";import{L as le}from"./Logo-2f19af55.js";import{s as de,a as pe,_ as xe,I as he}from"./selectors-5c385d48.js";const ge=t.header`
+import{n as t,a as h,d as X,r as d,u as b,j as e,e as G,f as J,g as K,h as M,i as T,k as Q,m as Y,o as Z,p as ee,q as te,O as oe,t as se}from"./index-0758601b.js";import{s as x}from"./sprite-33c0d800.js";import{C as ne,t as ie,i as re,s as ae,M as L,S as O,a as _,b as m,B as j,c as q,d as v,e as ce}from"./Button-3f8c4c2e.js";import{a as E,u as z,b as F,c as R,d as f}from"./index.esm-c6381a96.js";import{L as le}from"./Logo-56feda78.js";import{s as de,a as pe,_ as xe,I as he}from"./selectors-53a179f9.js";const ge=t.header`
   display: flex;
   flex-grow: 1;
   height: 60px;
@@ -47,14 +47,14 @@ import{n as t,a as u,d as X,r as d,u as b,j as e,e as G,f as J,g as K,h as T,i a
   margin-left: 4px;
   fill: transparent;
   stroke: var(--header-theme-select-text-color);
-`,ve=({toggleSidebar:o})=>{const n=u(X),[s,i]=d.useState(!1),l=d.useRef(null),a=b();d.useEffect(()=>{document.body.classList.remove("light","dark","violet"),document.body.classList.add(n)},[n]);const r=()=>{i(!s)},p=g=>{g.stopPropagation(),r()},h=g=>{g!==n&&(a(G({theme:g})),r())};return e.jsxs(ge,{children:[e.jsx(ue,{onClick:()=>{o()},children:e.jsx(me,{children:e.jsx("use",{href:`${x}#icon-menu`})})}),e.jsxs(fe,{children:[e.jsxs(be,{ref:l,onClick:p,children:["Theme",e.jsx(je,{children:e.jsx("use",{href:`${x}#icon-chevron-down`})})]}),s&&e.jsx(ne,{title:"Select theme",options:ie,selectedOption:n,isOpen:s,onClose:r,handleOptionClick:h,openBtnRef:l})]})]})},we=t.ul`
+`,ve=({toggleSidebar:o})=>{const n=h(X),[s,i]=d.useState(!1),l=d.useRef(null),a=b();d.useEffect(()=>{document.body.classList.remove("light","dark","violet"),document.body.classList.add(n)},[n]);const r=()=>{i(!s)},p=u=>{u.stopPropagation(),r()},g=u=>{u!==n&&(a(G({theme:u})),r())};return e.jsxs(ge,{children:[e.jsx(ue,{onClick:()=>{o()},children:e.jsx(me,{children:e.jsx("use",{href:`${x}#icon-menu`})})}),e.jsxs(fe,{children:[e.jsxs(be,{ref:l,onClick:p,children:["Theme",e.jsx(je,{children:e.jsx("use",{href:`${x}#icon-chevron-down`})})]}),s&&e.jsx(ne,{title:"Select theme",options:ie,selectedOption:n,isOpen:s,onClose:r,handleOptionClick:g,openBtnRef:l})]})]})},we=t.ul`
   display: flex;
   gap: 8px;
 `,ke=t.li`
   display: block;
   width: 18px;
   height: 18px;
-`,ye=t.label``,Be=t(q)`
+`,ye=t.label``,Be=t(E)`
   display: none;
 `,Ie=t.svg`
   width: 18px;
@@ -62,18 +62,18 @@ import{n as t,a as u,d as X,r as d,u as b,j as e,e as G,f as J,g as K,h as T,i a
   stroke: ${({selected:o})=>o?"var(--modal-selected-icon-color)":"var(--modal-icon-color)"};
   fill: transparent;
   cursor: pointer;
-`,A=({name:o,selectedItem:n})=>{const[s,i]=d.useState(n||""),{setFieldValue:l}=z();return d.useEffect(()=>{i(n||"")},[n]),e.jsx(we,{children:re.map(a=>e.jsx(ke,{children:e.jsxs(ye,{children:[e.jsx(Be,{type:"radio",name:o,value:a,onChange:r=>{i(r.target.value),l(o,r.target.value)}}),e.jsx(Ie,{selected:s===a,children:e.jsx("use",{href:x+`#${a}`})})]})},a))})},Ce=t.ul`
+`,H=({name:o,selectedItem:n})=>{const[s,i]=d.useState(n||""),{setFieldValue:l}=z();return d.useEffect(()=>{i(n||"")},[n]),e.jsx(we,{children:re.map(a=>e.jsx(ke,{children:e.jsxs(ye,{children:[e.jsx(Be,{type:"radio",name:o,value:a,onChange:r=>{i(r.target.value),l(o,r.target.value)}}),e.jsx(Ie,{selected:s===a,children:e.jsx("use",{href:x+`#${a}`})})]})},a))})},Ce=t.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
   width: 252px;
-`,k=t.li`
+`,w=t.li`
   display: block;
   width: 28px;
   height: 28px;
-`,y=t.label``,B=t(q)`
+`,k=t.label``,y=t(E)`
   display: none;
-`,I=t.div`
+`,B=t.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -88,7 +88,7 @@ import{n as t,a as u,d as X,r as d,u as b,j as e,e as G,f as J,g as K,h as T,i a
 `,$e=t.svg`
   stroke: var(--modal-icon-color);
   fill: transparent;
-`,N=({name:o,selectedItem:n})=>{const[s,i]=d.useState(n||""),l=u(ae),{setFieldValue:a}=z();return d.useEffect(()=>{i(n||"")},[n]),e.jsxs(Ce,{children:[e.jsx(k,{children:e.jsxs(y,{children:[e.jsx(B,{type:"radio",name:o,value:"null",onChange:r=>{i(r.target.value),a(o,r.target.value)}}),e.jsx(I,{selected:s==="null",children:e.jsx($e,{style:{width:"16px",height:"16px"},children:e.jsx("use",{href:x+"#null-background"})})})]})}),l.map(r=>e.jsx(k,{children:e.jsxs(y,{children:[e.jsx(B,{type:"radio",name:o,value:r._id,onChange:p=>{i(p.target.value),a(o,p.target.value)}}),e.jsx(I,{selected:s===r._id,children:e.jsx(Se,{src:r.previewURL})})]})},r._id))]})},D=({onClose:o})=>{const n=b(),s=i=>{const l={title:i.title,icon:i.selectedIcon,backgroundId:i.selectedBg};n(J(l)),o()};return e.jsx(O,{onClose:o,title:"New board",children:e.jsx(F,{initialValues:{title:"",selectedIcon:"",selectedBg:""},validationSchema:R({title:f().max(15,"Must be 15 characters or less").required("Name is required"),selectedIcon:f().required("Icon is required"),selectedBg:f().required("Background is required")}),onSubmit:s,children:e.jsxs(E,{children:[e.jsx(H,{type:"text",name:"title",placeholder:"Title"}),e.jsx(m,{name:"title"}),e.jsx(j,{children:"Icons"}),e.jsx(A,{name:"selectedIcon"}),e.jsx(m,{name:"selectedIcon"}),e.jsx(j,{children:"Backgrounds"}),e.jsx(N,{name:"selectedBg"}),e.jsx(m,{name:"selectedBg"}),e.jsx(_,{type:"submit",children:"Create"})]})})})},Me=t.div`
+`,A=({name:o,selectedItem:n})=>{const[s,i]=d.useState(n||""),l=h(ae),{setFieldValue:a}=z();return d.useEffect(()=>{i(n||"")},[n]),e.jsxs(Ce,{children:[e.jsx(w,{children:e.jsxs(k,{children:[e.jsx(y,{type:"radio",name:o,value:"null",onChange:r=>{i(r.target.value),a(o,r.target.value)}}),e.jsx(B,{selected:s==="null",children:e.jsx($e,{style:{width:"16px",height:"16px"},children:e.jsx("use",{href:x+"#null-background"})})})]})}),l.map(r=>e.jsx(w,{children:e.jsxs(k,{children:[e.jsx(y,{type:"radio",name:o,value:r._id,onChange:p=>{i(p.target.value),a(o,p.target.value)}}),e.jsx(B,{selected:s===r._id,children:e.jsx(Se,{src:r.previewURL})})]})},r._id))]})},N=({onClose:o})=>{const n=b(),s=i=>{const l={title:i.title,icon:i.selectedIcon,backgroundId:i.selectedBg};n(J(l)),o()};return e.jsx(L,{onClose:o,title:"New board",children:e.jsx(F,{initialValues:{title:"",selectedIcon:"",selectedBg:""},validationSchema:R({title:f().max(15,"Must be 15 characters or less").required("Name is required"),selectedIcon:f().required("Icon is required"),selectedBg:f().required("Background is required")}),onSubmit:s,children:e.jsxs(O,{children:[e.jsx(_,{type:"text",name:"title",placeholder:"Title"}),e.jsx(m,{name:"title"}),e.jsx(j,{children:"Icons"}),e.jsx(H,{name:"selectedIcon"}),e.jsx(m,{name:"selectedIcon"}),e.jsx(j,{children:"Backgrounds"}),e.jsx(A,{name:"selectedBg"}),e.jsx(m,{name:"selectedBg"}),e.jsx(q,{type:"submit",children:"Create"})]})})})},Me=t.div`
   display: flex;
   justify-content: space-between;
   height: 70px;
@@ -127,7 +127,7 @@ import{n as t,a as u,d as X,r as d,u as b,j as e,e as G,f as J,g as K,h as T,i a
   }
 `,Oe=t.svg`
   stroke: var(--sidebar-button-plus-icon-color);
-`,Ee=()=>{const[o,n]=d.useState(!1),s=()=>{n(!0)},i=()=>{n(!1)};return e.jsxs(e.Fragment,{children:[e.jsxs(Me,{children:[e.jsx(Te,{children:"Create a new board"}),e.jsx(Le,{type:"button",onClick:s,children:e.jsx(Oe,{width:"20px",height:"20px",children:e.jsx("use",{href:x+"#icon-plus"})})})]}),o&&e.jsx(D,{onClose:i})]})},He=({boardId:o,onClose:n})=>{var a,r;const s=u(w),i=b(),l=p=>{const h={title:p.title,icon:p.selectedIcon,backgroundId:p.selectedBg};i(K({boardId:o,body:h})),n()};return e.jsx(O,{onClose:n,title:"Edit board",children:e.jsx(F,{initialValues:{title:s==null?void 0:s.title,selectedIcon:s==null?void 0:s.icon,selectedBg:((a=s==null?void 0:s.background)==null?void 0:a._id)||"null"},validationSchema:R({title:f().max(15,"Must be 15 characters or less").required("Name is required"),selectedIcon:f().required("Icon is required"),selectedBg:f().required("Background is required")}),onSubmit:l,children:e.jsxs(E,{children:[e.jsx(H,{type:"text",name:"title",placeholder:"Title"}),e.jsx(m,{name:"title"}),e.jsx(j,{children:"Icons"}),e.jsx(A,{name:"selectedIcon",selectedItem:s==null?void 0:s.icon}),e.jsx(m,{name:"selectedIcon"}),e.jsx(j,{children:"Backgrounds"}),e.jsx(N,{name:"selectedBg",selectedItem:((r=s==null?void 0:s.background)==null?void 0:r._id)||"null"}),e.jsx(m,{name:"selectedBg"}),e.jsx(_,{type:"submit",children:"Edit"})]})})})},_e=t.ul`
+`,_e=()=>{const[o,n]=d.useState(!1),s=()=>{n(!0)},i=()=>{n(!1)};return e.jsxs(e.Fragment,{children:[e.jsxs(Me,{children:[e.jsx(Te,{children:"Create a new board"}),e.jsx(Le,{type:"button",onClick:s,children:e.jsx(Oe,{width:"20px",height:"20px",children:e.jsx("use",{href:x+"#icon-plus"})})})]}),o&&e.jsx(N,{onClose:i})]})},qe=({boardId:o,onClose:n})=>{var a,r;const s=h(v),i=b(),l=p=>{const g={title:p.title,icon:p.selectedIcon,backgroundId:p.selectedBg};i(K({boardId:o,body:g})),n()};return e.jsx(L,{onClose:n,title:"Edit board",children:e.jsx(F,{initialValues:{title:s==null?void 0:s.title,selectedIcon:s==null?void 0:s.icon,selectedBg:((a=s==null?void 0:s.background)==null?void 0:a._id)||"null"},validationSchema:R({title:f().max(15,"Must be 15 characters or less").required("Name is required"),selectedIcon:f().required("Icon is required"),selectedBg:f().required("Background is required")}),onSubmit:l,children:e.jsxs(O,{children:[e.jsx(_,{type:"text",name:"title",placeholder:"Title"}),e.jsx(m,{name:"title"}),e.jsx(j,{children:"Icons"}),e.jsx(H,{name:"selectedIcon",selectedItem:s==null?void 0:s.icon}),e.jsx(m,{name:"selectedIcon"}),e.jsx(j,{children:"Backgrounds"}),e.jsx(A,{name:"selectedBg",selectedItem:((r=s==null?void 0:s.background)==null?void 0:r._id)||"null"}),e.jsx(m,{name:"selectedBg"}),e.jsx(q,{type:"submit",children:"Edit"})]})})})},Ee=t.ul`
   width: 100%;
   min-height: 61px;
   margin-bottom: 40px;
@@ -149,7 +149,7 @@ import{n as t,a as u,d as X,r as d,u as b,j as e,e as G,f as J,g as K,h as T,i a
     border-radius: 4px;
     height: 130px;
   }
-`,qe=t.li`
+`,ze=t.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -170,7 +170,7 @@ import{n as t,a as u,d as X,r as d,u as b,j as e,e as G,f as J,g as K,h as T,i a
   @media screen and (min-width: 768px) {
     padding: 22px 24px;
   }
-`,ze=t.li`
+`,Fe=t.li`
   position: relative;
   display: flex;
   padding: 22px 18px 22px 14px;
@@ -194,11 +194,11 @@ import{n as t,a as u,d as X,r as d,u as b,j as e,e as G,f as J,g as K,h as T,i a
   @media screen and (min-width: 768px) {
     padding: 22px 24px;
   }
-`,C=t.svg`
+`,I=t.svg`
   stroke: var(--icon-stroke);
   fill: var(--sidebar-active-board-bg-color);
   opacity: 1;
-`,S=t.p`
+`,C=t.p`
   margin-right: auto;
   text-transform: capitalize;
   color: var(--sidebar-active-board-text-color);
@@ -210,11 +210,11 @@ import{n as t,a as u,d as X,r as d,u as b,j as e,e as G,f as J,g as K,h as T,i a
   @media screen and (min-width: 768px) {
     margin-left: 14px;
   }
-`,Fe=t.div`
+`,Re=t.div`
   display: flex;
   align-items: center;
   gap: 8px;
-`,$=t.button`
+`,S=t.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -223,7 +223,7 @@ import{n as t,a as u,d as X,r as d,u as b,j as e,e as G,f as J,g as K,h as T,i a
   height: 16px;
   background-color: transparent;
   border: none;
-`,M=t.svg`
+`,$=t.svg`
   stroke: var(--sidebar-inactive-icon-color);
   fill: var(--sidebar-active-board-bg-color);
   cursor: pointer;
@@ -232,7 +232,7 @@ import{n as t,a as u,d as X,r as d,u as b,j as e,e as G,f as J,g as K,h as T,i a
   &:focus {
     stroke: var(--progress-popup-text-color-hover);
   }
-`,Re=()=>{const[o,n]=d.useState(!1),[s,i]=d.useState(!1),l=u(ce),a=u(w),r=b(),p=T(),h=(c,W)=>{r(L(c));const U=W.toLowerCase().replace(/[\s/]+/g,"-");p(U)},g=()=>{n(!0)},v=()=>{n(!1)},V=c=>{i(c),g()},P=c=>{r(Q(c)),p("/home")};return e.jsxs(e.Fragment,{children:[e.jsx(_e,{children:l.map(c=>c._id===(a==null?void 0:a._id)?e.jsxs(ze,{children:[e.jsx(C,{width:"18px",height:"18px",children:e.jsx("use",{href:`${x}#${c.icon}`})}),e.jsx(S,{children:c.title}),e.jsxs(Fe,{children:[e.jsx($,{type:"button",onClick:()=>V(c._id),children:e.jsx(M,{width:"16px",height:"16px",children:e.jsx("use",{href:x+"#icon-pencil"})})}),e.jsx($,{type:"button",onClick:()=>P(c._id),children:e.jsx(M,{width:"16px",height:"16px",children:e.jsx("use",{href:x+"#icon-trash"})})})]})]},c._id):e.jsxs(qe,{onClick:()=>{h(c._id,c.title)},children:[e.jsx(C,{width:"18px",height:"18px",children:e.jsx("use",{href:`${x}#${c.icon}`})}),e.jsx(S,{children:c.title})]},c._id))}),o&&e.jsx(He,{boardId:s,onClose:v})]})},Ae=t.p`
+`,He=()=>{const[o,n]=d.useState(!1),[s,i]=d.useState(!1),l=h(ce),a=h(v),r=b(),p=M(),g=(c,W)=>{r(T(c));const U=W.toLowerCase().replace(/[\s/]+/g,"-");p(U)},u=()=>{n(!0)},D=()=>{n(!1)},V=c=>{i(c),u()},P=c=>{r(Q(c)),p("/home")};return e.jsxs(e.Fragment,{children:[e.jsx(Ee,{children:l.map(c=>c._id===(a==null?void 0:a._id)?e.jsxs(Fe,{children:[e.jsx(I,{width:"18px",height:"18px",children:e.jsx("use",{href:`${x}#${c.icon}`})}),e.jsx(C,{children:c.title}),e.jsxs(Re,{children:[e.jsx(S,{type:"button",onClick:()=>V(c._id),children:e.jsx($,{width:"16px",height:"16px",children:e.jsx("use",{href:x+"#icon-pencil"})})}),e.jsx(S,{type:"button",onClick:()=>P(c._id),children:e.jsx($,{width:"16px",height:"16px",children:e.jsx("use",{href:x+"#icon-trash"})})})]})]},c._id):e.jsxs(ze,{onClick:()=>{g(c._id,c.title)},children:[e.jsx(I,{width:"18px",height:"18px",children:e.jsx("use",{href:`${x}#${c.icon}`})}),e.jsx(C,{children:c.title})]},c._id))}),o&&e.jsx(qe,{boardId:s,onClose:D})]})},Ae=t.p`
   color: var(--primary-text-color);
   font-size: 16px;
   font-weight: 500;
@@ -316,10 +316,8 @@ import{n as t,a as u,d as X,r as d,u as b,j as e,e as G,f as J,g as K,h as T,i a
     margin-left: 24px;
     margin-right: 24px;
   }
-`,Ge=({isOpen:o,toggleSidebar:n})=>e.jsxs(e.Fragment,{children:[o&&e.jsx(We,{onClick:()=>{n()},isOpen:o}),e.jsxs(Pe,{isOpen:o,children:[e.jsx(le,{}),e.jsx(Ue,{children:"My boards"}),e.jsx(Ee,{}),e.jsx(Re,{}),e.jsx(Xe,{}),e.jsx(Ve,{})]})]}),Je=t.div`
+`,Ge=({isOpen:o,toggleSidebar:n})=>e.jsxs(e.Fragment,{children:[o&&e.jsx(We,{onClick:()=>{n()},isOpen:o}),e.jsxs(Pe,{isOpen:o,children:[e.jsx(le,{}),e.jsx(Ue,{children:"My boards"}),e.jsx(_e,{}),e.jsx(He,{}),e.jsx(Xe,{}),e.jsx(Ve,{})]})]}),Je=t.div`
   position: relative;
-  top: 0;
-  bottom: 0;
   display: flex;
   flex-direction: column;
   width: 100vw;
@@ -337,12 +335,16 @@ import{n as t,a as u,d as X,r as d,u as b,j as e,e as G,f as J,g as K,h as T,i a
   width: 200px;
   height: 200px;
 `,Ye=t.p`
-  width: 486px;
+  width: 335px;
   font-weight: normal;
   font-size: 14px;
   line-height: 18px;
   text-align: center;
   color: var(--placeholder-board-text-color);
+
+  @media screen and (min-width: 768px) {
+    width: 486px;
+  }
 `,Ze=t.span`
   color: var(--placeholder-board-text-accent-color);
   cursor: pointer;
@@ -351,4 +353,4 @@ import{n as t,a as u,d as X,r as d,u as b,j as e,e as G,f as J,g as K,h as T,i a
   :focus {
     text-decoration: underline;
   }
-`,et=()=>{const[o,n]=d.useState(!1),s=()=>{n(!0)},i=()=>{n(!1)};return e.jsxs(Ke,{children:[e.jsx(Qe,{children:e.jsx("use",{href:x+"#icon-main-trello"})}),e.jsxs(Ye,{children:["Before starting your project, it is essential",e.jsx(Ze,{onClick:s,children:" to create a board "}),"to visualize and track all the necessary tasks and milestones. This board serves as a powerful tool to organize the workflow and ensure effective collaboration among team members."]}),o&&e.jsx(D,{onClose:i})]})},at=()=>{const[o,n]=d.useState(!1),s=u(Z),i=u(w),l=u(de),a=b(),r=T(),p=u(pe);let h;d.useEffect(()=>{a(ee()),a(te()),s&&a(L(s))},[]),d.useEffect(()=>{if(i){const v=i.title.toLowerCase().replace(/[\s/]+/g,"-");r(v)}},[i]),d.useEffect(()=>{l&&xe.error(l)},[l]),d.useEffect(()=>{h=window.innerHeight-window.outerHeight,console.log("window.outerHeight: ",window.outerHeight),console.log("window.innerHeight: ",window.innerHeight),console.log("browserBarHeight: ",h)},[]);const g=()=>{n(!o)};return e.jsxs(Je,{browserBarHeight:h,children:[e.jsx(Ge,{isOpen:o,toggleSidebar:g}),e.jsx(ve,{toggleSidebar:g}),i?e.jsx(oe,{}):e.jsx(et,{}),e.jsx(he,{position:"bottom-right",reverseOrder:!1}),p&&e.jsx(se,{})]})};export{at as default};
+`,et=()=>{const[o,n]=d.useState(!1),s=()=>{n(!0)},i=()=>{n(!1)};return e.jsxs(Ke,{children:[e.jsx(Qe,{children:e.jsx("use",{href:x+"#icon-main-trello"})}),e.jsxs(Ye,{children:["Before starting your project, it is essential",e.jsx(Ze,{onClick:s,children:" to create a board "}),"to visualize and track all the necessary tasks and milestones. This board serves as a powerful tool to organize the workflow and ensure effective collaboration among team members."]}),o&&e.jsx(N,{onClose:i})]})},at=()=>{const[o,n]=d.useState(!1),s=h(Z),i=h(v),l=h(de),a=b(),r=M(),p=h(pe);d.useEffect(()=>{a(ee()),a(te()),s&&a(T(s))},[]),d.useEffect(()=>{if(i){const u=i.title.toLowerCase().replace(/[\s/]+/g,"-");r(u)}},[i]),d.useEffect(()=>{l&&xe.error(l)},[l]);const g=()=>{n(!o)};return e.jsxs(Je,{children:[e.jsx(Ge,{isOpen:o,toggleSidebar:g}),e.jsx(ve,{toggleSidebar:g}),i?e.jsx(oe,{}):e.jsx(et,{}),e.jsx(he,{position:"bottom-right",reverseOrder:!1}),p&&e.jsx(se,{})]})};export{at as default};

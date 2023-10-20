@@ -1,4 +1,4 @@
-import{n as e,r as d,j as r,F as k,H as y}from"./index-0fcdc4d2.js";import{s as h}from"./sprite-33c0d800.js";import{F as v,a as A,E as T}from"./index.esm-12594866.js";const E=e.div`
+import{n as e,r as d,j as r,F as k,H as y}from"./index-0758601b.js";import{s as h}from"./sprite-33c0d800.js";import{F as v,a as A,E as T}from"./index.esm-c6381a96.js";const E=e.div`
   max-height: ${({forCard:o})=>o?"145px":"200px"};
   position: absolute;
   top: ${({forCard:o})=>o?"-112px":"20px"};
@@ -63,13 +63,17 @@ import{n as e,r as d,j as r,F as k,H as y}from"./index-0fcdc4d2.js";import{s as 
   z-index: 5;
 `,X=e.div`
   position: relative;
-  width: 400px;
+  width: 335px;
   background-color: var(--modal-bg-color);
   padding: 24px;
   padding-top: 75px;
   border-radius: 14px;
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+
+  @media screen and (min-width: 768px) {
+    width: 350px;
+  }
 `,D=e.h2`
   position: absolute;
   top: 24px;
