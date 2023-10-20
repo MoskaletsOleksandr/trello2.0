@@ -1,4 +1,4 @@
-import{n as t,a as u,d as X,r as d,u as b,j as e,e as G,f as J,g as K,h as T,i as L,k as Q,m as Y,o as Z,p as ee,q as te,O as oe,t as se}from"./index-6b385b69.js";import{s as x}from"./sprite-33c0d800.js";import{C as ne,t as ie,i as re,s as ae,M as O,S as E,a as H,b as m,B as j,c as _,d as w,e as ce}from"./Button-a5618a45.js";import{a as q,u as z,b as F,c as R,d as f}from"./index.esm-0ab1e552.js";import{L as le}from"./Logo-bc1b2293.js";import{s as de,a as pe,_ as xe,I as he}from"./selectors-62cd845b.js";const ge=t.header`
+import{n as t,a as u,d as X,r as d,u as b,j as e,e as G,f as J,g as K,h as T,i as L,k as Q,m as Y,o as Z,p as ee,q as te,O as oe,t as se}from"./index-0fcdc4d2.js";import{s as x}from"./sprite-33c0d800.js";import{C as ne,t as ie,i as re,s as ae,M as O,S as E,a as H,b as m,B as j,c as _,d as w,e as ce}from"./Button-be4d790e.js";import{a as q,u as z,b as F,c as R,d as f}from"./index.esm-12594866.js";import{L as le}from"./Logo-2f19af55.js";import{s as de,a as pe,_ as xe,I as he}from"./selectors-5c385d48.js";const ge=t.header`
   display: flex;
   flex-grow: 1;
   height: 60px;
@@ -317,10 +317,12 @@ import{n as t,a as u,d as X,r as d,u as b,j as e,e as G,f as J,g as K,h as T,i a
     margin-right: 24px;
   }
 `,Ge=({isOpen:o,toggleSidebar:n})=>e.jsxs(e.Fragment,{children:[o&&e.jsx(We,{onClick:()=>{n()},isOpen:o}),e.jsxs(Pe,{isOpen:o,children:[e.jsx(le,{}),e.jsx(Ue,{children:"My boards"}),e.jsx(Ee,{}),e.jsx(Re,{}),e.jsx(Xe,{}),e.jsx(Ve,{})]})]}),Je=t.div`
+  position: relative;
+  top: 0;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   width: 100vw;
-  height: 100%;
   height: 100vh;
 `,Ke=t.div`
   display: flex;
