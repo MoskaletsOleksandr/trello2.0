@@ -6,7 +6,7 @@ export const Container = styled.div`
   caret-color: var(--auth-input-text-color);
 `;
 
-export const ToggleBtn = styled.button`
+export const EyeIcon = styled.svg`
   position: absolute;
   right: 18px;
   top: 50%;
@@ -16,10 +16,5 @@ export const ToggleBtn = styled.button`
   background-color: transparent;
   border: none;
   cursor: pointer;
-`;
-
-export const EyeIcon = styled.svg`
-  width: 14px;
-  height: 14px;
   fill: var(--modal-input-border-color);
 `;
