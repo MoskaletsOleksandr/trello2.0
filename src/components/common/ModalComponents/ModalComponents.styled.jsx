@@ -21,6 +21,7 @@ export const StyledField = styled(Field)`
   line-height: 1.5rem;
   font-weight: 400;
   padding: 12px 20px;
+  margin-top: ${({ profile }) => (profile ? '14px' : '0')};
   color: var(--modal-input-text-color);
 
   &:-webkit-autofill {

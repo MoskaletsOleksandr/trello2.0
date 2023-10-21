@@ -9,6 +9,7 @@ import {
   handleRegisterFulfilled,
   handleUpdateCurrentBoardIdFulfilled,
   handleUpdateThemeFulfilled,
+  handleUpdateUserFulfilled,
   wakeUpBackendFulfilled,
   wakeUpBackendPending,
   wakeUpBackendRejected,
@@ -21,6 +22,7 @@ import {
   registerThunk,
   updateCurrentBoardIdThunk,
   updateThemeThunk,
+  updateUserThunk,
   wakeUpBackendThunk,
 } from './thunks';
 
@@ -47,6 +49,9 @@ const authSlice = createSlice({
         handleUpdateCurrentBoardIdFulfilled
       )
       .addCase(updateCurrentBoardIdThunk.rejected, handleAuthThunkRejected)
+      .addCase(updateUserThunk.pending, handleAuthThunkPending)
+      .addCase(updateUserThunk.fulfilled, handleUpdateUserFulfilled)
+      .addCase(updateUserThunk.rejected, handleAuthThunkRejected)
       .addCase(refreshUserThunk.pending, handleAuthThunkPending)
       .addCase(refreshUserThunk.fulfilled, handleRefreshUserFulfilled)
       .addCase(refreshUserThunk.rejected, handleRefreshUserRejected)

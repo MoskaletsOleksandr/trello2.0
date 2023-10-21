@@ -4,14 +4,14 @@ import { CreateBoardModal } from '../modals/CreateBoardModal';
 import { Button, ButtonWrapper, Icon, Text } from './AddBoardBtn.styled';
 
 export const AddBoardButton = () => {
-  const [isModalOpen, setModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
-    setModalOpen(true);
+    setIsModalOpen(true);
   };
 
   const closeModal = () => {
-    setModalOpen(false);
+    setIsModalOpen(false);
   };
 
   return (

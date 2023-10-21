@@ -166,7 +166,7 @@ export const GlobalStyles = () => {
             --modal-selected-plus-color:#ffffff;
             --modal-calendar-bg-color:#1F1F1F;
             --modal-title-border-color: #ffffffA1; //vit change
-           
+            --modal-profile-plus-bg-color: #BEDBB0;
 
 
             //variables for progress popup
@@ -281,6 +281,7 @@ export const GlobalStyles = () => {
             --modal-selected-plus-color:#ffffff;
             --modal-calendar-bg-color:#ffffff;
             --modal-title-border-color: #1616161A; //vit
+            --modal-profile-plus-bg-color: #BEDBB0;
 
             //variables for progress popup
             --progress-popup-bg-color: #FCFCFC;
@@ -395,6 +396,7 @@ export const GlobalStyles = () => {
             --modal-selected-plus-color:#161616;
             --modal-calendar-bg-color:#ffffff;
             --modal-title-border-color: #161616A1; //vit
+            --modal-profile-plus-bg-color: #ECEDFD;
 
             //variables for progress popup
             --progress-popup-bg-color: #FCFCFC;

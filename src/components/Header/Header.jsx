@@ -14,6 +14,7 @@ import { selectTheme } from '../../redux/auth/selectors';
 import { updateThemeThunk } from '../../redux/auth/thunks';
 import { CustomSelect } from '../CustomSelect';
 import { themes } from '../../data/constants';
+import { UserInfo } from '../UserInfo';
 
 export const Header = ({ toggleSidebar }) => {
   const appTheme = useSelector(selectTheme);
@@ -60,6 +61,7 @@ export const Header = ({ toggleSidebar }) => {
             <use href={`${sprite}#icon-chevron-down`}></use>
           </IconDown>
         </TheamBtn>
+        <UserInfo />
         {isCustomOptionListOpen && (
           <CustomSelect
             title="Select theme"

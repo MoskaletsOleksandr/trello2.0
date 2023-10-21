@@ -59,6 +59,19 @@ export const updateCurrentBoardId = async (boardId) => {
   }
 };
 
+export const updateUser = async (formData) => {
+  try {
+    const { data } = await authInstance.put('/update', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+    return data;
+  } catch (error) {
+    throw new Error(error.response.data.message);
+  }
+};
+
 export const wakeUpBackend = async () => {
   try {
     await authInstance.get('/wakeUp');

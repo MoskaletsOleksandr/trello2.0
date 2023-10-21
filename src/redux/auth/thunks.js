@@ -6,6 +6,7 @@ import {
   register,
   updateCurrentBoardId,
   updateTheme,
+  updateUser,
   wakeUpBackend,
 } from '../../api/authApi/authApi';
 import { resetBoardsState } from '../boards/slice';
@@ -67,6 +68,18 @@ export const updateCurrentBoardIdThunk = createAsyncThunk(
   async (boardId, { rejectWithValue }) => {
     try {
       const data = await updateCurrentBoardId(boardId);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const updateUserThunk = createAsyncThunk(
+  'auth/updateUser',
+  async (formData, { rejectWithValue }) => {
+    try {
+      const data = await updateUser(formData);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);

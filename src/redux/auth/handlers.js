@@ -28,6 +28,12 @@ export const handleUpdateCurrentBoardIdFulfilled = (state, { payload }) => {
   state.authError = null;
 };
 
+export const handleUpdateUserFulfilled = (state, { payload }) => {
+  state.user = payload.user;
+  state.isAuthLoading = false;
+  state.authError = null;
+};
+
 export const handleRefreshUserFulfilled = (state, { payload }) => {
   state.user = payload.user;
   state.isAuthLoading = false;
