@@ -1,4 +1,4 @@
-import{n as o,N as v,r as u,j as e,u as x,l as w,b as y,c as k,a as S}from"./index-a8367e59.js";import{F as E,a as q,E as F,S as I,b as h,c as m,d as a}from"./ModalComponents.styled-a8166df7.js";import{s as L}from"./sprite-685f0d05.js";import{s as M,_ as $,I as c}from"./selectors-04b54b30.js";const b=o(E)`
+import{n as o,N as v,r as u,j as e,u as x,l as w,b as y,c as k,a as S}from"./index-e95cb96f.js";import{F as E,a as q,E as F,S as I,b as h,c as m,d as a}from"./ModalComponents.styled-f102713d.js";import{s as L}from"./sprite-685f0d05.js";import{s as M,_ as $,I as c}from"./selectors-cab4e13d.js";const b=o(E)`
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -83,6 +83,7 @@ import{n as o,N as v,r as u,j as e,u as x,l as w,b as y,c as k,a as S}from"./ind
 `,z=o.div`
   position: relative;
   width: 100%;
+  caret-color: var(--auth-input-text-color);
 `,P=o.button`
   position: absolute;
   right: 18px;
