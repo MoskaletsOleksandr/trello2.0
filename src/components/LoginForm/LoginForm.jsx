@@ -11,6 +11,7 @@ import {
 } from '../common/FormComponents/FormComponents.styled';
 import { useDispatch } from 'react-redux';
 import { loginThunk } from '../../redux/auth/thunks';
+import { PasswordToggle } from '../common/ModalComponents/PasswordToggle';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -44,11 +45,7 @@ export const LoginForm = () => {
         </AuthTitle>
         <StyledField type="email" name="email" placeholder="Enter your email" />
         <StyledErrorMessage name="email" />
-        <StyledField
-          type="password"
-          name="password"
-          placeholder="Enter your password"
-        />
+        <PasswordToggle name="password" />
         <StyledErrorMessage name="password" />
         <AuthButton type="submit">Login</AuthButton>
       </StyledForm>

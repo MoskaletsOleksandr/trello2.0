@@ -23,7 +23,6 @@ export const EditProfileModal = ({ onClose, user }) => {
       const imageUrl = URL.createObjectURL(file);
       setAvatarImage(imageUrl);
       setAvatarFile(file);
-      console.log('file: ', file);
     }
   };
 

@@ -2,7 +2,6 @@ import { useFormikContext } from 'formik';
 import React, { useEffect, useState } from 'react';
 import { priorities } from '../../../../data/constants';
 import {
-  Icon,
   Item,
   Label,
   List,
@@ -10,7 +9,7 @@ import {
   StyledField,
 } from './PriorityRadioBtns.styled';
 
-export const PriorityRadioBtns = ({ name, icons, selectedItem }) => {
+export const PriorityRadioBtns = ({ name, selectedItem }) => {
   const [selectedPriority, setSelectedPriority] = useState(selectedItem || '');
   const { setFieldValue } = useFormikContext();
 

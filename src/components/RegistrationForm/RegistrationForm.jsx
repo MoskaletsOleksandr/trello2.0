@@ -11,6 +11,7 @@ import {
 } from '../common/FormComponents/FormComponents.styled';
 import { useDispatch } from 'react-redux';
 import { registerThunk } from '../../redux/auth/thunks';
+import { PasswordToggle } from '../common/ModalComponents/PasswordToggle';
 
 export const RegistrationForm = () => {
   const dispatch = useDispatch();
@@ -50,11 +51,7 @@ export const RegistrationForm = () => {
         <StyledErrorMessage name="name" />
         <StyledField type="email" name="email" placeholder="Enter your email" />
         <StyledErrorMessage name="email" />
-        <StyledField
-          type="password"
-          name="password"
-          placeholder="Enter your password"
-        />
+        <PasswordToggle name="password" />
         <StyledErrorMessage name="password" />
         <AuthButton type="submit">Register</AuthButton>
       </StyledForm>

@@ -33,6 +33,7 @@ export const StyledField = styled(Field)`
   font-weight: 400;
   padding: 12px 20px;
   color: var(--auth-input-text-color);
+  caret-color: var(--auth-input-text-color);
 
   &:-webkit-autofill {
     -webkit-box-shadow: rgb(22, 22, 22) 0px 0px 0px 50px inset;

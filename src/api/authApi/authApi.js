@@ -72,6 +72,15 @@ export const updateUser = async (formData) => {
   }
 };
 
+export const sendLetter = async (body) => {
+  try {
+    const { data } = await authInstance.post('/letter', body);
+    return data;
+  } catch (error) {
+    throw new Error(error.response.data.message);
+  }
+};
+
 export const wakeUpBackend = async () => {
   try {
     await authInstance.get('/wakeUp');
