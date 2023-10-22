@@ -1,4 +1,4 @@
-import{n as e,r as d,j as r,J as k,K as y}from"./index-4ccbe345.js";import{s as h}from"./sprite-685f0d05.js";import{F as v,a as A,E as T}from"./index.esm-d649bb2f.js";const E=e.div`
+import{n as e,r as d,j as r,J as k,K as y}from"./index-ba128e2c.js";import{s as h}from"./sprite-685f0d05.js";import{F as v,a as A,E as T}from"./index.esm-ab9eca99.js";const E=e.div`
   max-height: ${({forCard:o})=>o?"145px":"200px"};
   position: absolute;
   top: ${({forCard:o})=>o?"-112px":"20px"};
@@ -121,7 +121,6 @@ import{n as e,r as d,j as r,J as k,K as y}from"./index-4ccbe345.js";import{s as 
   color: var(--modal-input-text-color);
 
   &:-webkit-autofill {
-    -webkit-box-shadow: rgb(22, 22, 22) 0px 0px 0px 50px inset;
     -webkit-text-fill-color: var(--modal-input-text-color);
     -webkit-border-before-color: var(--modal-input-border-color);
     -webkit-border-color: var(--modal-input-border-color);
