@@ -22,7 +22,7 @@ export const GlobalStyles = () => {
             --auth-input-bg-color: #1f1f1f;
             --auth-input-text-color: #ffffff;
             --auth-input-placeholder-color: #ffffff4c;
-            --auth-input-border-color: #737373;
+            --auth-input-border-color: #BEDBB0;
             --auth-form-bg-color: #161616;
           }
 

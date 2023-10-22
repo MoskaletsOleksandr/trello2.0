@@ -16,5 +16,5 @@ export const EyeIcon = styled.svg`
   background-color: transparent;
   border: none;
   cursor: pointer;
-  fill: var(--modal-input-border-color);
+  fill: var(--auth-input-border-color);
 `;
