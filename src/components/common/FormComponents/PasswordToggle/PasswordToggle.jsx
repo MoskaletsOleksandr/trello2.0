@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import sprite from '../../../../assets/sprite.svg';
-import { StyledField } from '../ModalComponents.styled';
+import { StyledField } from '../FormComponents.styled';
 import { Container, EyeIcon } from './PasswordToggle.styled';
 
 export const PasswordToggle = ({ name }) => {

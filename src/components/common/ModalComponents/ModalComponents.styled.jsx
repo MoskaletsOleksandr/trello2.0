@@ -10,25 +10,26 @@ export const StyledForm = styled(Form)`
   font-size: 14px;
   border: none;
   border-radius: 8px;
+  color: var(--modal-primary-text-color);
 `;
 
 export const StyledField = styled(Field)`
   width: 100%;
-  background-color: var(--auth-input-bg-color);
-  border: 1px solid var(--auth-input-border-color);
+  background-color: var(--modal-input-bg-color);
+  border: 1px solid var(--modal-input-border-color);
   border-radius: 8px;
   font-size: 16px;
   line-height: 1.5rem;
   font-weight: 400;
   padding: 12px 20px;
   margin-top: ${({ profile }) => (profile ? '14px' : '0')};
-  color: var(--auth-input-text-color);
+  color: var(--modal-input-text-color);
 
   &:-webkit-autofill {
     -webkit-box-shadow: rgb(22, 22, 22) 0px 0px 0px 50px inset;
-    -webkit-text-fill-color: var(--auth-input-text-color);
-    -webkit-border-before-color: var(--auth-input-border-color);
-    -webkit-border-color: var(--auth-input-border-color);
+    -webkit-text-fill-color: var(--modal-input-text-color);
+    -webkit-border-before-color: var(--modal-input-border-color);
+    -webkit-border-color: var(--modal-input-border-color);
     outline: transparent;
   }
 
@@ -38,7 +39,7 @@ export const StyledField = styled(Field)`
 
   &::placeholder {
     font-size: 14px;
-    color: var(--auth-input-placeholder-color);
+    color: var(--modal-input-placeholder-color);
   }
 `;
 

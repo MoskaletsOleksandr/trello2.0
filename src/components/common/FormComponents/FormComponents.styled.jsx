@@ -25,6 +25,7 @@ export const StyledForm = styled(Form)`
 `;
 
 export const StyledField = styled(Field)`
+  width: 100%;
   background-color: var(--auth-input-bg-color);
   border: 1px solid var(--auth-input-border-color);
   border-radius: 8px;

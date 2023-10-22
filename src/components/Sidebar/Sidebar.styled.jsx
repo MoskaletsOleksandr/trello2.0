@@ -45,18 +45,67 @@ export const Title = styled.h2`
   letter-spacing: -0.24px;
 `;
 
-export const HelpContainer = styled.div`
+export const FeedbackContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 197px;
-  height: 138px;
-  background-color: teal;
+  height: 178px;
+  background-color: var(--sidebar-active-board-bg-color);
+  border-radius: 8px;
   margin-left: 14px;
   margin-right: 14px;
   margin-bottom: 24px;
+  padding: 14px;
 
   @media screen and (min-width: 768px) {
     width: 212px;
-    height: 178px;
     margin-left: 24px;
     margin-right: 24px;
+    padding: 20px;
   }
+`;
+
+export const FeedbackTitle = styled.h3`
+  color: var(--primary-text-color);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+`;
+
+export const FeedbackText = styled.p`
+  color: var(--secondary-text-color);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.24px;
+`;
+
+export const FeedbackBtn = styled.button`
+  display: flex;
+  gap: 14px;
+  justify-content: left;
+  align-items: center;
+  color: var(--primary-text-color);
+  width: 150px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  &:hover svg {
+    stroke: var(--sidebar-logout-icon-color-hover);
+    transform: scale(1.15);
+  }
+
+  &:focus svg {
+    stroke: var(--sidebar-logout-icon-color-hover);
+    transform: scale(1.15);
+  }
+`;
+
+export const FeedbackIcon = styled.svg`
+  width: 20px;
+  height: 20px;
+  stroke: var(--sidebar-needhelp-icon-color);
+  transition: stroke 300ms var(--timing-function),
+    transform 300ms var(--timing-function);
 `;

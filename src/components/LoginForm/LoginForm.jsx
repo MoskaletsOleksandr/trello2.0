@@ -11,7 +11,7 @@ import {
 } from '../common/FormComponents/FormComponents.styled';
 import { useDispatch } from 'react-redux';
 import { loginThunk } from '../../redux/auth/thunks';
-import { PasswordToggle } from '../common/ModalComponents/PasswordToggle';
+import { PasswordToggle } from '../common/FormComponents/PasswordToggle';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
