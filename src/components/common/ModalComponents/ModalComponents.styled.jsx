@@ -26,7 +26,6 @@ export const StyledField = styled(Field)`
   color: var(--modal-input-text-color);
 
   &:-webkit-autofill {
-    -webkit-box-shadow: rgb(22, 22, 22) 0px 0px 0px 50px inset;
     -webkit-text-fill-color: var(--modal-input-text-color);
     -webkit-border-before-color: var(--modal-input-border-color);
     -webkit-border-color: var(--modal-input-border-color);
