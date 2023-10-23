@@ -1,4 +1,4 @@
-import{n as e,j as t,G as g,L as a,u as h,a as x,s as p,r as n,b as f,w as u}from"./index-96c59242.js";import{s as c}from"./sprite-cc172135.js";import{L as m}from"./Logo-310d1e71.js";const w=e.a`
+import{n as e,j as t,G as g,L as a,u as h,a as x,s as p,r as n,b as f,w as u}from"./index-02aefbae.js";import{s as c}from"./sprite-cc172135.js";import{L as m}from"./Logo-f839644f.js";const w=e.a`
   text-decoration: none;
   color: #161616;
 `,v=e.div`
@@ -31,7 +31,7 @@ import{n as e,j as t,G as g,L as a,u as h,a as x,s as p,r as n,b as f,w as u}fro
   height: 40px;
 
   transition: transform 300ms var(--timing-function);
-`,j=()=>t.jsxs(v,{children:[t.jsx(b,{children:t.jsx("use",{href:`${c}#icon-google`})}),t.jsx(w,{href:"https://trello2-0-backend.onrender.com/users/google",children:"Continue with Google"})]}),y=e.div`
+`,j=()=>t.jsxs(v,{children:[t.jsx(b,{children:t.jsx("use",{href:`${c}#icon-google`})}),t.jsx(w,{href:"https://trello2.0-backend.onrender.com/users/google",children:"Continue with Google"})]}),y=e.div`
   position: absolute;
   top: 0;
   left: 0;
