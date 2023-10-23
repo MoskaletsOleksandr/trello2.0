@@ -59,7 +59,14 @@ export const App = () => {
             }
           />
         </Route>
-        <Route path="*" element={<WelcomePage />} />
+        <Route
+          path="*"
+          element={
+            <PublicRoute>
+              <WelcomePage />
+            </PublicRoute>
+          }
+        />
       </Routes>
     </Suspense>
   );

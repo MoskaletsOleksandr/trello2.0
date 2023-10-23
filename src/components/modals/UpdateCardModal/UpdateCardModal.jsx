@@ -41,10 +41,9 @@ export const UpdateCardModal = ({ onClose, card }) => {
         }}
         validationSchema={Yup.object({
           title: Yup.string()
-            .max(20, 'Must be 20 characters or less')
+            .max(25, 'Must be 25 characters or less')
             .required('Name is required'),
           text: Yup.string()
-            .min(5, 'Must be 5 characters or more')
             .max(150, 'Must be 150 characters or less')
             .required('Description is required'),
           selectedPriority: Yup.string().required('Priority is required'),

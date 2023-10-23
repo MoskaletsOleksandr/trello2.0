@@ -1,7 +1,7 @@
 import { Grid } from 'react-loader-spinner';
 import { Container, Text, Title } from './WaitingLoader.styled';
 
-export const WitingLoader = () => {
+export const WaitingLoader = () => {
   return (
     <Container>
       <Title>Welcome to the app Trello2.0</Title>

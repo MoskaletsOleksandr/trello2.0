@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import sprite from '../../assets/sprite.svg';
+import { GoogleButton } from '../../components/common/GoogleButton';
 import Logo from '../../components/Logo/Logo';
-import { WitingLoader } from '../../components/WaitingLoader';
+import { WaitingLoader } from '../../components/WaitingLoader';
 import { selectIsBackendReady } from '../../redux/auth/selectors';
-import { wakeUpBackendThunk } from '../../redux/auth/thunks';
+import { refreshUserThunk, wakeUpBackendThunk } from '../../redux/auth/thunks';
 
 import {
   Container,
@@ -20,6 +21,16 @@ const WelcomePage = () => {
   const dispatch = useDispatch();
   const isBackendReady = useSelector(selectIsBackendReady);
   const [showLoader, setShowLoader] = useState(false);
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const deviceId = urlParams.get('deviceId');
+
+    if (deviceId) {
+      localStorage.setItem('deviceId', deviceId);
+      dispatch(refreshUserThunk());
+    }
+  }, []);
 
   useEffect(() => {
     dispatch(wakeUpBackendThunk());
@@ -49,9 +60,10 @@ const WelcomePage = () => {
         <Nav>
           <LoginBtn to="/auth/login">Log In</LoginBtn>
           <RegistrationBtn to="/auth/register">Registration</RegistrationBtn>
+          <GoogleButton />
         </Nav>
       </MainContent>
-      {showLoader && !isBackendReady && <WitingLoader />}
+      {showLoader && !isBackendReady && <WaitingLoader />}
     </Container>
   );
 };

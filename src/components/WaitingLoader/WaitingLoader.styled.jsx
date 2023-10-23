@@ -15,11 +15,13 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h2`
+  text-align: center;
   font-size: 50px;
   color: white;
 `;
 
 export const Text = styled.p`
+  text-align: center;
   font-size: 28px;
   color: white;
 `;
