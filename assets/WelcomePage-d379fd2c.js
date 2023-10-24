@@ -1,37 +1,4 @@
-import{n as e,j as t,G as g,L as a,u as h,a as x,s as p,r as n,b as f,w as u}from"./index-96c59242.js";import{s as c}from"./sprite-cc172135.js";import{L as m}from"./Logo-310d1e71.js";const w=e.a`
-  text-decoration: none;
-  color: #161616;
-`,v=e.div`
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 21px;
-  text-align: center;
-  letter-spacing: -0.02em;
-  width: 344px;
-  height: 49px;
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  background: #fff;
-  border-radius: 8px;
-  color: #161616;
-  cursor: pointer;
-
-  &:hover svg {
-    transform: scale(1.15);
-  }
-
-  &:focus svg {
-    transform: scale(1.15);
-  }
-`,b=e.svg`
-  width: 40px;
-  height: 40px;
-
-  transition: transform 300ms var(--timing-function);
-`,j=()=>t.jsxs(v,{children:[t.jsx(b,{children:t.jsx("use",{href:`${c}#icon-google`})}),t.jsx(w,{href:"https://trello2-0-backend.onrender.com/users/google",children:"Continue with Google"})]}),y=e.div`
+import{n as e,j as t,G as d,L as s,u as x,a as g,s as h,r as n,b as p,w as u}from"./index-12b6f751.js";import{s as f}from"./sprite-cc172135.js";import{G as m}from"./GoogleButton-27197fd0.js";import{L as w}from"./Logo-17d5465a.js";const b=e.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -43,15 +10,15 @@ import{n as e,j as t,G as g,L as a,u as h,a as x,s as p,r as n,b as f,w as u}fro
   flex-direction: column;
   align-items: center;
   justify-content: center;
-`,k=e.h2`
+`,v=e.h2`
   text-align: center;
   font-size: 50px;
   color: white;
-`,L=e.p`
+`,j=e.p`
   text-align: center;
   font-size: 28px;
   color: white;
-`,S=()=>t.jsxs(y,{children:[t.jsx(k,{children:"Welcome to the app Trello2.0"}),t.jsx(L,{children:"Sometimes render.com falls asleep, wait until we wake up our backend"}),t.jsx(g,{height:"240",width:"240",color:"green",ariaLabel:"grid-loading",radius:"12.5",visible:!0})]}),T=e.div`
+`,k=()=>t.jsxs(b,{children:[t.jsx(v,{children:"Welcome to the app Trello2.0"}),t.jsx(j,{children:"Sometimes render.com falls asleep, wait until we wake up our backend"}),t.jsx(d,{height:"240",width:"240",color:"green",ariaLabel:"grid-loading",radius:"12.5",visible:!0})]}),y=e.div`
   height: 100vh;
   width: 100%;
   display: flex;
@@ -59,16 +26,16 @@ import{n as e,j as t,G as g,L as a,u as h,a as x,s as p,r as n,b as f,w as u}fro
   align-items: center;
   justify-content: center;
   background: linear-gradient(180deg, #ffffff 0%, #ffffff 25%, #bedbb0 100%);
-`,I=e.div`
+`,L=e.div`
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-`,z=e.svg`
+`,T=e.svg`
   width: 200px;
   height: 200px;
-`,B=e.p`
+`,S=e.p`
   color: var(--welcome-primary-text-color);
   text-align: center;
   font-size: 14px;
@@ -82,12 +49,12 @@ import{n as e,j as t,G as g,L as a,u as h,a as x,s as p,r as n,b as f,w as u}fro
   @media screen and (min-width: 768px) {
     width: 473px;
   }
-`,R=e.div`
+`,I=e.div`
   align-items: center;
   display: flex;
   flex-direction: column;
   gap: 14px;
-`,C=e(a)`
+`,B=e(s)`
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -110,7 +77,7 @@ import{n as e,j as t,G as g,L as a,u as h,a as x,s as p,r as n,b as f,w as u}fro
   @media screen and (min-width: 768px) {
     width: 344px;
   }
-`,E=e(a)`
+`,R=e(s)`
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -143,4 +110,4 @@ import{n as e,j as t,G as g,L as a,u as h,a as x,s as p,r as n,b as f,w as u}fro
   @media screen and (min-width: 768px) {
     width: 344px;
   }
-`,M=()=>{const o=h(),r=x(p),[l,d]=n.useState(!1);return n.useEffect(()=>{const s=new URLSearchParams(window.location.search).get("deviceId");s&&(localStorage.setItem("deviceId",s),o(f()))},[]),n.useEffect(()=>{o(u());const i=setTimeout(()=>{r||d(!0)},1500);return()=>{clearTimeout(i)}},[]),t.jsxs(T,{children:[t.jsxs(I,{children:[t.jsx(z,{children:t.jsx("use",{href:c+"#icon-main-trello"})}),t.jsx(m,{large:!0}),t.jsx(B,{children:"Supercharge your productivity and take control of your tasks with this Task Manager - Don't wait, start achieving your goals now!"}),t.jsxs(R,{children:[t.jsx(E,{to:"/auth/login",children:"Log In"}),t.jsx(C,{to:"/auth/register",children:"Registration"}),t.jsx(j,{})]})]}),l&&!r&&t.jsx(S,{})]})};export{M as default};
+`,C=()=>{const o=x(),i=g(h),[c,l]=n.useState(!1);return n.useEffect(()=>{const a=new URLSearchParams(window.location.search).get("deviceId");a&&(localStorage.setItem("deviceId",a),o(p()))},[]),n.useEffect(()=>{o(u());const r=setTimeout(()=>{i||l(!0)},1500);return()=>{clearTimeout(r)}},[]),t.jsxs(y,{children:[t.jsxs(L,{children:[t.jsx(T,{children:t.jsx("use",{href:f+"#icon-main-trello"})}),t.jsx(w,{large:!0}),t.jsx(S,{children:"Supercharge your productivity and take control of your tasks with this Task Manager - Don't wait, start achieving your goals now!"}),t.jsxs(I,{children:[t.jsx(R,{to:"/auth/login",children:"Log In"}),t.jsx(B,{to:"/auth/register",children:"Registration"}),t.jsx(m,{})]})]}),c&&!i&&t.jsx(k,{})]})};export{C as default};
