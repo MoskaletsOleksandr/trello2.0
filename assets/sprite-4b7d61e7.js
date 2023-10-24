@@ -1,1 +1,0 @@
-import{R as e,Q as u,S as c}from"./index-bc89a093.js";function r(t=e){const s=t===e?u:c(t);return function(){const{store:o}=s();return o}}const a=r();function i(t=e){const s=t===e?a:r(t);return function(){return s().dispatch}}const x=i(),R="/trello2.0/assets/sprite-b2066990.svg";export{R as s,x as u};
