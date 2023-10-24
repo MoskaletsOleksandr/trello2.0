@@ -39,9 +39,9 @@ export const loginThunk = createAsyncThunk(
 
 export const logoutThunk = createAsyncThunk(
   'auth/logout',
-  async (body, { rejectWithValue, dispatch }) => {
+  async (_, { rejectWithValue, dispatch }) => {
     try {
-      await logout(body);
+      await logout();
       dispatch(resetBoardsState());
       dispatch(resetCardsState());
       dispatch(resetColumnsState());

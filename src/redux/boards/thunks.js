@@ -28,7 +28,6 @@ export const getCurrentBoardThunk = createAsyncThunk(
   async (id, { rejectWithValue, dispatch }) => {
     try {
       const data = await getCurrentBoard(id);
-      await dispatch(updateCurrentBoardIdThunk({ boardId: id }));
       await dispatch(getBoardColumnsThunk(id));
       await dispatch(getBoardCardsThunk(id));
       return data;

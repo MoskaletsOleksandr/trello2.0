@@ -3,9 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import sprite from '../../assets/sprite.svg';
 import { GoogleButton } from '../../components/common/GoogleButton';
 import Logo from '../../components/Logo/Logo';
-import { WaitingLoader } from '../../components/WaitingLoader';
-import { selectIsBackendReady } from '../../redux/auth/selectors';
-import { refreshUserThunk, wakeUpBackendThunk } from '../../redux/auth/thunks';
+import { refreshUserThunk } from '../../redux/auth/thunks';
 
 import {
   Container,
@@ -19,8 +17,6 @@ import {
 
 const WelcomePage = () => {
   const dispatch = useDispatch();
-  const isBackendReady = useSelector(selectIsBackendReady);
-  const [showLoader, setShowLoader] = useState(false);
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -30,20 +26,6 @@ const WelcomePage = () => {
       localStorage.setItem('deviceId', deviceId);
       dispatch(refreshUserThunk());
     }
-  }, []);
-
-  useEffect(() => {
-    dispatch(wakeUpBackendThunk());
-
-    const timeout = setTimeout(() => {
-      if (!isBackendReady) {
-        setShowLoader(true);
-      }
-    }, 1500);
-
-    return () => {
-      clearTimeout(timeout);
-    };
   }, []);
 
   return (
@@ -63,7 +45,6 @@ const WelcomePage = () => {
           <GoogleButton />
         </Nav>
       </MainContent>
-      {showLoader && !isBackendReady && <WaitingLoader />}
     </Container>
   );
 };

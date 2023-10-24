@@ -17,6 +17,7 @@ import { PlaceHolderBoard } from '../../components/PlaceHolderBoard/PlaceHolderB
 import { selectError, selectIsLoading } from '../../redux/selectors';
 import { Loader } from '../../components/Loader';
 import toast, { Toaster } from 'react-hot-toast';
+import { logoutThunk } from '../../redux/auth/thunks';
 
 const HomePage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,11 +29,15 @@ const HomePage = () => {
   const isLoading = useSelector(selectIsLoading);
 
   useEffect(() => {
-    dispatch(getAllBoardsThunk());
-    dispatch(getBackgroundsThunk());
-    if (currentBoardId) {
-      dispatch(getCurrentBoardThunk(currentBoardId));
-    }
+    const fetchData = async () => {
+      await dispatch(getAllBoardsThunk());
+      await dispatch(getBackgroundsThunk());
+      if (currentBoardId) {
+        await dispatch(getCurrentBoardThunk(currentBoardId));
+      }
+    };
+
+    fetchData();
   }, []);
 
   useEffect(() => {
@@ -45,6 +50,10 @@ const HomePage = () => {
   }, [currentBoard]);
 
   useEffect(() => {
+    if (errorMessage === 'Not authorized') {
+      dispatch(logoutThunk());
+    }
+
     if (errorMessage) {
       toast.error(errorMessage);
     }

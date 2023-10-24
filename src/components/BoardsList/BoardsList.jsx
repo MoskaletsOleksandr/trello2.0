@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import sprite from '../../assets/sprite.svg';
+import { updateCurrentBoardIdThunk } from '../../redux/auth/thunks';
 import {
   selectAllBoards,
   selectCurrentBoard,
@@ -30,8 +31,9 @@ export const BoardsList = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleOpenBoard = (boardId, boardTitle) => {
-    dispatch(getCurrentBoardThunk(boardId));
+  const handleOpenBoard = async (boardId, boardTitle) => {
+    await dispatch(getCurrentBoardThunk(boardId));
+    await dispatch(updateCurrentBoardIdThunk({ boardId }));
     const normalizedTitle = boardTitle.toLowerCase().replace(/[\s/]+/g, '-');
     navigate(normalizedTitle);
   };

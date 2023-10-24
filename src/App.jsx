@@ -1,12 +1,15 @@
 import { Routes, Route } from 'react-router-dom';
-import { Suspense, lazy } from 'react';
+import { Suspense, lazy, useState } from 'react';
 import PublicRoute from './components/PublicRoute/PublicRoute';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { refreshUserThunk } from './redux/auth/thunks';
+import { useDispatch, useSelector } from 'react-redux';
 import GlobalStyles from './GlobalStyles';
 import { Loader } from './components/Loader';
+import { wakeUpBackendThunk } from './redux/auth/thunks';
+import { selectIsBackendReady } from './redux/auth/selectors';
+import { WaitingLoader } from './components/WaitingLoader';
+// import { refreshUserThunk } from './redux/auth/thunks';
 
 const WelcomePage = lazy(() => import('./pages/WelcomePage/WelcomePage'));
 const AuthPage = lazy(() => import('./pages/AuthPage/AuthPage'));
@@ -15,12 +18,28 @@ const CardsPage = lazy(() => import('./pages/CardsPage/CardsPage'));
 
 export const App = () => {
   const dispatch = useDispatch();
+  const isBackendReady = useSelector(selectIsBackendReady);
+  const [showLoader, setShowLoader] = useState(false);
 
   useEffect(() => {
-    if (localStorage.getItem('token')) {
-      dispatch(refreshUserThunk());
-    }
+    dispatch(wakeUpBackendThunk());
+
+    const timeout = setTimeout(() => {
+      if (!isBackendReady) {
+        setShowLoader(true);
+      }
+    }, 1500);
+
+    return () => {
+      clearTimeout(timeout);
+    };
   }, []);
+
+  // useEffect(() => {
+  //   if (localStorage.getItem('token')) {
+  //     dispatch(refreshUserThunk());
+  //   }
+  // }, []);
 
   return (
     <Suspense fallback={<Loader />}>
@@ -68,6 +87,7 @@ export const App = () => {
           }
         />
       </Routes>
+      {showLoader && !isBackendReady && <WaitingLoader />}
     </Suspense>
   );
 };
