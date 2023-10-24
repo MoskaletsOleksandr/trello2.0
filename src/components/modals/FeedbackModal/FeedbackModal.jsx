@@ -4,13 +4,13 @@ import React from 'react';
 import { sendLetter } from '../../../api/authApi/authApi';
 import { Modal } from '../../common/Modal';
 import {
-  CardModalTitle,
   StyledErrorMessage,
   StyledField,
   StyledForm,
   StyledTextarea,
 } from '../../common/ModalComponents/ModalComponents.styled';
 import { Button } from '../../common/Button';
+import toast, { Toaster } from 'react-hot-toast';
 
 export const FeedbackModal = ({ onClose }) => {
   const handleSubmit = async (values) => {
@@ -20,9 +20,9 @@ export const FeedbackModal = ({ onClose }) => {
     };
     try {
       const response = await sendLetter(body);
-      console.log('Response from server:', response);
+      toast.success(response.message);
     } catch (error) {
-      console.log('Error:', error.message);
+      toast.error(error.message);
     }
     onClose();
   };
@@ -54,6 +54,7 @@ export const FeedbackModal = ({ onClose }) => {
           <Button type="submit">Send feedback</Button>
         </StyledForm>
       </Formik>
+      <Toaster position="top-right" reverseOrder={false} />
     </Modal>
   );
 };

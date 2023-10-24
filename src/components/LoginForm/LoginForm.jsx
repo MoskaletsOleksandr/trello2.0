@@ -12,6 +12,7 @@ import {
 import { useDispatch } from 'react-redux';
 import { loginThunk } from '../../redux/auth/thunks';
 import { PasswordToggle } from '../common/FormComponents/PasswordToggle';
+import { GoogleButton } from '../../components/common/GoogleButton';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -48,6 +49,7 @@ export const LoginForm = () => {
         <PasswordToggle name="password" />
         <StyledErrorMessage name="password" />
         <AuthButton type="submit">Login</AuthButton>
+        <GoogleButton />
       </StyledForm>
     </Formik>
   );

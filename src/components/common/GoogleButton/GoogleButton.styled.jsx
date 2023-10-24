@@ -3,24 +3,25 @@ import styled from '@emotion/styled';
 export const StyledLink = styled.a`
   text-decoration: none;
   color: #161616;
-`;
-export const Container = styled.div`
-  font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 21px;
   text-align: center;
   letter-spacing: -0.02em;
-  width: 344px;
-  height: 49px;
   display: flex;
   gap: 10px;
   justify-content: center;
   align-items: center;
-  background: #fff;
+  width: 100%;
+  height: 49px;
+  background-color: #ffffff;
   border-radius: 8px;
-  color: #161616;
-  cursor: pointer;
+  transition: background-color 300ms var(--timing-function);
+
+  &:hover,
+  :focus {
+    background-color: var(--auth-btn-bg-color-hover);
+  }
 
   &:hover svg {
     transform: scale(1.15);

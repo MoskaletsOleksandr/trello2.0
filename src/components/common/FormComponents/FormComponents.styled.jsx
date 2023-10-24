@@ -37,7 +37,7 @@ export const StyledField = styled(Field)`
   caret-color: var(--auth-input-text-color);
 
   &:-webkit-autofill {
-    -webkit-box-shadow: rgb(22, 22, 22) 0px 0px 0px 50px inset;
+    -webkit-box-shadow: #1f1f1f 0px 0px 0px 50px inset;
     -webkit-text-fill-color: var(--auth-input-text-color);
     -webkit-border-before-color: var(--auth-input-border-color);
     -webkit-border-color: var(--auth-input-border-color);

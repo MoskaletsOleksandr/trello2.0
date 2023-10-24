@@ -12,6 +12,7 @@ import {
 import { useDispatch } from 'react-redux';
 import { registerThunk } from '../../redux/auth/thunks';
 import { PasswordToggle } from '../common/FormComponents/PasswordToggle';
+import { GoogleButton } from '../../components/common/GoogleButton';
 
 export const RegistrationForm = () => {
   const dispatch = useDispatch();
@@ -54,6 +55,7 @@ export const RegistrationForm = () => {
         <PasswordToggle name="password" />
         <StyledErrorMessage name="password" />
         <AuthButton type="submit">Register</AuthButton>
+        <GoogleButton />
       </StyledForm>
     </Formik>
   );
