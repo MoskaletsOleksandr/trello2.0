@@ -4,9 +4,6 @@ import sprite from '../../assets/sprite.svg';
 import { GoogleButton } from '../../components/common/GoogleButton';
 import Logo from '../../components/Logo/Logo';
 import { refreshUserThunk } from '../../redux/auth/thunks';
-import { resetBoardsState } from '../../redux/boards/slice';
-import { resetCardsState } from '../../redux/cards/slice';
-import { resetColumnsState } from '../../redux/columns/slice';
 
 import {
   Container,
@@ -29,12 +26,6 @@ const WelcomePage = () => {
       localStorage.setItem('deviceId', deviceId);
       dispatch(refreshUserThunk());
     }
-  }, []);
-
-  useEffect(() => {
-    dispatch(resetBoardsState());
-    dispatch(resetCardsState());
-    dispatch(resetColumnsState());
   }, []);
 
   return (
