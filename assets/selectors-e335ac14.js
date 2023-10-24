@@ -1,4 +1,4 @@
-import{n as e,r as d,j as r,M as k,P as y}from"./index-345036cf.js";import{s as h}from"./sprite-cc172135.js";import{F as v,a as A,E as T}from"./index.esm-c460fc4a.js";const E=e.div`
+import{n as e,r as d,j as r,P as k,Q as y}from"./index-32e1df62.js";import{s as h}from"./sprite-cc172135.js";import{F as v,a as A,E as T}from"./index.esm-b547ea7a.js";const E=e.div`
   max-height: ${({forCard:o})=>o?"145px":"200px"};
   position: absolute;
   top: ${({forCard:o})=>o?"-112px":"20px"};
@@ -50,7 +50,7 @@ import{n as e,r as d,j as r,M as k,P as y}from"./index-345036cf.js";import{s as 
 `,C=e.span`
   font-size: 12px;
   text-transform: lowercase;
-`,Y=({title:o,options:t,selectedOption:a,isOpen:s,onClose:i,handleOptionClick:p,openBtnRef:x,forCard:u})=>{const l=d.useRef(null);return d.useEffect(()=>{const n=g=>{s&&l.current&&!l.current.contains(g.target)&&x.current!==g.target&&i()};return s?document.addEventListener("click",n):document.removeEventListener("click",n),()=>{document.removeEventListener("click",n)}},[s]),r.jsxs(E,{ref:l,forCard:u,children:[r.jsx(S,{children:o}),r.jsx(j,{children:t.map(n=>r.jsxs(R,{onClick:()=>p(n),selected:a===n,children:[n,a===n&&r.jsx(C,{children:"(current)"})]},n))})]})},H=["icon-project","icon-star","icon-loading","icon-puzzle-piece","icon-container","icon-lightning","icon-colors","icon-hexagon"],V=["light","dark","violet"],_=["without","low","medium","high"];var m={exports:{}},B="SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED",z=B,L=z;function b(){}function f(){}f.resetWarningCache=b;var M=function(){function o(s,i,p,x,u,l){if(l!==L){var n=new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types");throw n.name="Invariant Violation",n}}o.isRequired=o;function t(){return o}var a={array:o,bigint:o,bool:o,func:o,number:o,object:o,string:o,symbol:o,any:o,arrayOf:t,element:o,elementType:o,instanceOf:t,node:o,objectOf:t,oneOf:t,oneOfType:t,shape:t,exact:t,checkPropTypes:f,resetWarningCache:b};return a.PropTypes=a,a};m.exports=M();var P=m.exports;const c=k(P),X=e.div`
+`,Y=({title:o,options:t,selectedOption:a,isOpen:s,onClose:i,handleOptionClick:p,openBtnRef:x,forCard:u})=>{const l=d.useRef(null);return d.useEffect(()=>{const n=g=>{s&&l.current&&!l.current.contains(g.target)&&x.current!==g.target&&i()};return s?document.addEventListener("click",n):document.removeEventListener("click",n),()=>{document.removeEventListener("click",n)}},[s]),r.jsxs(E,{ref:l,forCard:u,children:[r.jsx(S,{children:o}),r.jsx(j,{children:t.map(n=>r.jsxs(R,{onClick:()=>p(n),selected:a===n,children:[n,a===n&&r.jsx(C,{children:"(current)"})]},n))})]})},H=["icon-project","icon-star","icon-loading","icon-puzzle-piece","icon-container","icon-lightning","icon-colors","icon-hexagon"],V=["light","dark","violet"],_=["without","low","medium","high"];var m={exports:{}},B="SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED",z=B,L=z;function b(){}function f(){}f.resetWarningCache=b;var P=function(){function o(s,i,p,x,u,l){if(l!==L){var n=new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types");throw n.name="Invariant Violation",n}}o.isRequired=o;function t(){return o}var a={array:o,bigint:o,bool:o,func:o,number:o,object:o,string:o,symbol:o,any:o,arrayOf:t,element:o,elementType:o,instanceOf:t,node:o,objectOf:t,oneOf:t,oneOfType:t,shape:t,exact:t,checkPropTypes:f,resetWarningCache:b};return a.PropTypes=a,a};m.exports=P();var M=m.exports;const c=k(M),X=e.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -74,14 +74,14 @@ import{n as e,r as d,j as r,M as k,P as y}from"./index-345036cf.js";import{s as 
   @media screen and (min-width: 768px) {
     width: 350px;
   }
-`,D=e.h2`
+`,Q=e.h2`
   position: absolute;
   top: 24px;
   left: 24px;
   color: var(--modal-title-color);
   font-size: 18px;
   font-weight: 600;
-`,K=e.svg`
+`,D=e.svg`
   position: absolute;
   top: 14px;
   right: 14px;
@@ -99,7 +99,7 @@ import{n as e,r as d,j as r,M as k,P as y}from"./index-345036cf.js";import{s as 
     transform: scale(1.2);
     outline: none;
   }
-`,Q=document.querySelector("#modal-root"),U=({onClose:o,children:t,title:a})=>{d.useEffect(()=>{const i=p=>{p.code==="Escape"&&o()};return window.addEventListener("keydown",i),()=>{window.removeEventListener("keydown",i)}},[o]);const s=i=>{i.currentTarget===i.target&&o()};return y.createPortal(r.jsx(X,{onClick:s,children:r.jsxs(F,{children:[r.jsx(D,{children:a}),r.jsx(K,{width:24,height:24,onClick:()=>{o()},children:r.jsx("use",{href:h+"#icon-x-close"})}),t]})}),Q)};U.propTypes={onClose:c.func.isRequired,title:c.string.isRequired};const N="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAADjklEQVR4nO3TbUwTdxwHcMz01d4si2/2cq/ce7PE93tjXPZqL7ZFs0RALBFjtfFhgxiGTqgdO1uK5dSj0GuBtbZ3HERK27sqD4p4bUfLsNwhPkLURBMSnxgP3+V/tKWFmCzxKG/8Jr/0kv6T/+f+/++VlHzMe2JxjXx5yjYul/56f6G6KcV4vfhEkIXt3YPdu0qKkdPt04nDDffww5FZ/GicRS11+y3r7Zq3M9YXRQFUO59O7DcDpqanoFrCqD3nxsFjnThRH3r3Gx3/umiAcssimM4BmMzX8fPJR9qJ7DU9xqmm1HXKmfhswwCnXbPyCmAJNDuIA78/wcHGtzBR9/CTcUaD7P/lwUKNPWXbEAAty9suh2PzldZ3KD2/CILJThU1h6r6lX6QqTqrvKx3jn6vO0JSuNehu724IKRRZlkqQJA5aptFWc2DFYhxBkbLZNrMju3o73d9yku+Q7oAJJUHGT4RRq17Zh2izLIIk/Uh9h1/rEGMdcllhvX/a79kAy3Q2/UBKJyGIOMZHsZRx9w6SOWfb3CBGcIZcwcMx1hU1gzjDB2r0wUQiLWBHbKh/65PQ4hKN+jQ3zBQ8wWIVm8cxroADHXTuX4cp8amdQE4QufQEmlAKIMgc228D/Xe+yg9v6wBLnqSMNSOoLQBMNmeoPLsLeyp6F3+YACfaNcAZPomvNrmQpLNQbi4iOq2Z+uuZXd5jzYfDJBUHj0pD5hoYw5wKWJG2wCFa/905SCugREctr/aGICUKWMkU0gCICfScbN59X+VR2RSQHMwiYrGBXxr6MEJyreoyxX4Ri/nNifTecsBR3gVwMWd2hoxs6Y3FYRb6kTLXxR0K+EV6Q+E01fzStiFQKxVe/bLjLaGXFM47V/pyR2PPgAu7lxXwmDmNzv+WGtuTfZz1Q0gKRz8MQZ0xLxaQtEMz83m3NuS6/HJDOhwg66AQP5bhtJXEZ70F5SQIPLXkM0jSkAfAIk0xX0jKnyy4GtQebQPWgu+AmGMRU/SXbBGFwBJNBrdKk1xFaLKP8/fgEu0wXubLighO9ik7wnkJzju/VxUOauocgtrTyQL0LWE70s0LXwlKlzf2rt3D9uLA8gmonDfSSo/lQ/pTXUgkinqhgNIZJneJin8EUnl5tZeS1EA2dyY8H8hKTwtKfzSpgCykaa4naLCDW0agATAlqgS2CeMep65go5YyWYFwJZN2/z/5j8x5nNEeYCXywAAAABJRU5ErkJggg==",$=e(v)`
+`,K=document.querySelector("#modal-root"),U=({onClose:o,children:t,title:a})=>{d.useEffect(()=>{const i=p=>{p.code==="Escape"&&o()};return window.addEventListener("keydown",i),()=>{window.removeEventListener("keydown",i)}},[o]);const s=i=>{i.currentTarget===i.target&&o()};return y.createPortal(r.jsx(X,{onClick:s,children:r.jsxs(F,{children:[r.jsx(Q,{children:a}),r.jsx(D,{width:24,height:24,onClick:()=>{o()},children:r.jsx("use",{href:h+"#icon-x-close"})}),t]})}),K)};U.propTypes={onClose:c.func.isRequired,title:c.string.isRequired};const N="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAADjklEQVR4nO3TbUwTdxwHcMz01d4si2/2cq/ce7PE93tjXPZqL7ZFs0RALBFjtfFhgxiGTqgdO1uK5dSj0GuBtbZ3HERK27sqD4p4bUfLsNwhPkLURBMSnxgP3+V/tKWFmCzxKG/8Jr/0kv6T/+f+/++VlHzMe2JxjXx5yjYul/56f6G6KcV4vfhEkIXt3YPdu0qKkdPt04nDDffww5FZ/GicRS11+y3r7Zq3M9YXRQFUO59O7DcDpqanoFrCqD3nxsFjnThRH3r3Gx3/umiAcssimM4BmMzX8fPJR9qJ7DU9xqmm1HXKmfhswwCnXbPyCmAJNDuIA78/wcHGtzBR9/CTcUaD7P/lwUKNPWXbEAAty9suh2PzldZ3KD2/CILJThU1h6r6lX6QqTqrvKx3jn6vO0JSuNehu724IKRRZlkqQJA5aptFWc2DFYhxBkbLZNrMju3o73d9yku+Q7oAJJUHGT4RRq17Zh2izLIIk/Uh9h1/rEGMdcllhvX/a79kAy3Q2/UBKJyGIOMZHsZRx9w6SOWfb3CBGcIZcwcMx1hU1gzjDB2r0wUQiLWBHbKh/65PQ4hKN+jQ3zBQ8wWIVm8cxroADHXTuX4cp8amdQE4QufQEmlAKIMgc228D/Xe+yg9v6wBLnqSMNSOoLQBMNmeoPLsLeyp6F3+YACfaNcAZPomvNrmQpLNQbi4iOq2Z+uuZXd5jzYfDJBUHj0pD5hoYw5wKWJG2wCFa/905SCugREctr/aGICUKWMkU0gCICfScbN59X+VR2RSQHMwiYrGBXxr6MEJyreoyxX4Ri/nNifTecsBR3gVwMWd2hoxs6Y3FYRb6kTLXxR0K+EV6Q+E01fzStiFQKxVe/bLjLaGXFM47V/pyR2PPgAu7lxXwmDmNzv+WGtuTfZz1Q0gKRz8MQZ0xLxaQtEMz83m3NuS6/HJDOhwg66AQP5bhtJXEZ70F5SQIPLXkM0jSkAfAIk0xX0jKnyy4GtQebQPWgu+AmGMRU/SXbBGFwBJNBrdKk1xFaLKP8/fgEu0wXubLighO9ik7wnkJzju/VxUOauocgtrTyQL0LWE70s0LXwlKlzf2rt3D9uLA8gmonDfSSo/lQ/pTXUgkinqhgNIZJneJin8EUnl5tZeS1EA2dyY8H8hKTwtKfzSpgCykaa4naLCDW0agATAlqgS2CeMep65go5YyWYFwJZN2/z/5j8x5nNEeYCXywAAAABJRU5ErkJggg==",$=e(v)`
   display: flex;
   flex-direction: column;
   width: 100%;

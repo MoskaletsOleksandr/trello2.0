@@ -1,4 +1,4 @@
-import{n as e,L as i,u as a,r,a as s,b as c,c as l,d,j as t}from"./index-345036cf.js";import{s as g}from"./sprite-cc172135.js";import{G as x}from"./GoogleButton-83d299c3.js";import{L as h}from"./Logo-b528284f.js";const p=e.div`
+import{n as e,L as o,u as i,r as a,a as c,j as t}from"./index-32e1df62.js";import{s}from"./sprite-cc172135.js";import{G as l}from"./GoogleButton-918d627b.js";import{L as d}from"./Logo-0422967a.js";const g=e.div`
   height: 100vh;
   width: 100%;
   display: flex;
@@ -6,16 +6,16 @@ import{n as e,L as i,u as a,r,a as s,b as c,c as l,d,j as t}from"./index-345036c
   align-items: center;
   justify-content: center;
   background: linear-gradient(180deg, #ffffff 0%, #ffffff 25%, #bedbb0 100%);
-`,f=e.div`
+`,x=e.div`
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-`,m=e.svg`
+`,h=e.svg`
   width: 200px;
   height: 200px;
-`,u=e.p`
+`,p=e.p`
   color: var(--welcome-primary-text-color);
   text-align: center;
   font-size: 14px;
@@ -29,12 +29,12 @@ import{n as e,L as i,u as a,r,a as s,b as c,c as l,d,j as t}from"./index-345036c
   @media screen and (min-width: 768px) {
     width: 473px;
   }
-`,v=e.div`
+`,f=e.div`
   align-items: center;
   display: flex;
   flex-direction: column;
   gap: 14px;
-`,b=e(i)`
+`,m=e(o)`
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -57,7 +57,7 @@ import{n as e,L as i,u as a,r,a as s,b as c,c as l,d,j as t}from"./index-345036c
   @media screen and (min-width: 768px) {
     width: 344px;
   }
-`,w=e(i)`
+`,u=e(o)`
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -90,4 +90,4 @@ import{n as e,L as i,u as a,r,a as s,b as c,c as l,d,j as t}from"./index-345036c
   @media screen and (min-width: 768px) {
     width: 344px;
   }
-`,I=()=>{const n=a();return r.useEffect(()=>{const o=new URLSearchParams(window.location.search).get("deviceId");o&&(localStorage.setItem("deviceId",o),n(s()))},[]),r.useEffect(()=>{n(c()),n(l()),n(d())},[]),t.jsx(p,{children:t.jsxs(f,{children:[t.jsx(m,{children:t.jsx("use",{href:g+"#icon-main-trello"})}),t.jsx(h,{large:!0}),t.jsx(u,{children:"Supercharge your productivity and take control of your tasks with this Task Manager - Don't wait, start achieving your goals now!"}),t.jsxs(v,{children:[t.jsx(w,{to:"/auth/login",children:"Log In"}),t.jsx(b,{to:"/auth/register",children:"Registration"}),t.jsx(x,{})]})]})})};export{I as default};
+`,k=()=>{const r=i();return a.useEffect(()=>{const n=new URLSearchParams(window.location.search).get("deviceId");n&&(localStorage.setItem("deviceId",n),r(c()))},[]),t.jsx(g,{children:t.jsxs(x,{children:[t.jsx(h,{children:t.jsx("use",{href:s+"#icon-main-trello"})}),t.jsx(d,{large:!0}),t.jsx(p,{children:"Supercharge your productivity and take control of your tasks with this Task Manager - Don't wait, start achieving your goals now!"}),t.jsxs(f,{children:[t.jsx(u,{to:"/auth/login",children:"Log In"}),t.jsx(m,{to:"/auth/register",children:"Registration"}),t.jsx(l,{})]})]})})};export{k as default};
