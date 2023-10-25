@@ -45,8 +45,12 @@ export const EditProfileModal = ({ onClose, user }) => {
         }}
         validationSchema={Yup.object({
           name: Yup.string()
-            .max(25, 'Must be 25 characters or less')
-            .required('Name is required'),
+            .max(29, 'Must be 29 characters or less')
+            .required('Name is required')
+            .matches(
+              /^[A-Za-z\s]+$/,
+              'Name can only contain letters and spaces'
+            ),
           email: Yup.string()
             .email('Invalid email address')
             .required('Email is required'),

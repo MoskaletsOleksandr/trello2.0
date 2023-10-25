@@ -37,7 +37,7 @@ export const FeedbackModal = ({ onClose }) => {
         validationSchema={Yup.object({
           email: Yup.string().email('Invalid email address'),
           feedback: Yup.string()
-            .max(150, 'Must be 150 characters or less')
+            .max(499, 'Must be 499 characters or less')
             .required('Feedback is required'),
         })}
         onSubmit={handleSubmit}
