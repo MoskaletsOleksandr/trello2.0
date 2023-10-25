@@ -45,9 +45,9 @@ export const CreateCardModal = ({ onClose, columnId, boardId }) => {
         validationSchema={Yup.object({
           title: Yup.string()
             .max(24, 'Must be 24 characters or less')
-            .required('Name is required'),
+            .required('Title is required'),
           text: Yup.string()
-            .max(150, 'Must be 150 characters or less')
+            .max(449, 'Must be 449 characters or less')
             .required('Description is required'),
           selectedPriority: Yup.string().required('Priority is required'),
           selectedDate: Yup.string().required('Deadline is required'),

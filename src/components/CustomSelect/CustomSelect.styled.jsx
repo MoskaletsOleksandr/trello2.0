@@ -4,7 +4,7 @@ export const Container = styled.div`
   max-height: ${({ forCard }) => (forCard ? '145px' : '200px')};
   position: absolute;
   top: ${({ forCard }) => (forCard ? '-112px' : '20px')};
-  left: ${({ forCard }) => (forCard ? '-150px' : '-135px')};
+  left: ${({ forCard }) => (forCard ? '-110px' : '-135px')};
   margin: 0;
   padding: 18px;
   border: solid 1px var(--header-theme-select-border-color);

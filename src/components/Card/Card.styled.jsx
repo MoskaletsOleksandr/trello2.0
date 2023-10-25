@@ -19,17 +19,6 @@ export const Container = styled.div`
   &:hover {
     background-color: var(--card-bg-color-hover);
   }
-
-  /* &::before {
-    content: '';
-    width: 334px;
-    height: 154px;
-    background-color: red;
-    position: absolute;
-    top: -10px;
-    left: -4px;
-    border-radius: 8px;
-  } */
 `;
 
 export const CardTitle = styled.h4`
@@ -137,5 +126,7 @@ export const Button = styled.button`
 export const ButtonIcon = styled.svg`
   stroke: var(--card-icon-color);
   fill: none;
+  fill: ${({ readMore }) => (readMore ? 'var(--card-icon-color)' : 'none')};
+
   transition: stroke 300ms var(--timing-function);
 `;

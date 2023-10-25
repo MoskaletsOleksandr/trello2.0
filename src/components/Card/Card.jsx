@@ -25,10 +25,12 @@ import {
 import { CustomSelect } from '../CustomSelect';
 import { selectBoardColumns } from '../../redux/columns/selectors';
 import { format } from 'date-fns';
+import { CardModal } from '../modals/CardModal';
 
 export const Card = ({ card, columnTitle }) => {
   const moveCardBtnRef = useRef(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isCardsModalOpen, setIsCardsModalOpen] = useState(false);
   const [isCustomOptionListOpen, setCustomOptionListOpen] = useState(false);
   const dispatch = useDispatch();
   const boardColumns = useSelector(selectBoardColumns);
@@ -37,12 +39,21 @@ export const Card = ({ card, columnTitle }) => {
 
   const columnOptionsList = boardColumns.map((column) => column.title);
   const columnsAmount = columnOptionsList.length;
+
   const openModal = () => {
     setIsModalOpen(true);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
+  };
+
+  const openCardModal = () => {
+    setIsCardsModalOpen(true);
+  };
+
+  const closeCardModal = () => {
+    setIsCardsModalOpen(false);
   };
 
   const handleDeleteCard = () => {
@@ -94,6 +105,16 @@ export const Card = ({ card, columnTitle }) => {
           </InfoItem>
         </InfoList>
         <ButtonsWrapper>
+          <Button
+            type="button"
+            onClick={() => {
+              openCardModal();
+            }}
+          >
+            <ButtonIcon width="16px" height="16px" readMore={true}>
+              <use href={sprite + '#icon-read-more'}></use>
+            </ButtonIcon>
+          </Button>
           <Button type="button" onClick={openModal}>
             <ButtonIcon width="16px" height="16px">
               <use href={sprite + '#icon-pencil'}></use>
@@ -135,6 +156,7 @@ export const Card = ({ card, columnTitle }) => {
         </ButtonsWrapper>
       </CardInfo>
       {isModalOpen && <UpdateCardModal onClose={closeModal} card={card} />}
+      {isCardsModalOpen && <CardModal onClose={closeCardModal} card={card} />}
     </Container>
   );
 };
