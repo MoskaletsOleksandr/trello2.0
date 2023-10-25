@@ -25,12 +25,12 @@ import {
 import { CustomSelect } from '../CustomSelect';
 import { selectBoardColumns } from '../../redux/columns/selectors';
 import { format } from 'date-fns';
-import { CardModal } from '../modals/CardModal';
+// import { CardModal } from '../modals/CardModal';
 
 export const Card = ({ card, columnTitle }) => {
   const moveCardBtnRef = useRef(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isCardsModalOpen, setIsCardsModalOpen] = useState(false);
+  // const [isCardsModalOpen, setIsCardsModalOpen] = useState(false);
   const [isCustomOptionListOpen, setCustomOptionListOpen] = useState(false);
   const dispatch = useDispatch();
   const boardColumns = useSelector(selectBoardColumns);
@@ -48,13 +48,13 @@ export const Card = ({ card, columnTitle }) => {
     setIsModalOpen(false);
   };
 
-  const openCardModal = () => {
-    setIsCardsModalOpen(true);
-  };
+  // const openCardModal = () => {
+  //   setIsCardsModalOpen(true);
+  // };
 
-  const closeCardModal = () => {
-    setIsCardsModalOpen(false);
-  };
+  // const closeCardModal = () => {
+  //   setIsCardsModalOpen(false);
+  // };
 
   const handleDeleteCard = () => {
     dispatch(deleteCardByIdThunk(cardId));
@@ -105,7 +105,7 @@ export const Card = ({ card, columnTitle }) => {
           </InfoItem>
         </InfoList>
         <ButtonsWrapper>
-          <Button
+          {/* <Button
             type="button"
             onClick={() => {
               openCardModal();
@@ -114,7 +114,7 @@ export const Card = ({ card, columnTitle }) => {
             <ButtonIcon width="16px" height="16px" readMore={true}>
               <use href={sprite + '#icon-read-more'}></use>
             </ButtonIcon>
-          </Button>
+          </Button> */}
           <Button type="button" onClick={openModal}>
             <ButtonIcon width="16px" height="16px">
               <use href={sprite + '#icon-pencil'}></use>
@@ -156,7 +156,7 @@ export const Card = ({ card, columnTitle }) => {
         </ButtonsWrapper>
       </CardInfo>
       {isModalOpen && <UpdateCardModal onClose={closeModal} card={card} />}
-      {isCardsModalOpen && <CardModal onClose={closeCardModal} card={card} />}
+      {/* {isCardsModalOpen && <CardModal onClose={closeCardModal} card={card} />} */}
     </Container>
   );
 };
