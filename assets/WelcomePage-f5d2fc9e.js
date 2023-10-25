@@ -1,4 +1,4 @@
-import{n as e,L as o,u as i,r as a,a as c,j as t}from"./index-3ff4ca18.js";import{s}from"./sprite-fc6f0751.js";import{G as l}from"./GoogleButton-4ce39dee.js";import{L as d}from"./Logo-4d95f970.js";const g=e.div`
+import{n as e,L as o,u as i,r as a,a as c,j as t}from"./index-d97a85be.js";import{s}from"./sprite-fc6f0751.js";import{G as l}from"./GoogleButton-80a92dff.js";import{L as d}from"./Logo-9bdbc85e.js";const g=e.div`
   height: 100vh;
   width: 100%;
   display: flex;
