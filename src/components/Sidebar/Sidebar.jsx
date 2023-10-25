@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import sprite from '../../assets/sprite.svg';
-import { AddBoardButton } from '../AddBoardBtn';
 import { BoardsList } from '../BoardsList/BoardsList';
-import Logo from '../Logo/Logo';
-import { LogoutBtn } from '../LogoutBtn';
+import { AddBoardButton } from '../buttons/AddBoardBtn';
+import { LogoutBtn } from '../buttons/LogoutBtn';
+import Logo from '../common/Logo/Logo';
 import { FeedbackModal } from '../modals/FeedbackModal';
 import {
   BackDrop,

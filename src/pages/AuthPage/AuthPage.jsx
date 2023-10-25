@@ -1,7 +1,5 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { LoginForm } from '../../components/LoginForm';
-import { RegistrationForm } from '../../components/RegistrationForm';
 import { Container } from './AuthPage.styled';
 import toast, { Toaster } from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,6 +8,8 @@ import { resetBoardsState } from '../../redux/boards/slice';
 import { resetCardsState } from '../../redux/cards/slice';
 import { resetColumnsState } from '../../redux/columns/slice';
 import { selectAuthError } from '../../redux/auth/selectors';
+import { LoginForm } from '../../components/forms/LoginForm';
+import { RegistrationForm } from '../../components/forms/RegistrationForm/RegistrationForm';
 
 const AuthPage = () => {
   const dispatch = useDispatch();

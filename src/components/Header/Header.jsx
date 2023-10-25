@@ -12,7 +12,7 @@ import sprite from '../../assets/sprite.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectTheme } from '../../redux/auth/selectors';
 import { updateThemeThunk } from '../../redux/auth/thunks';
-import { CustomSelect } from '../CustomSelect';
+import { CustomSelect } from '../common/CustomSelect';
 import { themes } from '../../data/constants';
 import { UserInfo } from '../UserInfo';
 

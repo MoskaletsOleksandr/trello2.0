@@ -17,7 +17,7 @@ import {
   moveColumnByIdThunk,
 } from '../../redux/columns/thunks';
 import { useDispatch, useSelector } from 'react-redux';
-import { CustomSelect } from '../CustomSelect';
+import { CustomSelect } from '../common/CustomSelect';
 import { Card } from '../Card';
 import { selectBoardCards, selectPriority } from '../../redux/cards/selectors';
 import { useEffect } from 'react';

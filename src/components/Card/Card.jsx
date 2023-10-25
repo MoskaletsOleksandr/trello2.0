@@ -22,7 +22,7 @@ import {
   deleteCardByIdThunk,
   moveCardByIdThunk,
 } from '../../redux/cards/thunks';
-import { CustomSelect } from '../CustomSelect';
+import { CustomSelect } from '../common/CustomSelect';
 import { selectBoardColumns } from '../../redux/columns/selectors';
 import { format } from 'date-fns';
 // import { CardModal } from '../modals/CardModal';

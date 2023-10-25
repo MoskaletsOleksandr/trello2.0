@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import sprite from '../../assets/sprite.svg';
-import { GoogleButton } from '../../components/common/GoogleButton';
-import Logo from '../../components/Logo/Logo';
+import { GoogleButton } from '../../components/buttons/GoogleButton';
+import Logo from '../../components/common/Logo/Logo';
 import { refreshUserThunk } from '../../redux/auth/thunks';
 
 import {

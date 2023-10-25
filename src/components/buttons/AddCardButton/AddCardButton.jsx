@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { Icon, IconContainer, StyledButton } from './AddColumnButton.styled';
-import sprite from '../../assets/sprite.svg';
-import { CreateColumnModal } from '../modals/CreateColumnModal';
+import { Icon, IconContainer, StyledButton } from './AddCardButton.styled';
+import sprite from '../../../assets/sprite.svg';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { selectCurrentBoardId } from '../../redux/auth/selectors';
+import { selectCurrentBoardId } from '../../../redux/auth/selectors';
+import { CreateCardModal } from '../../modals/CreateCardModal';
 
-export const AddColumnButton = () => {
+export const AddCardButton = ({ columnId }) => {
   const [isModalOpen, setModalOpen] = useState(false);
   const boardId = useSelector(selectCurrentBoardId);
 
@@ -25,10 +25,14 @@ export const AddColumnButton = () => {
             <use href={sprite + '#icon-plus'}></use>
           </Icon>
         </IconContainer>
-        Add another column
+        Add another card
       </StyledButton>
       {isModalOpen && (
-        <CreateColumnModal boardId={boardId} onClose={closeModal} />
+        <CreateCardModal
+          onClose={closeModal}
+          columnId={columnId}
+          boardId={boardId}
+        />
       )}
     </>
   );

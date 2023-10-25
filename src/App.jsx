@@ -5,11 +5,10 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import GlobalStyles from './GlobalStyles';
-import { Loader } from './components/Loader';
 import { wakeUpBackendThunk } from './redux/auth/thunks';
 import { selectIsBackendReady } from './redux/auth/selectors';
-import { WaitingLoader } from './components/WaitingLoader';
-// import { refreshUserThunk } from './redux/auth/thunks';
+import { Loader } from './components/common/Loader';
+import { WaitingLoader } from './components/common/WaitingLoader';
 
 const WelcomePage = lazy(() => import('./pages/WelcomePage/WelcomePage'));
 const AuthPage = lazy(() => import('./pages/AuthPage/AuthPage'));
@@ -34,12 +33,6 @@ export const App = () => {
       clearTimeout(timeout);
     };
   }, []);
-
-  // useEffect(() => {
-  //   if (localStorage.getItem('token')) {
-  //     dispatch(refreshUserThunk());
-  //   }
-  // }, []);
 
   return (
     <Suspense fallback={<Loader />}>

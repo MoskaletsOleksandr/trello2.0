@@ -1,7 +1,7 @@
-import sprite from '../../assets/sprite.svg';
+import sprite from '../../../assets/sprite.svg';
 import { Button, Icon, BtnText } from './LogoutBtn.styled';
 import { useDispatch } from 'react-redux';
-import { logoutThunk } from '../../redux/auth/thunks';
+import { logoutThunk } from '../../../redux/auth/thunks';
 
 export const LogoutBtn = () => {
   const dispatch = useDispatch();

@@ -8,28 +8,36 @@ import {
   StyledField,
   StyledForm,
   StyledLink,
-} from '../common/FormComponents/FormComponents.styled';
+} from '../../common/FormComponents/FormComponents.styled';
 import { useDispatch } from 'react-redux';
-import { loginThunk } from '../../redux/auth/thunks';
-import { PasswordToggle } from '../common/FormComponents/PasswordToggle';
-import { GoogleButton } from '../../components/common/GoogleButton';
+import { registerThunk } from '../../../redux/auth/thunks';
+import { PasswordToggle } from '../../common/FormComponents/PasswordToggle';
+import { GoogleButton } from '../../buttons/GoogleButton';
 
-export const LoginForm = () => {
+export const RegistrationForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (values) => {
     const body = {
       email: values.email,
+      name: values.name,
       password: values.password,
     };
 
-    dispatch(loginThunk(body));
+    dispatch(registerThunk(body));
   };
 
   return (
     <Formik
-      initialValues={{ email: '', password: '' }}
+      initialValues={{ name: '', email: '', password: '' }}
       validationSchema={Yup.object({
+        name: Yup.string()
+          .max(29, 'Must be 29 characters or less')
+          .required('Name is required')
+          .matches(
+            /^[A-Za-z\u0410-\u044F\u0451\u0401\s]+$/,
+            'Name can only contain letters and spaces'
+          ),
         email: Yup.string()
           .email('Invalid email address')
           .required('Email is required')
@@ -46,11 +54,13 @@ export const LoginForm = () => {
           <StyledLink to="/auth/register">Registration</StyledLink>
           <StyledLink to="/auth/login"> Log In</StyledLink>
         </AuthTitle>
+        <StyledField type="text" name="name" placeholder="Enter your name" />
+        <StyledErrorMessage name="name" />
         <StyledField type="email" name="email" placeholder="Enter your email" />
         <StyledErrorMessage name="email" />
         <PasswordToggle name="password" />
         <StyledErrorMessage name="password" />
-        <AuthButton type="submit">Login</AuthButton>
+        <AuthButton type="submit">Register</AuthButton>
         <GoogleButton />
       </StyledForm>
     </Formik>

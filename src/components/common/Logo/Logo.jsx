@@ -1,4 +1,4 @@
-import sprite from '../../assets/sprite.svg';
+import sprite from '../../../assets/sprite.svg';
 import { IconContainer, LogoContainer, LogoIcon, Title } from './Logo.styled';
 
 const Logo = ({ large }) => {

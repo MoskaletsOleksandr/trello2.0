@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import sprite from '../../assets/sprite.svg';
-import { CreateBoardModal } from '../modals/CreateBoardModal';
+import sprite from '../../../assets/sprite.svg';
+import { CreateBoardModal } from '../../modals/CreateBoardModal';
 import { Button, ButtonWrapper, Icon, Text } from './AddBoardBtn.styled';
 
 export const AddBoardButton = () => {

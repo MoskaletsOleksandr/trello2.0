@@ -15,9 +15,9 @@ import { Container } from './Homepage.styled';
 import { Outlet } from 'react-router-dom';
 import { PlaceHolderBoard } from '../../components/PlaceHolderBoard/PlaceHolderBoard';
 import { selectError, selectIsLoading } from '../../redux/selectors';
-import { Loader } from '../../components/Loader';
 import toast, { Toaster } from 'react-hot-toast';
 import { logoutThunk } from '../../redux/auth/thunks';
+import { Loader } from '../../components/common/Loader';
 
 const HomePage = () => {
   const [isOpen, setIsOpen] = useState(false);

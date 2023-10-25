@@ -17,15 +17,15 @@ import {
 } from './MainDashboard.styled';
 import sprite from '../../assets/sprite.svg';
 import { Column } from '../Column';
-import { AddColumnButton } from '../AddColumnButton';
 import { selectBoardColumns } from '../../redux/columns/selectors';
 import { selectPriority } from '../../redux/cards/selectors';
-import { CustomSelect } from '../CustomSelect';
+import { CustomSelect } from '../common/CustomSelect';
 import { priorities } from '../../data/constants';
 import { changePriority } from '../../redux/cards/slice';
 import { moveColumnByIdThunk } from '../../redux/columns/thunks';
 import { moveCardByIdThunk } from '../../redux/cards/thunks';
-import { AddCardButton } from '../AddCardButton';
+import { AddCardButton } from '../buttons/AddCardButton';
+import { AddColumnButton } from '../buttons/AddColumnButton';
 
 export const MainDashDoard = () => {
   const boardTitle = useSelector(selectBoardTitle);
