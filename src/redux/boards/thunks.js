@@ -71,7 +71,7 @@ export const deleteBoardByIdThunk = createAsyncThunk(
     try {
       await deleteBoardById(boardId);
       await dispatch(getAllBoardsThunk());
-      await dispatch(updateCurrentBoardIdThunk({ boardId: null }));
+      await dispatch(updateCurrentBoardIdThunk({ boardId: 'null' }));
     } catch (error) {
       return rejectWithValue(error.message);
     }

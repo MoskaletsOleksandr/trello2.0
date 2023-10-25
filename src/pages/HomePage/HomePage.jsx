@@ -32,7 +32,7 @@ const HomePage = () => {
     const fetchData = async () => {
       await dispatch(getAllBoardsThunk());
       await dispatch(getBackgroundsThunk());
-      if (currentBoardId) {
+      if (currentBoardId && currentBoardId !== 'null') {
         await dispatch(getCurrentBoardThunk(currentBoardId));
       }
     };

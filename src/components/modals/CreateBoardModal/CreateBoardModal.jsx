@@ -37,7 +37,7 @@ export const CreateBoardModal = ({ onClose }) => {
         }}
         validationSchema={Yup.object({
           title: Yup.string()
-            .max(20, 'Must be 20 characters or less')
+            .max(15, 'Must be 15 characters or less')
             .required('Name is required'),
           selectedIcon: Yup.string().required('Icon is required'),
           selectedBg: Yup.string().required('Background is required'),
