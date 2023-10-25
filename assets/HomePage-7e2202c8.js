@@ -1,4 +1,4 @@
-import{n as o,j as e,r as l,u as v,h as G,d as m,i as J,k as K,m as Q,o as ee,p as te,q as _,t as U,v as oe,w as se,x as N,y as re,z as ne,O as ie,A as ae,B as ce,C as le}from"./index-d97a85be.js";import{s as h}from"./sprite-fc6f0751.js";import{M as w,S as y,a as j,b as f,B as I,C as de,t as pe,i as he,s as xe,c as k,d as M,e as ue,f as ge}from"./selectors-dae9c35d.js";import{b as B,c as C,d as b,a as R,u as D}from"./index.esm-9ac69e75.js";import{L as me}from"./Logo-9bdbc85e.js";import{I as V,_ as $}from"./index-e42ea881.js";const fe=o.header`
+import{n as o,j as e,r as l,u as v,h as G,d as m,i as J,k as K,m as Q,o as ee,p as _,q as U,t as te,v as oe,w as se,x as N,y as re,z as ne,O as ie,A as ae,B as ce,C as le}from"./index-fab517e0.js";import{s as h}from"./sprite-fc6f0751.js";import{M as w,S as y,a as j,b as f,B as I,C as de,t as pe,i as he,s as xe,c as M,d as k,e as ue,f as ge}from"./selectors-f00d8446.js";import{b as B,c as C,d as b,a as R,u as D}from"./index.esm-27818855.js";import{L as me}from"./Logo-f1a39253.js";import{I as V,_ as $}from"./index-99fbea3a.js";const fe=o.header`
   display: flex;
   flex-grow: 1;
   height: 60px;
@@ -162,46 +162,7 @@ import{n as o,j as e,r as l,u as v,h as G,d as m,i as J,k as K,m as Q,o as ee,p 
 `,We=o.svg`
   stroke: var(--modal-icon-color);
   fill: transparent;
-`,P=({name:t,selectedItem:r})=>{const[s,n]=l.useState(r||""),i=m(xe),{setFieldValue:a}=D();return l.useEffect(()=>{n(r||"")},[r]),e.jsxs(He,{children:[e.jsx(L,{children:e.jsxs(T,{children:[e.jsx(F,{type:"radio",name:t,value:"null",onChange:c=>{n(c.target.value),a(t,c.target.value)}}),e.jsx(O,{selected:s==="null",children:e.jsx(We,{style:{width:"16px",height:"16px"},children:e.jsx("use",{href:h+"#null-background"})})})]})}),i.map(c=>e.jsx(L,{children:e.jsxs(T,{children:[e.jsx(F,{type:"radio",name:t,value:c._id,onChange:p=>{n(p.target.value),a(t,p.target.value)}}),e.jsx(O,{selected:s===c._id,children:e.jsx(Pe,{src:c.previewURL})})]})},c._id))]})},W=({onClose:t})=>{const r=v(),s=n=>{const i={title:n.title,icon:n.selectedIcon,backgroundId:n.selectedBg};r(ee(i)),t()};return e.jsx(w,{onClose:t,title:"New board",children:e.jsx(B,{initialValues:{title:"",selectedIcon:"",selectedBg:""},validationSchema:C({title:b().max(15,"Must be 15 characters or less").required("Name is required"),selectedIcon:b().required("Icon is required"),selectedBg:b().required("Background is required")}),onSubmit:s,children:e.jsxs(y,{children:[e.jsx(j,{type:"text",name:"title",placeholder:"Title"}),e.jsx(f,{name:"title"}),e.jsx(k,{children:"Icons"}),e.jsx(H,{name:"selectedIcon"}),e.jsx(f,{name:"selectedIcon"}),e.jsx(k,{children:"Backgrounds"}),e.jsx(P,{name:"selectedBg"}),e.jsx(f,{name:"selectedBg"}),e.jsx(I,{type:"submit",children:"Create"})]})})})},Xe=o.div`
-  display: flex;
-  justify-content: space-between;
-  height: 70px;
-  margin-left: 14px;
-  margin-right: 14px;
-  margin-bottom: 40px;
-  padding: 14px 4px 14px 0;
-  border-top: 1px solid var(--sidebar-button-plus-border-color);
-  border-bottom: 1px solid var(--sidebar-button-plus-border-color);
-
-  @media screen and (min-width: 768px) {
-    margin-left: 24px;
-    margin-right: 24px;
-  }
-`,Ye=o.p`
-  width: 76px;
-  color: var(--primary-text-color);
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: -0.2px;
-`,Ze=o.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 36px;
-  background-color: var(--sidebar-button-plus-bg-color);
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-
-  &:hover,
-  &:focus {
-    scale: 1.05;
-    background-color: var(--modal-btn-bg-color-hover);
-  }
-`,Ge=o.svg`
-  stroke: var(--sidebar-button-plus-icon-color);
-`,Je=()=>{const[t,r]=l.useState(!1),s=()=>{r(!0)},n=()=>{r(!1)};return e.jsxs(e.Fragment,{children:[e.jsxs(Xe,{children:[e.jsx(Ye,{children:"Create a new board"}),e.jsx(Ze,{type:"button",onClick:s,children:e.jsx(Ge,{width:"20px",height:"20px",children:e.jsx("use",{href:h+"#icon-plus"})})})]}),t&&e.jsx(W,{onClose:n})]})},Ke=({boardId:t,onClose:r})=>{var a,c;const s=m(M),n=v(),i=p=>{const u={title:p.title,icon:p.selectedIcon,backgroundId:p.selectedBg};n(te({boardId:t,body:u})),r()};return e.jsx(w,{onClose:r,title:"Edit board",children:e.jsx(B,{initialValues:{title:s==null?void 0:s.title,selectedIcon:s==null?void 0:s.icon,selectedBg:((a=s==null?void 0:s.background)==null?void 0:a._id)||"null"},validationSchema:C({title:b().max(15,"Must be 15 characters or less").required("Name is required"),selectedIcon:b().required("Icon is required"),selectedBg:b().required("Background is required")}),onSubmit:i,children:e.jsxs(y,{children:[e.jsx(j,{type:"text",name:"title",placeholder:"Title"}),e.jsx(f,{name:"title"}),e.jsx(k,{children:"Icons"}),e.jsx(H,{name:"selectedIcon",selectedItem:s==null?void 0:s.icon}),e.jsx(f,{name:"selectedIcon"}),e.jsx(k,{children:"Backgrounds"}),e.jsx(P,{name:"selectedBg",selectedItem:((c=s==null?void 0:s.background)==null?void 0:c._id)||"null"}),e.jsx(f,{name:"selectedBg"}),e.jsx(I,{type:"submit",children:"Edit"})]})})})},Qe=o.ul`
+`,P=({name:t,selectedItem:r})=>{const[s,n]=l.useState(r||""),i=m(xe),{setFieldValue:a}=D();return l.useEffect(()=>{n(r||"")},[r]),e.jsxs(He,{children:[e.jsx(L,{children:e.jsxs(T,{children:[e.jsx(F,{type:"radio",name:t,value:"null",onChange:c=>{n(c.target.value),a(t,c.target.value)}}),e.jsx(O,{selected:s==="null",children:e.jsx(We,{style:{width:"16px",height:"16px"},children:e.jsx("use",{href:h+"#null-background"})})})]})}),i.map(c=>e.jsx(L,{children:e.jsxs(T,{children:[e.jsx(F,{type:"radio",name:t,value:c._id,onChange:p=>{n(p.target.value),a(t,p.target.value)}}),e.jsx(O,{selected:s===c._id,children:e.jsx(Pe,{src:c.previewURL})})]})},c._id))]})},Xe=({boardId:t,onClose:r})=>{var a,c;const s=m(M),n=v(),i=p=>{const u={title:p.title,icon:p.selectedIcon,backgroundId:p.selectedBg};n(ee({boardId:t,body:u})),r()};return e.jsx(w,{onClose:r,title:"Edit board",children:e.jsx(B,{initialValues:{title:s==null?void 0:s.title,selectedIcon:s==null?void 0:s.icon,selectedBg:((a=s==null?void 0:s.background)==null?void 0:a._id)||"null"},validationSchema:C({title:b().max(15,"Must be 15 characters or less").required("Name is required"),selectedIcon:b().required("Icon is required"),selectedBg:b().required("Background is required")}),onSubmit:i,children:e.jsxs(y,{children:[e.jsx(j,{type:"text",name:"title",placeholder:"Title"}),e.jsx(f,{name:"title"}),e.jsx(k,{children:"Icons"}),e.jsx(H,{name:"selectedIcon",selectedItem:s==null?void 0:s.icon}),e.jsx(f,{name:"selectedIcon"}),e.jsx(k,{children:"Backgrounds"}),e.jsx(P,{name:"selectedBg",selectedItem:((c=s==null?void 0:s.background)==null?void 0:c._id)||"null"}),e.jsx(f,{name:"selectedBg"}),e.jsx(I,{type:"submit",children:"Edit"})]})})})},Ye=o.ul`
   width: 100%;
   min-height: 61px;
   margin-bottom: 40px;
@@ -223,7 +184,7 @@ import{n as o,j as e,r as l,u as v,h as G,d as m,i as J,k as K,m as Q,o as ee,p 
     border-radius: 4px;
     height: 130px;
   }
-`,et=o.li`
+`,Ze=o.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -244,7 +205,7 @@ import{n as o,j as e,r as l,u as v,h as G,d as m,i as J,k as K,m as Q,o as ee,p 
   @media screen and (min-width: 768px) {
     padding: 22px 24px;
   }
-`,tt=o.li`
+`,Ge=o.li`
   position: relative;
   display: flex;
   padding: 22px 18px 22px 14px;
@@ -284,7 +245,7 @@ import{n as o,j as e,r as l,u as v,h as G,d as m,i as J,k as K,m as Q,o as ee,p 
   @media screen and (min-width: 768px) {
     margin-left: 14px;
   }
-`,ot=o.div`
+`,Je=o.div`
   display: flex;
   align-items: center;
   gap: 8px;
@@ -306,7 +267,46 @@ import{n as o,j as e,r as l,u as v,h as G,d as m,i as J,k as K,m as Q,o as ee,p 
   &:focus {
     stroke: var(--progress-popup-text-color-hover);
   }
-`,st=()=>{const[t,r]=l.useState(!1),[s,n]=l.useState(!1),i=m(ue),a=m(M),c=v(),p=_(),u=async(d,Y)=>{await c(U(d)),await c(oe({boardId:d}));const Z=Y.toLowerCase().replace(/[\s/]+/g,"-");p(Z)},x=()=>{r(!0)},g=()=>{r(!1)},S=d=>{n(d),x()},X=d=>{c(se(d)),p("/home")};return e.jsxs(e.Fragment,{children:[e.jsx(Qe,{children:i.map(d=>d._id===(a==null?void 0:a._id)?e.jsxs(tt,{children:[e.jsx(E,{width:"18px",height:"18px",children:e.jsx("use",{href:`${h}#${d.icon}`})}),e.jsx(q,{children:d.title}),e.jsxs(ot,{children:[e.jsx(z,{type:"button",onClick:()=>S(d._id),children:e.jsx(A,{width:"16px",height:"16px",children:e.jsx("use",{href:h+"#icon-pencil"})})}),e.jsx(z,{type:"button",onClick:()=>X(d._id),children:e.jsx(A,{width:"16px",height:"16px",children:e.jsx("use",{href:h+"#icon-trash"})})})]})]},d._id):e.jsxs(et,{onClick:()=>{u(d._id,d.title)},children:[e.jsx(E,{width:"18px",height:"18px",children:e.jsx("use",{href:`${h}#${d.icon}`})}),e.jsx(q,{children:d.title})]},d._id))}),t&&e.jsx(Ke,{boardId:s,onClose:g})]})},rt=o.p`
+`,Ke=()=>{const[t,r]=l.useState(!1),[s,n]=l.useState(!1),i=m(ue),a=m(M),c=v(),p=_(),u=async(d,Y)=>{await c(U(d)),await c(te({boardId:d}));const Z=Y.toLowerCase().replace(/[\s/]+/g,"-");p(Z)},x=()=>{r(!0)},g=()=>{r(!1)},S=d=>{n(d),x()},X=d=>{c(oe(d)),p("/home")};return e.jsxs(e.Fragment,{children:[e.jsx(Ye,{children:i.map(d=>d._id===(a==null?void 0:a._id)?e.jsxs(Ge,{children:[e.jsx(E,{width:"18px",height:"18px",children:e.jsx("use",{href:`${h}#${d.icon}`})}),e.jsx(q,{children:d.title}),e.jsxs(Je,{children:[e.jsx(z,{type:"button",onClick:()=>S(d._id),children:e.jsx(A,{width:"16px",height:"16px",children:e.jsx("use",{href:h+"#icon-pencil"})})}),e.jsx(z,{type:"button",onClick:()=>X(d._id),children:e.jsx(A,{width:"16px",height:"16px",children:e.jsx("use",{href:h+"#icon-trash"})})})]})]},d._id):e.jsxs(Ze,{onClick:()=>{u(d._id,d.title)},children:[e.jsx(E,{width:"18px",height:"18px",children:e.jsx("use",{href:`${h}#${d.icon}`})}),e.jsx(q,{children:d.title})]},d._id))}),t&&e.jsx(Xe,{boardId:s,onClose:g})]})},W=({onClose:t})=>{const r=v(),s=n=>{const i={title:n.title,icon:n.selectedIcon,backgroundId:n.selectedBg};r(se(i)),t()};return e.jsx(w,{onClose:t,title:"New board",children:e.jsx(B,{initialValues:{title:"",selectedIcon:"",selectedBg:""},validationSchema:C({title:b().max(15,"Must be 15 characters or less").required("Name is required"),selectedIcon:b().required("Icon is required"),selectedBg:b().required("Background is required")}),onSubmit:s,children:e.jsxs(y,{children:[e.jsx(j,{type:"text",name:"title",placeholder:"Title"}),e.jsx(f,{name:"title"}),e.jsx(k,{children:"Icons"}),e.jsx(H,{name:"selectedIcon"}),e.jsx(f,{name:"selectedIcon"}),e.jsx(k,{children:"Backgrounds"}),e.jsx(P,{name:"selectedBg"}),e.jsx(f,{name:"selectedBg"}),e.jsx(I,{type:"submit",children:"Create"})]})})})},Qe=o.div`
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  margin-left: 14px;
+  margin-right: 14px;
+  margin-bottom: 40px;
+  padding: 14px 4px 14px 0;
+  border-top: 1px solid var(--sidebar-button-plus-border-color);
+  border-bottom: 1px solid var(--sidebar-button-plus-border-color);
+
+  @media screen and (min-width: 768px) {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+`,et=o.p`
+  width: 76px;
+  color: var(--primary-text-color);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+`,tt=o.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 36px;
+  background-color: var(--sidebar-button-plus-bg-color);
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    scale: 1.05;
+    background-color: var(--modal-btn-bg-color-hover);
+  }
+`,ot=o.svg`
+  stroke: var(--sidebar-button-plus-icon-color);
+`,st=()=>{const[t,r]=l.useState(!1),s=()=>{r(!0)},n=()=>{r(!1)};return e.jsxs(e.Fragment,{children:[e.jsxs(Qe,{children:[e.jsx(et,{children:"Create a new board"}),e.jsx(tt,{type:"button",onClick:s,children:e.jsx(ot,{width:"20px",height:"20px",children:e.jsx("use",{href:h+"#icon-plus"})})})]}),t&&e.jsx(W,{onClose:n})]})},rt=o.p`
   color: var(--primary-text-color);
   font-size: 16px;
   font-weight: 500;
@@ -431,7 +431,7 @@ import{n as o,j as e,r as l,u as v,h as G,d as m,i as J,k as K,m as Q,o as ee,p 
   stroke: var(--sidebar-needhelp-icon-color);
   transition: stroke 300ms var(--timing-function),
     transform 300ms var(--timing-function);
-`,ft=({isOpen:t,toggleSidebar:r})=>{const[s,n]=l.useState(!1),i=()=>{n(!0)},a=()=>{n(!1)};return e.jsxs(e.Fragment,{children:[t&&e.jsx(dt,{onClick:()=>{r()},isOpen:t}),e.jsxs(lt,{isOpen:t,children:[e.jsx(me,{}),e.jsx(pt,{children:"My boards"}),e.jsx(Je,{}),e.jsx(st,{}),e.jsxs(ht,{children:[e.jsx(xt,{children:"Leave feedback"}),e.jsx(ut,{children:"Share your thoughts to help us. Your feedback on improvements or errors makes this app better!"}),e.jsxs(gt,{onClick:i,children:[e.jsx(mt,{children:e.jsx("use",{href:`${h}#icon-help-circle`})}),"Click me to write"]}),s&&e.jsx(ct,{onClose:a})]}),e.jsx(at,{})]})]})},bt=o.div`
+`,ft=({isOpen:t,toggleSidebar:r})=>{const[s,n]=l.useState(!1),i=()=>{n(!0)},a=()=>{n(!1)};return e.jsxs(e.Fragment,{children:[t&&e.jsx(dt,{onClick:()=>{r()},isOpen:t}),e.jsxs(lt,{isOpen:t,children:[e.jsx(me,{}),e.jsx(pt,{children:"My boards"}),e.jsx(st,{}),e.jsx(Ke,{}),e.jsxs(ht,{children:[e.jsx(xt,{children:"Leave feedback"}),e.jsx(ut,{children:"Share your thoughts to help us. Your feedback on improvements or errors makes this app better!"}),e.jsxs(gt,{onClick:i,children:[e.jsx(mt,{children:e.jsx("use",{href:`${h}#icon-help-circle`})}),"Click me to write"]}),s&&e.jsx(ct,{onClose:a})]}),e.jsx(at,{})]})]})},bt=o.div`
   position: relative;
   display: flex;
   flex-direction: column;

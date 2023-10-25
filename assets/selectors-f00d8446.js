@@ -1,4 +1,4 @@
-import{n as e,r as d,j as r,P as k,Q as y}from"./index-d97a85be.js";import{s as h}from"./sprite-fc6f0751.js";import{F as v,a as A,E as T}from"./index.esm-9ac69e75.js";const E=e.div`
+import{n as e,r as d,j as r,P as k,Q as y}from"./index-fab517e0.js";import{s as h}from"./sprite-fc6f0751.js";import{F as v,a as A,E as T}from"./index.esm-27818855.js";const E=e.div`
   max-height: ${({forCard:o})=>o?"145px":"200px"};
   position: absolute;
   top: ${({forCard:o})=>o?"-112px":"20px"};
@@ -204,4 +204,4 @@ import{n as e,r as d,j as r,P as k,Q as y}from"./index-d97a85be.js";import{s as 
   width: 14px;
   height: 14px;
   stroke: var(--modal-selected-plus-color);
-`,I=({children:o,onClick:t,type:a})=>r.jsxs(O,{onClick:t,type:a,children:[r.jsx(q,{children:r.jsx(J,{width:"28px",height:"28px",children:r.jsx("use",{href:h+"#icon-plus"})})}),o]});I.propTypes={children:c.oneOfType([c.string,c.object]).isRequired,onClick:c.func,type:c.string};const ao=o=>o.boards.boards,io=o=>o.boards.currentBoard,co=o=>o.boards.currentBoard.background,so=o=>o.boards.currentBoard.title,lo=o=>o.boards.backgrounds;export{I as B,Y as C,U as M,$ as S,w as a,no as b,ro as c,io as d,ao as e,oo as f,to as g,eo as h,H as i,so as j,co as k,_ as p,lo as s,V as t};
+`,I=({children:o,onClick:t,type:a})=>r.jsxs(O,{onClick:t,type:a,children:[r.jsx(q,{children:r.jsx(J,{width:"28px",height:"28px",children:r.jsx("use",{href:h+"#icon-plus"})})}),o]});I.propTypes={children:c.oneOfType([c.string,c.object]).isRequired,onClick:c.func,type:c.string};const ao=o=>o.boards.boards,io=o=>o.boards.currentBoard,co=o=>o.boards.currentBoard.background,so=o=>o.boards.currentBoard.title,lo=o=>o.boards.backgrounds;export{I as B,Y as C,U as M,$ as S,w as a,no as b,io as c,ro as d,ao as e,oo as f,to as g,eo as h,H as i,so as j,co as k,_ as p,lo as s,V as t};
