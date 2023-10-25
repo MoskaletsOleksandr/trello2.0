@@ -32,9 +32,12 @@ export const RegistrationForm = () => {
       initialValues={{ name: '', email: '', password: '' }}
       validationSchema={Yup.object({
         name: Yup.string()
-          .matches(/^[A-Za-z\s]+$/, 'Name can only contain letters and spaces')
           .max(29, 'Must be 29 characters or less')
-          .required('Name is required'),
+          .required('Name is required')
+          .matches(
+            /^[A-Za-z\u0410-\u044F\u0451\u0401\s]+$/,
+            'Name can only contain letters and spaces'
+          ),
         email: Yup.string()
           .email('Invalid email address')
           .required('Email is required')
