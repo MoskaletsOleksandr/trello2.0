@@ -1,4 +1,4 @@
-import { Field, Formik } from 'formik';
+import { Formik } from 'formik';
 import * as Yup from 'yup';
 import React from 'react';
 import { Modal } from '../../common/Modal';
@@ -41,10 +41,10 @@ export const UpdateCardModal = ({ onClose, card }) => {
         }}
         validationSchema={Yup.object({
           title: Yup.string()
-            .max(25, 'Must be 25 characters or less')
-            .required('Name is required'),
+            .max(24, 'Must be 24 characters or less')
+            .required('Title is required'),
           text: Yup.string()
-            .max(150, 'Must be 150 characters or less')
+            .max(449, 'Must be 449 characters or less')
             .required('Description is required'),
           selectedPriority: Yup.string().required('Priority is required'),
           selectedDate: Yup.string().required('Deadline is required'),
