@@ -31,8 +31,8 @@ export const CreateColumnModal = ({ boardId, onClose }) => {
         }}
         validationSchema={Yup.object({
           title: Yup.string()
-            .max(20, 'Must be 20 characters or less')
-            .required('Name is required'),
+            .max(25, 'Must be 25 characters or less')
+            .required('Title is required'),
         })}
         onSubmit={handleSubmit}
       >
