@@ -171,18 +171,23 @@ Stay tuned for these upcoming features, and thank you for your continued support
 Welcome to the Trello2.0 Screenshot Gallery. Take a visual tour of our app with these screenshots to get a feel for the user interface and key features. Explore how Trello2.0 can help you manage your projects and tasks effectively.
 
 ![Screenshot 1](https://res.cloudinary.com/do7vvnlbr/image/upload/v1698333988/trello2.0/screenshots/Trello-HomePage.png)
+
 _Home Page with creating a new board modal_
 
 ![Screenshot 2](https://res.cloudinary.com/do7vvnlbr/image/upload/v1698334019/trello2.0/screenshots/Trello-creating-card.png)
+
 _Creating Card Modal on existing board_
 
 ![Screenshot 3](https://res.cloudinary.com/do7vvnlbr/image/upload/v1698334052/trello2.0/screenshots/Trello-Sidebar.png)
+
 _Sidebar_
 
 ![Screenshot 4](https://res.cloudinary.com/do7vvnlbr/image/upload/v1698334075/trello2.0/screenshots/Trello-CardsPage.png)
+
 _Cards Page_
 
 ![Screenshot 5](https://res.cloudinary.com/do7vvnlbr/image/upload/v1698334099/trello2.0/screenshots/Trello-selects.png)
+
 _All Selects_
 
 I hope these screenshots give you an overview of Trello2.0's user interface and functionality. If you'd like to explore further or have any questions, feel free to try out the app or reach out to me.
