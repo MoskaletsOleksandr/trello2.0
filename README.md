@@ -100,15 +100,15 @@ Trello2.0 utilizes a range of modern technologies, libraries, and tools for its 
     - **_axiosConfig.js_** - Configuration file for Axios, the HTTP client
   - **_assets_** - Contains icons and images used throughout the application
   - **_components_** - Reusable React components
-    - **_BoardList_** - Component for rendering a list of boards
     - **_buttons_** - Different buttons
-    - **_Card_** - Component for rendering cards
-    - **_Column_** - Component for rendering columns
     - **_common_** Common UI components (like Logo, Loader etc.)
     - **_forms_** - Different forms
+    - **_modals_** - Different reusable modals
+    - **_BoardList_** - Component for rendering a list of boards
+    - **_Card_** - Component for rendering cards
+    - **_Column_** - Component for rendering columns
     - **_Header_** - Header component
     - **_MainDashboard_** - Main dashboard component
-    - **_modals_** - Different reusable modals
     - **_PlaceHolderBoard_** - Placeholder board component
     - **_PrivateRoute_** - Route component for private routes
     - **_PublicRoute_** - Route component for public routes
