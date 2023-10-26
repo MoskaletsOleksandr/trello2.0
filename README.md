@@ -38,6 +38,7 @@
 
 ### Backend:
 
+You can find the backend code [here: https://github.com/MoskaletsOleksandr/trello2.0-backend](https://github.com/MoskaletsOleksandr/trello2.0-backend).
 The project's backend is deployed on the free hosting platform [render.com](https://render.com/). The initial launch may be accompanied by a loading spinner, as free servers can occasionally experience temporary slowdowns.
 
 ---
