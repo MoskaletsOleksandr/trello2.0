@@ -2,12 +2,6 @@
 
 ---
 
-## ![Trello2.0](https://res.cloudinary.com/do7vvnlbr/image/upload/v1698334241/trello2.0/screenshots/Trello2-0.png)
-
-# Trello2.0
-
----
-
 ## Table of Contents
 
 1. [Description](#description)
@@ -20,6 +14,10 @@
 8. [Future Plans](#future-plans)
 9. [Screenshot Gallery](#screenshot-gallery)
 10. [License](#license)
+
+---
+
+## ![Trello2.0](https://res.cloudinary.com/do7vvnlbr/image/upload/v1698334241/trello2.0/screenshots/Trello2-0.png)
 
 ---
 
@@ -78,7 +76,7 @@ Trello2.0 utilizes a range of modern technologies, libraries, and tools for its 
 - **[Axios](https://axios-http.com/):** A library for making HTTP requests and interacting with the server.
 - **[Formik](https://formik.org/):** A library for working with forms and their validation.
 - **[Yup](https://github.com/jquense/yup):** A library for data validation in forms.
-- **[React-Redux](hthttps://react-redux.js.org/):** A package for integrating Redux into React applications.
+- **[React-Redux](https://react-redux.js.org/):** A package for integrating Redux into React applications.
 - **[Emotion Styled](https://emotion.sh/docs/introduction/):** A library for creating styles in React using CSS-in-JS.
 - **[Date-fns](https://date-fns.org/):** A library for working with dates and time in JavaScript
 - **[React Hot Toast](https://react-hot-toast.com/):** A library for notifications and messages within the application.
