@@ -30,8 +30,8 @@ export const Text = styled.p`
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 18px;
-  letter-spacing: -0.2px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
   width: 335px;
   margin-bottom: 48px;
 

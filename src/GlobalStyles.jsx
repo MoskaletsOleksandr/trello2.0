@@ -4,6 +4,11 @@ import 'modern-normalize';
 export const GlobalStyles = () => {
   return (
     <>
+      <style>
+        {`
+          @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&display=swap');
+        `}
+      </style>
       <Global
         styles={css`
           :root {
@@ -28,7 +33,7 @@ export const GlobalStyles = () => {
 
           body {
             margin: 0;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Roboto Slab', sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             font-size: 14px;

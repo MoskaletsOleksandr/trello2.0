@@ -4,6 +4,7 @@ export const BtnText = styled.p`
   color: var(--primary-text-color);
   font-size: 16px;
   font-weight: 500;
+  transition: color 300ms var(--timing-function);
 `;
 
 export const Button = styled.button`
@@ -17,6 +18,14 @@ export const Button = styled.button`
   background-color: transparent;
   border: none;
   cursor: pointer;
+
+  &:hover p {
+    color: var(--sidebar-logout-icon-color-hover);
+  }
+
+  &:focus p {
+    color: var(--sidebar-logout-icon-color-hover);
+  }
 
   &:hover svg {
     stroke: var(--sidebar-logout-icon-color-hover);

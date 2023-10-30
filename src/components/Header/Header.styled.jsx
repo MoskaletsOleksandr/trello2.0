@@ -50,6 +50,9 @@ export const HeaderInfo = styled.div`
 export const TheamBtn = styled.div`
   display: flex;
   align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
   cursor: pointer;
 `;
 

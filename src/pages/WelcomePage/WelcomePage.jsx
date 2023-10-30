@@ -36,8 +36,8 @@ const WelcomePage = () => {
         </MainIcon>
         <Logo large={true} />
         <Text>
-          Supercharge your productivity and take control of your tasks with this
-          Task Manager - Don't wait, start achieving your goals now!
+          Boost your efficiency and master your tasks with the Trello2.0 Task
+          Manager. Don't hesitate – start realizing your objectives today!
         </Text>
         <Nav>
           <LoginBtn to="/auth/login">Log In</LoginBtn>

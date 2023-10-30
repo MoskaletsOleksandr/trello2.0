@@ -18,7 +18,7 @@ export const ButtonWrapper = styled.div`
 `;
 
 export const Text = styled.p`
-  width: 76px;
+  width: 86px;
   color: var(--primary-text-color);
   font-size: 16px;
   font-weight: 500;
@@ -35,10 +35,12 @@ export const Button = styled.button`
   border-radius: 6px;
   border: none;
   cursor: pointer;
+  transition: background-color 300ms var(--timing-function),
+    transform 300ms var(--timing-function);
 
   &:hover,
   &:focus {
-    scale: 1.05;
+    transform: scale(1.05);
     background-color: var(--modal-btn-bg-color-hover);
   }
 `;

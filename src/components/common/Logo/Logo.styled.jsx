@@ -36,5 +36,5 @@ export const Title = styled.h1`
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  letter-spacing: ${({ large }) => (large ? '-1.6px' : '-0.2px')};
+  letter-spacing: ${({ large }) => (large ? '-0.03em' : '-0.2px')};
 `;

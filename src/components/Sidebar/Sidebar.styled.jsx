@@ -86,10 +86,16 @@ export const FeedbackBtn = styled.button`
   justify-content: left;
   align-items: center;
   color: var(--primary-text-color);
-  width: 150px;
+  width: 160px;
   background-color: transparent;
   border: none;
   cursor: pointer;
+  transition: color 300ms var(--timing-function);
+
+  &:hover,
+  :focus {
+    color: var(--sidebar-logout-icon-color-hover);
+  }
 
   &:hover svg {
     stroke: var(--sidebar-logout-icon-color-hover);

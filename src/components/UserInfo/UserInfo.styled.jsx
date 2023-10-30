@@ -46,5 +46,7 @@ export const AvatarImg = styled.img`
 
 export const Name = styled.p`
   text-transform: capitalize;
-  font-weight: medium;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
 `;

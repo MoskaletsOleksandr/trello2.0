@@ -65,7 +65,7 @@ This command will launch the server and grant access to your local instance of T
 - **_Run the Local Backend:_** After downloading the backend code, users need to run the local backend server. By default, the frontend code is configured to send requests to http://localhost:5000 in the **_axiosConfig.js_** file.
 - **_Google Authorization:_** If users prefer to use Google authorization for a seamless login experience, the backend will automatically handle the authentication process. The server will redirect them to the live Trello2.0 application after successful authorization.
 - **_Use the Live Server (Optional):_** If users don't want to set up the backend locally and prefer to work with the online version, they can modify the **_baseURL_** variable in the **_axiosConfig.js_** file to ***https://trello2-0-backend.onrender.com.***
-- ✨**_Magic ✨_**
+- ✨*Magic ✨*
 
 ## Technologies Used
 
